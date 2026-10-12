@@ -1,0 +1,70 @@
+{
+  "locked_at": "2026-07-03T15:31:08.670802+00:00",
+  "version": 2,
+  "amend_reason": "Salah + Fathy + Abdelmaguid declared fit (Ahram/ESPN 2026-07-03); Lasheen suspended (new). v1 invalidation clause fired. Adjustment +55 -> +22 by releasing v1's own registered magnitudes; instrument swapped to M v2.",
+  "original_sha256": "8fb8e583c22b436a15308e7dadfcf215109d650020bf92ddd160a23a857d3153",
+  "payload": {
+    "match_id": "r32_aus_egy",
+    "pilot": true,
+    "teams": {
+      "home": "Australia",
+      "away": "Egypt"
+    },
+    "kickoff_utc": "2026-07-03T18:00:00+00:00",
+    "mode": "A",
+    "probs_90": {
+      "home": 0.4505,
+      "draw": 0.2962,
+      "away": 0.2533
+    },
+    "qualify_home": 0.6118,
+    "lambdas": {
+      "home": 1.3913,
+      "away": 1.0166
+    },
+    "inputs": {
+      "instrument": "M v2 (calibration.json) — mechanical swap from v1's old skeleton, market-free by construction",
+      "elo_home": 1800,
+      "elo_away": 1742,
+      "elo_diff_raw": 58,
+      "elo_diff_adjustment": 22,
+      "elo_diff_effective": 80,
+      "adjustment_reasons": [
+        "+12: Salah residual (v1 registered +40; declared fit after two full sessions, released 70%; residual for start-uncertainty per coach + recurrence risk at 34)",
+        "+5: Fattouh hamstring tear confirmed out (v1 cluster component retained)",
+        "+5: Lasheen suspended (NEW info, not in v1)",
+        "0: Fathy + Abdelmaguid declared fit -> their v1 cluster weight released in full",
+        "anti-anchoring: all magnitudes derived from v1's own registered numbers; market prices not referenced"
+      ],
+      "pk_home": 0.5
+    },
+    "rationale": [
+      "v1 invalidation clause fired: 'Salah declared fit and starts -> amend required' (cleared to play; start decision at kickoff)",
+      "residual AUS edge is now almost purely the eloratings layer (+58 raw): cross-confederation comparability is the live question tonight",
+      "no J for this match: analyst has seen the market extensively since v1 — any fresh judgment would be anchored (checklist Q4)"
+    ],
+    "invalidation": [
+      "Salah NOT in matchday squad after all -> this amendment overshoots toward Egypt",
+      "lineup shows 4+ Egypt rotations -> revisit"
+    ],
+    "sources": [
+      {
+        "item": "Salah recovers from hamstring, cleared for Australia; second full training Wednesday; coach: start decision near kickoff",
+        "source": "espn.com story 49252258 + vavel + thenationalnews",
+        "as_of": "2026-07-03"
+      },
+      {
+        "item": "Triple fitness boost: Salah, Hamdy Fathy, Hossam Abdelmaguid all declared fit; Fatouh out (tear); Lasheen suspended",
+        "source": "english.ahram.org.eg 572120",
+        "as_of": "2026-07-03"
+      },
+      {
+        "item": "Elo unchanged since v1 (neither side played): AUS 1800, EGY 1742",
+        "source": "eloratings.net World.tsv (v1 audit)",
+        "as_of": "2026-07-02"
+      }
+    ],
+    "contamination_notes": "Analyst HAS seen market prices for this match since v1 (screenshots, API pulls). This amendment therefore restricts itself to: (a) the pre-registered invalidation clause firing on cited news, (b) magnitude arithmetic derived from v1's own registered numbers, (c) a mechanical instrument swap to M v2. No J instrument is added. The drift detector will correctly record that this amendment moves toward the market; the mover is the news, per the registered clause."
+  },
+  "sha256": "ef18eb9a8174328a26e8be452122d2a153c3d2e6b862149bfd8be955f6e4d019"
+}

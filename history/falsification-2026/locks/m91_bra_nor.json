@@ -1,0 +1,167 @@
+{
+  "locked_at": "2026-07-03T09:11:46.736953+00:00",
+  "version": 1,
+  "payload": {
+    "match_id": "m91_bra_nor",
+    "pilot": false,
+    "teams": {
+      "home": "Brazil",
+      "away": "Norway"
+    },
+    "kickoff_utc": "2026-07-05T20:00:00+00:00",
+    "kickoff_note": "Sun Jul 5 4:00pm EDT at MetLife Stadium (FIFA: New York New Jersey Stadium), East Rutherford NJ; 4-source cross-check (ESPN gameId 760504, NBC, World Soccer Talk, Sky Sports UK 9pm BST = 20:00 UTC); Goal.com's 'July 6 / 16:00 EST' listing discarded as timezone artifact; only match scheduled Jul 5... note Match 92 MEX-ENG also listed Jul 5 by protocol table - Sky's 'only match' claim not load-bearing",
+    "mode": "A",
+    "probs_90": {
+      "home": 0.466883,
+      "draw": 0.292124,
+      "away": 0.240993
+    },
+    "qualify_home": 0.627993,
+    "lambdas": {
+      "home": 1.4245,
+      "away": 0.993
+    },
+    "inputs": {
+      "instrument": "M v2 (calibration.json)",
+      "elo_home": 2031,
+      "elo_away": 1934,
+      "elo_diff_raw": 97,
+      "elo_diff_adjustment": -5,
+      "elo_diff_effective": 92,
+      "adjustment_reasons": [
+        "-10: Paqueta ruled OUT (CBF imaging statement Jun 30, back-of-left-thigh muscle tear, ~2-3 weeks). Starter #8 but NOT the xG carrier - Brazil's attack is distributed (Vinicius 2.1 of ~9.0 team xG; Guimaraes led shots vs Japan) and replacements are genuine (Endrick took the slot at HT vs Japan; Neymar candidate; Martinelli scored the R32 winner). Magnitude conservative per pilot doctrine (Balogun -25 was 46%-of-xG; Paqueta is well below that)",
+        "-5: Raphinha doubt at half weight - sources conflict (Goal Jul 1: back in individual training, late call, may be preserved for QF; FotMob availability list: expected return mid-July; a second Goal fetch said 'available'). Baseline status quo: Brazil already played and won its last two matches without him",
+        "+10: logistics bundle, single conservative entry not stacked items - Brazil's tournament base camp is Morristown NJ ~34km from the venue (zero relocation; effectively a home-base match) vs Norway's base at UNC Greensboro ~725km (flight + hotel move); Brazil 6 rest days vs Norway 5; 4pm EDT open-air kickoff, NWS high 89F - FIFA formally warned the Norway camp about training in the heat and Norway's own physiologist flagged heat/ET concern, Brazil's heat adaptation self-evidently better; expected pro-Brazil crowd at 82k MetLife (large NY-area Brazilian community; reasoned assumption, not ticket data)",
+        "0: Casemiro (cramp/minor adductor vs Japan, self-reported fine, trending available) - no deduction; invalidation entry covers late ruling-out",
+        "0: no suspensions either side (yellows wiped after groups); Casemiro+Danilo (BRA) and Nusa (NOR) each one booking from a QF ban - symmetric-ish care incentive, no adjustment"
+      ],
+      "pk_home": 0.5,
+      "pk_note": "Alisson elite + Brazil 3-of-5 WC shootout record (last: lost 2022 vs CRO) vs Nyland 35 in strong form (4 saves + injury-time wonder-save vs CIV) + Norway has never contested a WC shootout in its history; evidence thin both ways - default kept (M94 pattern)"
+    },
+    "j": {
+      "probs_90": {
+        "home": 0.45319,
+        "draw": 0.295584,
+        "away": 0.251226
+      },
+      "qualify_home": 0.614554,
+      "basis": [
+        "single mechanism, single direction: rotation-distorted Elo input. Norway's 1934 carries a ~25-30pt hit from the 1-4 France loss played by a deliberate B-team - Solbakken rested 10 first-teamers INCLUDING Haaland and Odegaard (NRK headline, primary source) after medical tests showed 5-6 players 'very affected' post-Senegal; that B-team still won the RealGM xG 1.70-1.50 while France started Dembele (hat-trick). Elo has no lineup knowledge and scored it as a full-strength 3-goal loss (K=60, G~1.75, We~0.28 -> ~-27). Credited back at half weight per conservative-magnitude doctrine: +10 to Norway -> d_J = +82",
+        "doctrine tension declared honestly: this sits in the legal 'rotation signal' input class and is mechanically computed from K/G/We (not fitted to any price), but it is PUBLIC information the market almost certainly also prices - so it fails the strict 'market-may-not-have-it' test even though it passes the 'not derived from market' test. Logged for B1 to adjudicate; if J again merely tracks the market here, that is one more data point for the market-simulator failure mode",
+        "no style/lambda/pk edits (clean-J, SUI-ALG pattern): the TFA+NRK convergent read (Brazil vulnerable in transition x Norway's transition-attack identity = the credible upset path) and the counter-reads (Haaland finishing +2.5 over xG = mean-reversion risk; Nyland running hot; Brazil's far deeper bench in 89F heat/ET; Brazil process +1.22 xG-diff/m vs Norway +0.76) were examined and NETTED TO ZERO - they pull opposite directions and none is market-missing; refusing to stack them avoids the SUI-ALG double-count and the ESP-AUT talk-both-sides trap",
+        "quasi-independent model cluster unavailable for this match: Opta match-level number sits behind a JS widget (Chrome session unavailable) - recorded as not-obtained rather than guessed; only stale tournament-level Opta (Jun 1: BRA title 6.6%/SF 22.1%, NOR title 3.5%/'last four 23.9%'; Jun 28 pre-R32: BRA 6.5%) reached the pack. NRK expert's subjective '60-40 Brazil' (non-market pundit number) noted as loosely corroborating J's 61.5% qualify, weighted near zero"
+      ]
+    },
+    "rationale": [
+      "Elo raw +97 (BRA 2031 #5 vs NOR 1934 #10): Brazil moderate favorite over a genuine top-10 side, closest-rated R16 pairing locked so far besides M94",
+      "M net adjustment -5 (injuries -15, logistics +10) -> d_eff +92: 46.7/29.2/24.1, qualify 62.8%; J's single rotation-artifact credit -> d_J +82: 45.3/29.6/25.1, qualify 61.5%",
+      "process xG corroborates the ordering without changing it: Brazil +1.22/m but vs a weak slate and LOST the xG to its one quality opponent (Morocco 1.23-1.53); Norway +0.76/m and out-created all four opponents including rotated-self vs France; both R32s were 90-minute wins (no ET legs), 6 vs 5 rest days",
+      "goals model lambdas 1.42/0.99 (total ~2.42); weather is the biggest scenario risk: NWS 89F, 50% chance of showers with thunderstorms possible after 2pm - a delay/interruption adds variance, direction unclear, no adjustment",
+      "H2H narrative (Norway unbeaten vs Brazil P4 W2 D2, incl. WC1998 2-1) is 20+ years stale - zero adjustment, but flagged as retail-narrative fuel for Phase 2 reading"
+    ],
+    "invalidation": [
+      "Casemiro ruled out or absent from announced XI -> amend toward Norway",
+      "Raphinha in the announced starting XI -> amend toward Brazil (restore the -5 half-weight)",
+      "Haaland, Odegaard, or Nyland missing from announced XI -> amend toward Brazil",
+      "Alisson missing from announced XI -> amend toward Norway (Ederson's form was poor pre-tournament)",
+      "Ryerson passed fit and starts at RB -> no amend (public 50/50 recovery race, small magnitude, deputy Pedersen has started every match)",
+      "Neymar vs Endrick as the Paqueta replacement -> no amend (selection variance, direction unclear: Neymar upside vs 14 total minutes of match fitness)",
+      "thunderstorm delay/interruption -> no probability amend (variance note only)",
+      "referee appointment published -> no amend unless a documented extreme-card-rate profile"
+    ],
+    "sources": [
+      {
+        "item": "Elo verbatim rows: BR 2031 (#5), NO 1934 (#10); raw diff +97; code mapping audited via en.teams.tsv (line 41 BR=Brazil, line 211 NO=Norway)",
+        "source": "eloratings.net World.tsv + en.teams.tsv (downloaded .cache/elo_world_20260703b.tsv 08:21 UTC)",
+        "as_of": "2026-07-03"
+      },
+      {
+        "item": "Paqueta OUT: CBF imaging-confirmed muscle tear back of left thigh vs Japan (subbed HT), intensive treatment protocol, ~2-3 week recovery - in danger for rest of tournament",
+        "source": "CBF statement via World Soccer Talk (Jun 30) / India TV (Jul 2) / Goal.com",
+        "as_of": "2026-07-02"
+      },
+      {
+        "item": "Casemiro: down 92' vs Japan after scoring 56' equalizer, self-reported 'small pain in the adductor, a cramp, nothing serious'; no official CBF diagnosis; Jul 2 reporting = likely available",
+        "source": "Yahoo Sports (Jun 29) / Sportsdunia (Jul 1-2)",
+        "as_of": "2026-07-02"
+      },
+      {
+        "item": "Raphinha: right-thigh strain from Haiti match (5th thigh injury of his 25-26 season), missed Scotland+Japan, first individual on-pitch session Jun 30, ESPN 'remains a doubt'/late call/possibly preserved for QF; FotMob lists return mid-July; one Goal fetch said 'available' - CONFLICT flagged, treated as likely out at half weight",
+        "source": "Goal.com (Jul 1) vs FotMob availability list (fetched Jul 3) vs Goal.com preview (fetched Jul 3)",
+        "as_of": "2026-07-03"
+      },
+      {
+        "item": "Neymar: grade-II right calf pre-tournament, 0 min in first two group games, ~14 min debut vs Scotland, unused vs Japan (Ancelotti: was saving him for ET/60-65min if not ahead); live candidate for Paqueta's slot",
+        "source": "World Soccer Talk (Jun 30) / Goal.com Ancelotti presser quotes",
+        "as_of": "2026-06-30"
+      },
+      {
+        "item": "Brazil R32: 2-1 Japan, Jun 29, Houston, regulation (90+8); trailed 0-1 HT, 69% possession, xG 2.07-0.33 (xgscore) / 1.72-0.23 (RealGM) - provider spread logged; XI 4-3-3 Alisson; Danilo, Marquinhos, Gabriel, Douglas Santos; Guimaraes, Casemiro, Paqueta(45' Endrick); Rayan, Cunha(66' Martinelli), Vinicius; Martinelli winner 90+5; 6 rest days to Jul 5",
+        "source": "ESPN match page gameId 760487 / xgscore.io / RealGM tracker",
+        "as_of": "2026-06-29"
+      },
+      {
+        "item": "Norway R32: 2-1 Ivory Coast, Jun 30, Arlington TX, regulation; Nusa 39', Haaland 86' winner; Nyland 4 saves incl point-blank on Pepe + injury-time save; first-ever Norway WC knockout win; 5 rest days to Jul 5",
+        "source": "Sky Sports match report / AP via Washington Post",
+        "as_of": "2026-06-30"
+      },
+      {
+        "item": "Norway rotation vs France (Jun 26/27, lost 1-4): Solbakken rested 10 first-teamers INCLUDING Haaland and Odegaard after medical tests showed 5-6 players 'very affected after 80 minutes' vs Senegal; France started Dembele (1st-half hat-trick); RealGM xG that match 1.70-1.50 in NORWAY's favor",
+        "source": "NRK headline 'Haaland og Odegaard hviles mot Frankrike' (primary) / ESPN (~Jun 25) / RealGM tracker",
+        "as_of": "2026-06-27"
+      },
+      {
+        "item": "Per-match xG (RealGM tracker, xgscore cross-check): BRA - MAR 1.23-1.53 (1-1), HAI 1.56-1.21 (3-0), SCO 4.46-1.13 (3-0), JPN 1.72-0.23 (2-1); sum +4.87 (+1.22/m), only xG loss = Morocco. NOR - IRQ 2.53-0.77 (4-1), SEN 2.10-1.70 (3-2), FRA 1.70-1.50 (1-4, B-team), CIV 2.02-1.36 (2-1); sum +3.02 (+0.76/m), out-created all four opponents. RealGM's own 'differential ranking' line (BRA 20th/NOR 14th) did not reconcile with its per-match numbers - discarded as misparse, derived sums used",
+        "source": "RealGM 2026 WC xG Tracker (soccer.realgm.com/analysis/559, via text proxy after 403) / xgscore.io",
+        "as_of": "2026-07-03"
+      },
+      {
+        "item": "Player xG: Haaland 5 goals on ~2.5 xG in 287 min (tournament xG leader, finishing +2.5 hot - mean-reversion flag); Vinicius 2.1 xG / 4 goals in 351 min, only Brazilian in leaderboard top group (attack distributed); Odegaard assists in 3 consecutive WC matches (first since Kuyt 2010)",
+        "source": "xG leaderboard synthesis (footballparadise/planetfootball) / Goal.com",
+        "as_of": "2026-07-03"
+      },
+      {
+        "item": "Ryerson (NOR RB): thigh injury Jun 22 vs Senegal, missed France + R32; 'better and better each day', declined percentage, first full team training Jul 3; Nettavisen Jul 2: 'the only uncertain card in the Norwegian squad'; genuine 50/50 for Jul 5. Deputy Pedersen started every match incl scoring vs Senegal",
+        "source": "NRK (Jun 30) / Nettavisen (Jul 2) / RotoWire (Jun 29-30)",
+        "as_of": "2026-07-03"
+      },
+      {
+        "item": "Suspensions: none either side (group-stage yellows wiped). One booking from QF ban: Casemiro + Danilo (both carded R32 vs JPN), Nusa (carded 45' vs CIV)",
+        "source": "Yahoo yellow-card tracker / FourFourTwo+TNT rules explainers / ESPN boxscores",
+        "as_of": "2026-07-03"
+      },
+      {
+        "item": "Venue/logistics: MetLife Stadium open-air, temporary Bermuda natural grass over FieldTurf base (Copa America 2024 protocol), ~82k WC capacity, sea level; Brazil base camp Columbia Park Morristown NJ ~34km from venue (zero relocation) vs Norway base UNC Greensboro NC ~725km; both R32 sites ~2,250km away (BRA Houston, NOR Arlington)",
+        "source": "US Soccer + NBC base-camp lists / CBS pitch-engineering feature / worldcup.nyc / distances computed from stadium coordinates",
+        "as_of": "2026-07-03"
+      },
+      {
+        "item": "Weather Jul 5 East Rutherford: NWS mostly cloudy, high 89F, 50% precip, 'thunderstorms possible after 2pm' (kickoff 4pm = inside storm window; delay risk nonzero); commercial aggregates milder (82F/17%) - genuine T-2d uncertainty flagged; FIFA formally warned Norway camp re training heat; Norway physiologist: full-squad depth 'invaluable' if extra time",
+        "source": "NWS forecast.weather.gov (pulled Jul 3) / Nettavisen 'Fifa advarer Norge' (~Jul 2) / VG (~Jul 2)",
+        "as_of": "2026-07-03"
+      },
+      {
+        "item": "Opta supercomputer: match-level BRA-NOR number NOT OBTAINED (lives in JS bracket widget at theanalyst.com Jul 2 article; text fetch cannot read it; Chrome session unavailable) - recorded as missing per protocol, no value imputed. Stale tournament-level only: Jun 1 pre-tournament BRA title 6.6%/SF 22.1%, NOR title 3.5%/'last four 23.9%'; Jun 28 pre-R32 BRA 6.5%. Methodology caveat stands (Opta match model admits betting-odds input)",
+        "source": "theanalyst.com who-will-win article (fetched Jul 3, pub Jun 1) / knockout-predictions article (Jun 28) / SI relay",
+        "as_of": "2026-07-03"
+      },
+      {
+        "item": "Expert/tactical reads: TFA picks Brazil in 90 (depth + pedigree) while flagging Brazil 'vulnerable on transitions'; NRK expert Lokberg ~60-40 Brazil (subjective pundit number, non-market), asserts Brazil's midfield is WEAKER than Norway's and Vinicius-dependency is the hinge; convergent structural read: Brazil transition-D weakness x Norway transition-attack identity = the upset path; Solbakken post-R32: 'Carlo Ancelotti, we are coming for you'; Haaland publicly downplaying ('our chances very small') read by NRK as pressure games",
+        "source": "totalfootballanalysis.com R16 preview / NRK (fetched Jul 3)",
+        "as_of": "2026-07-03"
+      },
+      {
+        "item": "H2H: Norway unbeaten vs Brazil all-time P4 W2 D2 - WC1998 group Norway 2-1 (Rekdal 89' pen), 1997 Oslo friendly 4-2 [training-knowledge, not re-verified], 2006 Oslo friendly 1-1, 1988 1-1 [low confidence]; Goal.com's claim that 2006 is 'the only documented match' is demonstrably wrong - its H2H section discarded",
+        "source": "TFA + NRK (1998 corroborated) / VG / Goal.com (discarded)",
+        "as_of": "2026-07-03"
+      },
+      {
+        "item": "Bracket: M91 winner -> QF Match 99 vs winner of M92 Mexico-England (Estadio Azteca Jul 5), QF at Miami Jul 11",
+        "source": "Sky Sports / Scotsman bracket listings",
+        "as_of": "2026-07-03"
+      }
+    ],
+    "contamination_notes": "Evidence gathered by 9 collector subagents under an explicit no-odds firewall (6 original: Brazil-news, Norway-news, logistics succeeded; xG, models, previews died mid-run to an account spend limit with outputs unrecovered and never read by the analyst; 3 tightened replacements succeeded). Analyst read only structured agent returns plus two direct analyst fetches of non-odds pages (eloratings.net TSVs; theanalyst.com article). Declared incidental exposures: (1) previews agent's search-engine summary displayed explicit market lines (a Brazil moneyline, a W/D/W percentage triplet, a Norway double-chance price) - the agent transcribed no figures; what reached the analyst is the agent's qualitative disclosure that 'the lines showed Brazil as a modest favorite', a direction M and J had already produced independently - declared as qualitative directional market exposure pre-lock; (2) models agent's search snippet relayed moneyline/advance figures from sportsbettingdime - discarded by the agent, no numbers reached the pack or analyst; (3) odds-site URLs surfaced across searches and were never opened (espn.com/soccer/odds gameId 760504, rotowire odds slug, dknetwork, betmgm, freetips, yahoo betting-picks, ladbrokes preview, sportsbettingdime, ghanasoccernet correct-score, skysports group-guide with 'odds' in slug, goal.com golden-boot-odds) - none of the surfaced slugs encodes a market direction for this match; (4) NRK expert's '60-40' is a pundit's subjective probability on a non-bookmaker state broadcaster - treated as legal secondhand analysis, weighted near zero; (5) Opta tournament-level numbers used are pre-R32-stale and Opta's methodology admits odds input - down-weighted and declared; the post-R32 match-level Opta number was NOT read (JS widget, no browser session). No price for this match was retrieved, read, or snapshotted before lock. Unresolved factual conflicts flagged in sources: Raphinha availability (3-way), Brazil-Japan xG provider spread, 1997/1988 H2H training-knowledge items, RealGM differential-ranking line discarded."
+  },
+  "sha256": "42e216c723a6c8a1e5af5b480adba43e3a88ed138e2f89c53f640cabab810e92"
+}

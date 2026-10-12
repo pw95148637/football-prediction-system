@@ -1,0 +1,71 @@
+{
+  "locked_at": "2026-07-02T03:12:12.812984+00:00",
+  "version": 1,
+  "payload": {
+    "match_id": "r32_arg_cpv",
+    "pilot": true,
+    "teams": {
+      "home": "Argentina",
+      "away": "Cape Verde"
+    },
+    "kickoff_utc": "2026-07-03T22:00:00+00:00",
+    "mode": "A",
+    "probs_90": {
+      "home": 0.9161,
+      "draw": 0.0754,
+      "away": 0.0085
+    },
+    "qualify_home": 0.9784,
+    "lambdas": {
+      "home": 2.7772,
+      "away": 0.1228
+    },
+    "inputs": {
+      "elo_home": 2148,
+      "elo_away": 1622,
+      "elo_diff_raw": 526,
+      "elo_diff_adjustment": 0,
+      "elo_diff_effective": 526,
+      "adjustment_reasons": [
+        "0: rotation talk is speculation only; ESPN predicted lineup is full-strength XI with Messi starting — no concrete info, listed as invalidation instead"
+      ],
+      "total_goals": 2.9,
+      "pk_home": 0.6,
+      "elo_expected_score": 0.9538
+    },
+    "rationale": [
+      "Largest Elo gap of the round (+526): world #1 vs #58 tournament debutant",
+      "mu 2.9 above baseline: heavy mismatch, goals concentrate on Argentina side",
+      "pk_home 0.60: E.Martinez elite shootout record (2022 WC, two Copa America shootouts)",
+      "Cape Verde missing Arcanjo (muscle); Monteiro/Lenini recovered and featuring"
+    ],
+    "invalidation": [
+      "Messi rested plus 4+ rotations in announced lineup -> amend",
+      "Miami extreme-weather delay/conditions -> revisit mu"
+    ],
+    "sources": [
+      {
+        "item": "Elo ratings",
+        "source": "eloratings.net World.tsv",
+        "as_of": "2026-07-02"
+      },
+      {
+        "item": "Messi expected to start; rotation only a temptation narrative",
+        "source": "sportsmole.co.uk preview 600481 + espn.com predicted lineups",
+        "as_of": "2026-07-02"
+      },
+      {
+        "item": "Cape Verde: Arcanjo out (muscle), Monteiro/Lenini fit",
+        "source": "sportsmole.co.uk preview 600481",
+        "as_of": "2026-07-02"
+      },
+      {
+        "item": "kickoff 6pm ET Jul 3, Hard Rock Stadium Miami",
+        "source": "nbcsports.com R32 schedule",
+        "as_of": "2026-07-02"
+      }
+    ],
+    "contamination_notes": "News searches on 2026-07-02 surfaced prediction-site headlines but no odds numbers were read before this lock."
+  },
+  "sha256": "f4d0c6e9a19a9b929a40f511557f9e8aa2a84b9286dcc19a0d97698cb110620b"
+}

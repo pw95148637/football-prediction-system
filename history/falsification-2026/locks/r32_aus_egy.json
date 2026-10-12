@@ -1,0 +1,73 @@
+{
+  "locked_at": "2026-07-02T03:12:12.809677+00:00",
+  "version": 1,
+  "payload": {
+    "match_id": "r32_aus_egy",
+    "pilot": true,
+    "teams": {
+      "home": "Australia",
+      "away": "Egypt"
+    },
+    "kickoff_utc": "2026-07-03T18:00:00+00:00",
+    "mode": "A",
+    "probs_90": {
+      "home": 0.5247,
+      "draw": 0.2649,
+      "away": 0.2104
+    },
+    "qualify_home": 0.6779,
+    "lambdas": {
+      "home": 1.4742,
+      "away": 0.8258
+    },
+    "inputs": {
+      "elo_home": 1800,
+      "elo_away": 1742,
+      "elo_diff_raw": 58,
+      "elo_diff_adjustment": 55,
+      "elo_diff_effective": 113,
+      "adjustment_reasons": [
+        "+40: Salah confirmed hamstring strain (scans), major doubt — Egypt's system player",
+        "+15: Egypt injury cluster: Fattouh hamstring tear (likely out), Abdelmonem ankle, H.Fathy groin, Abdelmaguid head all doubts",
+        "0: Australia missing only Italiano/Leckie (rotation depth) — no adjustment"
+      ],
+      "total_goals": 2.3,
+      "pk_home": 0.5,
+      "elo_expected_score": 0.6571
+    },
+    "rationale": [
+      "Elo edge AUS +58 before injuries; Egypt attack runs through Salah, who is hurt days before kickoff",
+      "Egypt low-scoring profile even healthy; without Salah, mu set 2.3 (below 2.4 baseline)",
+      "AT&T Stadium roof = climate neutral, no weather factor",
+      "Both teams ~6 days rest (matchday 3 ended Jun 25-27), no rest asymmetry"
+    ],
+    "invalidation": [
+      "Salah declared fit and starts -> effective diff drops ~40, amend required",
+      "All of Abdelmonem/Fathy/Fatouh start -> amend +15 away"
+    ],
+    "sources": [
+      {
+        "item": "Elo ratings",
+        "source": "eloratings.net World.tsv",
+        "as_of": "2026-07-02"
+      },
+      {
+        "item": "Salah hamstring strain confirmed by scans",
+        "source": "fifa.com Egypt injury article + Yahoo Sports",
+        "as_of": "2026-07-02"
+      },
+      {
+        "item": "Egypt doubts: Fattouh (tear), Abdelmonem, Fathy, Abdelmaguid; Australia out: Italiano, Leckie",
+        "source": "sportsmole.co.uk preview 600483",
+        "as_of": "2026-07-02"
+      },
+      {
+        "item": "kickoff 2pm ET Jul 3, AT&T Stadium Dallas",
+        "source": "nbcsports.com R32 schedule",
+        "as_of": "2026-07-02"
+      }
+    ],
+    "contamination_notes": "News searches on 2026-07-02 surfaced prediction-site headlines but no odds numbers were read before this lock."
+  },
+  "sha256": "8fb8e583c22b436a15308e7dadfcf215109d650020bf92ddd160a23a857d3153"
+}

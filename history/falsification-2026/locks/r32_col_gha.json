@@ -1,0 +1,73 @@
+{
+  "locked_at": "2026-07-02T03:12:12.815510+00:00",
+  "version": 1,
+  "payload": {
+    "match_id": "r32_col_gha",
+    "pilot": true,
+    "teams": {
+      "home": "Colombia",
+      "away": "Ghana"
+    },
+    "kickoff_utc": "2026-07-04T01:30:00+00:00",
+    "mode": "A",
+    "probs_90": {
+      "home": 0.864,
+      "draw": 0.124,
+      "away": 0.012
+    },
+    "qualify_home": 0.9565,
+    "lambdas": {
+      "home": 2.1981,
+      "away": 0.1019
+    },
+    "inputs": {
+      "elo_home": 2004,
+      "elo_away": 1575,
+      "elo_diff_raw": 429,
+      "elo_diff_adjustment": 10,
+      "elo_diff_effective": 439,
+      "adjustment_reasons": [
+        "+10: Partey unavailable (denied UK-related entry, already missed Panama game; no report of clearance)",
+        "0: Kudus absence NOT re-added — he missed the whole tournament, current Elo already reflects group results without him"
+      ],
+      "total_goals": 2.3,
+      "pk_home": 0.5,
+      "elo_expected_score": 0.926
+    },
+    "rationale": [
+      "Elo gap +429 (world #6 vs #68); Colombia unbeaten group incl. 0-0 vs Portugal, full squad available",
+      "Queiroz low-block Ghana: 1-0, 0-0, 1-2 group scorelines -> mu 2.3 below baseline",
+      "Ghana already weakened: no Kudus all tournament, Partey unavailable, Semenyo carrying a knock (expected to feature)",
+      "Evening kickoff Kansas City, no weather factor identified"
+    ],
+    "invalidation": [
+      "Partey cleared and starts -> amend -10",
+      "Semenyo ruled out entirely -> amend +10",
+      "James/Diaz rested in announced lineup -> amend"
+    ],
+    "sources": [
+      {
+        "item": "Elo ratings",
+        "source": "eloratings.net World.tsv",
+        "as_of": "2026-07-02"
+      },
+      {
+        "item": "Partey denied entry, missed Panama match; Semenyo knock but expected to feature; Kudus out of tournament",
+        "source": "espn.com story 49224579",
+        "as_of": "2026-07-02"
+      },
+      {
+        "item": "Colombia full strength, group unbeaten (3-1 UZB, 1-0 COD, 0-0 POR)",
+        "source": "espn.com story 49224579 + fifa.com preview",
+        "as_of": "2026-07-02"
+      },
+      {
+        "item": "kickoff 9:30pm ET Jul 3, Arrowhead Kansas City",
+        "source": "nbcsports.com R32 schedule (7:30pm local CT)",
+        "as_of": "2026-07-02"
+      }
+    ],
+    "contamination_notes": "News searches on 2026-07-02 surfaced prediction-site headlines but no odds numbers were read before this lock."
+  },
+  "sha256": "89aacdb061055b26d9350f899ecfaa3f5a498e441313fa270db502fc07509a3c"
+}

@@ -1,0 +1,13 @@
+# store/data/ used to be ignored here, with the reason "derived view rebuilt
+# from the v2 sources (data/import_v2.py) — never commit; the v2 files in
+# wc2026/ remain the authority until cutover". That premise expired on
+# 2026-07-24, when era v1-epl-2026-27 began writing PRIMARY records into the
+# same files — locks, results, odds snapshots, evidence bundles that exist
+# nowhere else on disk. From then until 2026-08-26 the live competition's
+# only copy of its own data was untracked and unbacked-up.
+#
+# Tracked from 2026-08-26. The v2-wc2026 era rows in these files are still a
+# rebuildable derived view, and audit/selftest.py's bit-identical recompute
+# gate is what proves it — so committing them costs a few hundred KB and
+# losing them would cost the live window everything.
+__pycache__/

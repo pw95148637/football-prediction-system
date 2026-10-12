@@ -1,0 +1,6 @@
+# Everything football_ai imports beyond the standard library.
+# Developed and self-tested on Python 3.13 with pandas 3.0.3 / numpy 2.4.3.
+# The audit selftest re-derives archived numbers bit-for-bit, so on a new
+# machine run both selftests (see CLAUDE.md) before trusting any output.
+pandas>=2.2
+numpy>=1.26

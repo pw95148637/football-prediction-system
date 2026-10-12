@@ -1,0 +1,22 @@
+{
+  "ol_b": 0.5528321501058863,
+  "ol_c1": -0.7362491995563498,
+  "ol_c2": 0.5456985656089309,
+  "g_a": 0.1735199263858596,
+  "g_b": 0.1960899854794818,
+  "meta": {
+    "source": "https://raw.githubusercontent.com/martj42/international_results/master/results.csv",
+    "fitted_on": "competitive internationals 1990-01-01+ (K>=40), n=16549",
+    "fitted_at": "2026-07-07",
+    "validation_2018plus_rps": {
+      "calibrated": 0.1631,
+      "old_skeleton": 0.1632,
+      "constant_baseline": 0.2324
+    },
+    "home_adv_elo": 100.0,
+    "known_limits": [
+      "scores include extra time for some knockout matches (dataset limitation) \u2014 slight draw-rate deflation",
+      "replayed Elo, not eloratings.net's exact seeds; see sanity print for scale agreement"
+    ]
+  }
+}

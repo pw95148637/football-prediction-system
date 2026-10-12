@@ -1,0 +1,2746 @@
+{
+ "name": "EPL key-starter absence -> team xG base rates",
+ "generated_by": "baserate/analyze.py + make_table.py (Understat data, numpy OLS/PPML)",
+ "data": {
+  "source": "understat.com getLeagueData/EPL/<season> (fixtures, team xG) and getMatchData/<id> (rosters)",
+  "seasons": [
+   "2014-15",
+   "2015-16",
+   "2016-17",
+   "2017-18",
+   "2018-19",
+   "2019-20",
+   "2020-21",
+   "2021-22",
+   "2022-23",
+   "2023-24",
+   "2024-25",
+   "2025-26"
+  ],
+  "n_matches": 4560,
+  "n_team_matches": 9120,
+  "mean_xg_per_team_match": 1.4254,
+  "mean_xg_home": 1.5795,
+  "mean_xg_away": 1.2713,
+  "complete": true
+ },
+ "definitions": {
+  "position_groups": {
+   "GK": [
+    "GK"
+   ],
+   "CB": [
+    "DC"
+   ],
+   "FB": [
+    "DR",
+    "DL",
+    "DMR",
+    "DML",
+    "MR/ML when the XI has exactly 3 DC and no DR/DL/DMR/DML (wing-backs)"
+   ],
+   "DM": [
+    "DMC"
+   ],
+   "CM": [
+    "MC"
+   ],
+   "WIDE": [
+    "MR",
+    "ML",
+    "AMR",
+    "AML"
+   ],
+   "AM": [
+    "AMC"
+   ],
+   "ST": [
+    "FW",
+    "FWL",
+    "FWR"
+   ]
+  },
+  "position_source": "Understat starting formation slot of each match",
+  "key_starter": "started >= 60% of the team's league matches that season (any slot); assigned to the position group where most of his starts were (modal group). Spec-literal rule (>= 60% in one group) reported under robustness.strict_key_rule.",
+  "absence": "a key starter who is not in that match's starting XI (injury, suspension, rotation, or not yet signed / already left)",
+  "tiers": {
+   "start_share": "core: started >= 80% of team league matches; regular: 60%-80%",
+   "attack_rank": "top3: top-3 in team-season (xG+xA)/90 among players with >= 900 league minutes"
+  }
+ },
+ "model": {
+  "equation": "xg_for[t,m] = a[team-season] + d[opp-season] + h*home + sum_g b_for[g]*n_absent_own[g] + sum_g b_against[g]*n_absent_opp[g] + e",
+  "note": "one row per team per match; b_for = change in the absent team's xG-for per absent key starter; b_against = change in the absent team's xG-against (estimated from the opponent's rows). Equivalent to separate xG-for and xG-against regressions with team-season FE, opponent-season FE, home, own absences, each also controlling for the other side's absences.",
+  "se": "clustered by the absent team's team-season (se_*); se_twoway_* also clusters by the other team-season",
+  "sample": "all seasons in data.seasons",
+  "home_coef": 0.3017,
+  "resid_sd": 0.7108
+ },
+ "base_rates": {
+  "by_group": [
+   {
+    "group": "GK",
+    "tier": "all",
+    "d_xg_for": -0.0205,
+    "se_for": 0.0268,
+    "ci95_for": [
+     -0.073,
+     0.032
+    ],
+    "d_xg_against": 0.132,
+    "se_against": 0.0293,
+    "ci95_against": [
+     0.0746,
+     0.1894
+    ],
+    "se_twoway_for": 0.0269,
+    "se_twoway_against": 0.0311,
+    "n_absent_player_matches": 955,
+    "n_team_matches_with_absence": 955,
+    "n_key_player_seasons": 214,
+    "n_key_player_seasons_with_absence": 161,
+    "pct_xg_for_ppml": -1.41,
+    "pct_xg_for_ppml_ci95": [
+     -5.09,
+     2.41
+    ],
+    "pct_xg_against_ppml": 9.16,
+    "pct_xg_against_ppml_ci95": [
+     5.09,
+     13.39
+    ]
+   },
+   {
+    "group": "CB",
+    "tier": "all",
+    "d_xg_for": -0.0257,
+    "se_for": 0.017,
+    "ci95_for": [
+     -0.059,
+     0.0076
+    ],
+    "d_xg_against": 0.0768,
+    "se_against": 0.0191,
+    "ci95_against": [
+     0.0394,
+     0.1142
+    ],
+    "se_twoway_for": 0.0178,
+    "se_twoway_against": 0.0203,
+    "n_absent_player_matches": 3317,
+    "n_team_matches_with_absence": 3083,
+    "n_key_player_seasons": 437,
+    "n_key_player_seasons_with_absence": 404,
+    "pct_xg_for_ppml": -1.94,
+    "pct_xg_for_ppml_ci95": [
+     -4.28,
+     0.45
+    ],
+    "pct_xg_against_ppml": 5.08,
+    "pct_xg_against_ppml_ci95": [
+     2.5,
+     7.72
+    ]
+   },
+   {
+    "group": "FB",
+    "tier": "all",
+    "d_xg_for": -0.0317,
+    "se_for": 0.0157,
+    "ci95_for": [
+     -0.0625,
+     -0.0009
+    ],
+    "d_xg_against": 0.052,
+    "se_against": 0.0159,
+    "ci95_against": [
+     0.0208,
+     0.0832
+    ],
+    "se_twoway_for": 0.0166,
+    "se_twoway_against": 0.0152,
+    "n_absent_player_matches": 2749,
+    "n_team_matches_with_absence": 2534,
+    "n_key_player_seasons": 350,
+    "n_key_player_seasons_with_absence": 333,
+    "pct_xg_for_ppml": -2.55,
+    "pct_xg_for_ppml_ci95": [
+     -4.67,
+     -0.38
+    ],
+    "pct_xg_against_ppml": 3.42,
+    "pct_xg_against_ppml_ci95": [
+     1.22,
+     5.67
+    ]
+   },
+   {
+    "group": "DM",
+    "tier": "all",
+    "d_xg_for": -0.0671,
+    "se_for": 0.0235,
+    "ci95_for": [
+     -0.1132,
+     -0.021
+    ],
+    "d_xg_against": 0.1129,
+    "se_against": 0.0275,
+    "ci95_against": [
+     0.059,
+     0.1668
+    ],
+    "se_twoway_for": 0.0244,
+    "se_twoway_against": 0.0285,
+    "n_absent_player_matches": 1235,
+    "n_team_matches_with_absence": 1141,
+    "n_key_player_seasons": 153,
+    "n_key_player_seasons_with_absence": 147,
+    "pct_xg_for_ppml": -4.64,
+    "pct_xg_for_ppml_ci95": [
+     -7.65,
+     -1.53
+    ],
+    "pct_xg_against_ppml": 7.75,
+    "pct_xg_against_ppml_ci95": [
+     3.9,
+     11.75
+    ]
+   },
+   {
+    "group": "CM",
+    "tier": "all",
+    "d_xg_for": -0.0433,
+    "se_for": 0.0174,
+    "ci95_for": [
+     -0.0774,
+     -0.0092
+    ],
+    "d_xg_against": 0.0562,
+    "se_against": 0.0181,
+    "ci95_against": [
+     0.0207,
+     0.0917
+    ],
+    "se_twoway_for": 0.0176,
+    "se_twoway_against": 0.018,
+    "n_absent_player_matches": 2572,
+    "n_team_matches_with_absence": 2305,
+    "n_key_player_seasons": 312,
+    "n_key_player_seasons_with_absence": 301,
+    "pct_xg_for_ppml": -3.69,
+    "pct_xg_for_ppml_ci95": [
+     -5.91,
+     -1.41
+    ],
+    "pct_xg_against_ppml": 3.68,
+    "pct_xg_against_ppml_ci95": [
+     1.2,
+     6.23
+    ]
+   },
+   {
+    "group": "WIDE",
+    "tier": "all",
+    "d_xg_for": -0.0709,
+    "se_for": 0.0184,
+    "ci95_for": [
+     -0.107,
+     -0.0348
+    ],
+    "d_xg_against": 0.0648,
+    "se_against": 0.0234,
+    "ci95_against": [
+     0.0189,
+     0.1107
+    ],
+    "se_twoway_for": 0.0169,
+    "se_twoway_against": 0.0233,
+    "n_absent_player_matches": 1848,
+    "n_team_matches_with_absence": 1750,
+    "n_key_player_seasons": 204,
+    "n_key_player_seasons_with_absence": 199,
+    "pct_xg_for_ppml": -5.15,
+    "pct_xg_for_ppml_ci95": [
+     -7.65,
+     -2.59
+    ],
+    "pct_xg_against_ppml": 4.42,
+    "pct_xg_against_ppml_ci95": [
+     1.26,
+     7.68
+    ]
+   },
+   {
+    "group": "AM",
+    "tier": "all",
+    "d_xg_for": -0.1148,
+    "se_for": 0.0307,
+    "ci95_for": [
+     -0.175,
+     -0.0546
+    ],
+    "d_xg_against": 0.0576,
+    "se_against": 0.0301,
+    "ci95_against": [
+     -0.0014,
+     0.1166
+    ],
+    "se_twoway_for": 0.03,
+    "se_twoway_against": 0.0292,
+    "n_absent_player_matches": 755,
+    "n_team_matches_with_absence": 748,
+    "n_key_player_seasons": 102,
+    "n_key_player_seasons_with_absence": 102,
+    "pct_xg_for_ppml": -8.23,
+    "pct_xg_for_ppml_ci95": [
+     -12.05,
+     -4.24
+    ],
+    "pct_xg_against_ppml": 3.51,
+    "pct_xg_against_ppml_ci95": [
+     -0.31,
+     7.47
+    ]
+   },
+   {
+    "group": "ST",
+    "tier": "all",
+    "d_xg_for": -0.0827,
+    "se_for": 0.02,
+    "ci95_for": [
+     -0.1219,
+     -0.0435
+    ],
+    "d_xg_against": 0.0193,
+    "se_against": 0.0187,
+    "ci95_against": [
+     -0.0174,
+     0.056
+    ],
+    "se_twoway_for": 0.0206,
+    "se_twoway_against": 0.0187,
+    "n_absent_player_matches": 2297,
+    "n_team_matches_with_absence": 2168,
+    "n_key_player_seasons": 273,
+    "n_key_player_seasons_with_absence": 271,
+    "pct_xg_for_ppml": -5.75,
+    "pct_xg_for_ppml_ci95": [
+     -8.26,
+     -3.18
+    ],
+    "pct_xg_against_ppml": 0.89,
+    "pct_xg_against_ppml_ci95": [
+     -1.74,
+     3.59
+    ]
+   }
+  ],
+  "by_group_recent_2022_25": [
+   {
+    "group": "GK",
+    "tier": "all",
+    "d_xg_for": 0.0006,
+    "se_for": 0.0406,
+    "ci95_for": [
+     -0.079,
+     0.0802
+    ],
+    "d_xg_against": 0.1313,
+    "se_against": 0.058,
+    "ci95_against": [
+     0.0176,
+     0.245
+    ],
+    "se_twoway_for": 0.0364,
+    "se_twoway_against": 0.06,
+    "n_absent_player_matches": 345,
+    "n_team_matches_with_absence": 345,
+    "n_key_player_seasons": null,
+    "n_key_player_seasons_with_absence": 54
+   },
+   {
+    "group": "CB",
+    "tier": "all",
+    "d_xg_for": 0.0124,
+    "se_for": 0.0347,
+    "ci95_for": [
+     -0.0556,
+     0.0804
+    ],
+    "d_xg_against": 0.1397,
+    "se_against": 0.0349,
+    "ci95_against": [
+     0.0713,
+     0.2081
+    ],
+    "se_twoway_for": 0.0341,
+    "se_twoway_against": 0.0371,
+    "n_absent_player_matches": 982,
+    "n_team_matches_with_absence": 909,
+    "n_key_player_seasons": null,
+    "n_key_player_seasons_with_absence": 125
+   },
+   {
+    "group": "FB",
+    "tier": "all",
+    "d_xg_for": -0.0158,
+    "se_for": 0.0302,
+    "ci95_for": [
+     -0.075,
+     0.0434
+    ],
+    "d_xg_against": 0.0723,
+    "se_against": 0.0311,
+    "ci95_against": [
+     0.0113,
+     0.1333
+    ],
+    "se_twoway_for": 0.035,
+    "se_twoway_against": 0.0286,
+    "n_absent_player_matches": 862,
+    "n_team_matches_with_absence": 803,
+    "n_key_player_seasons": null,
+    "n_key_player_seasons_with_absence": 110
+   },
+   {
+    "group": "DM",
+    "tier": "all",
+    "d_xg_for": -0.0939,
+    "se_for": 0.0296,
+    "ci95_for": [
+     -0.1519,
+     -0.0359
+    ],
+    "d_xg_against": 0.1474,
+    "se_against": 0.048,
+    "ci95_against": [
+     0.0533,
+     0.2415
+    ],
+    "se_twoway_for": 0.0312,
+    "se_twoway_against": 0.0547,
+    "n_absent_player_matches": 518,
+    "n_team_matches_with_absence": 470,
+    "n_key_player_seasons": null,
+    "n_key_player_seasons_with_absence": 63
+   },
+   {
+    "group": "CM",
+    "tier": "all",
+    "d_xg_for": -0.0888,
+    "se_for": 0.0388,
+    "ci95_for": [
+     -0.1648,
+     -0.0128
+    ],
+    "d_xg_against": 0.1241,
+    "se_against": 0.0387,
+    "ci95_against": [
+     0.0482,
+     0.2
+    ],
+    "se_twoway_for": 0.0375,
+    "se_twoway_against": 0.0423,
+    "n_absent_player_matches": 674,
+    "n_team_matches_with_absence": 609,
+    "n_key_player_seasons": null,
+    "n_key_player_seasons_with_absence": 83
+   },
+   {
+    "group": "WIDE",
+    "tier": "all",
+    "d_xg_for": -0.0857,
+    "se_for": 0.0345,
+    "ci95_for": [
+     -0.1533,
+     -0.0181
+    ],
+    "d_xg_against": 0.1047,
+    "se_against": 0.047,
+    "ci95_against": [
+     0.0126,
+     0.1968
+    ],
+    "se_twoway_for": 0.0282,
+    "se_twoway_against": 0.0463,
+    "n_absent_player_matches": 606,
+    "n_team_matches_with_absence": 579,
+    "n_key_player_seasons": null,
+    "n_key_player_seasons_with_absence": 65
+   },
+   {
+    "group": "AM",
+    "tier": "all",
+    "d_xg_for": -0.1063,
+    "se_for": 0.0451,
+    "ci95_for": [
+     -0.1947,
+     -0.0179
+    ],
+    "d_xg_against": 0.06,
+    "se_against": 0.0471,
+    "ci95_against": [
+     -0.0323,
+     0.1523
+    ],
+    "se_twoway_for": 0.046,
+    "se_twoway_against": 0.0428,
+    "n_absent_player_matches": 359,
+    "n_team_matches_with_absence": 353,
+    "n_key_player_seasons": null,
+    "n_key_player_seasons_with_absence": 48
+   },
+   {
+    "group": "ST",
+    "tier": "all",
+    "d_xg_for": -0.0526,
+    "se_for": 0.0417,
+    "ci95_for": [
+     -0.1343,
+     0.0291
+    ],
+    "d_xg_against": 0.0012,
+    "se_against": 0.033,
+    "ci95_against": [
+     -0.0635,
+     0.0659
+    ],
+    "se_twoway_for": 0.0436,
+    "se_twoway_against": 0.0314,
+    "n_absent_player_matches": 701,
+    "n_team_matches_with_absence": 655,
+    "n_key_player_seasons": null,
+    "n_key_player_seasons_with_absence": 80
+   }
+  ],
+  "by_line": [
+   {
+    "group": "GK",
+    "tier": "all",
+    "d_xg_for": -0.0201,
+    "se_for": 0.0268,
+    "ci95_for": [
+     -0.0726,
+     0.0324
+    ],
+    "d_xg_against": 0.1317,
+    "se_against": 0.0294,
+    "ci95_against": [
+     0.0741,
+     0.1893
+    ],
+    "se_twoway_for": 0.0269,
+    "se_twoway_against": 0.0312,
+    "n_absent_player_matches": 955,
+    "n_team_matches_with_absence": 955,
+    "n_key_player_seasons": 214,
+    "n_key_player_seasons_with_absence": 161
+   },
+   {
+    "group": "DEF",
+    "tier": "all",
+    "d_xg_for": -0.029,
+    "se_for": 0.0124,
+    "ci95_for": [
+     -0.0533,
+     -0.0047
+    ],
+    "d_xg_against": 0.0647,
+    "se_against": 0.0126,
+    "ci95_against": [
+     0.04,
+     0.0894
+    ],
+    "se_twoway_for": 0.0124,
+    "se_twoway_against": 0.0127,
+    "n_absent_player_matches": 6066,
+    "n_team_matches_with_absence": 4718,
+    "n_key_player_seasons": 787,
+    "n_key_player_seasons_with_absence": 737
+   },
+   {
+    "group": "MID",
+    "tier": "all",
+    "d_xg_for": -0.052,
+    "se_for": 0.0141,
+    "ci95_for": [
+     -0.0796,
+     -0.0244
+    ],
+    "d_xg_against": 0.0745,
+    "se_against": 0.016,
+    "ci95_against": [
+     0.0431,
+     0.1059
+    ],
+    "se_twoway_for": 0.0147,
+    "se_twoway_against": 0.0158,
+    "n_absent_player_matches": 3807,
+    "n_team_matches_with_absence": 3410,
+    "n_key_player_seasons": 465,
+    "n_key_player_seasons_with_absence": 448
+   },
+   {
+    "group": "ATT",
+    "tier": "all",
+    "d_xg_for": -0.0841,
+    "se_for": 0.0129,
+    "ci95_for": [
+     -0.1094,
+     -0.0588
+    ],
+    "d_xg_against": 0.0422,
+    "se_against": 0.0134,
+    "ci95_against": [
+     0.0159,
+     0.0685
+    ],
+    "se_twoway_for": 0.0133,
+    "se_twoway_against": 0.0132,
+    "n_absent_player_matches": 4900,
+    "n_team_matches_with_absence": 4138,
+    "n_key_player_seasons": 579,
+    "n_key_player_seasons_with_absence": 572
+   }
+  ],
+  "by_group_alt_fwl_fwr_as_wide": [
+   {
+    "group": "GK",
+    "tier": "all",
+    "d_xg_for": -0.0191,
+    "se_for": 0.0267,
+    "ci95_for": [
+     -0.0714,
+     0.0332
+    ],
+    "d_xg_against": 0.1322,
+    "se_against": 0.0293,
+    "ci95_against": [
+     0.0748,
+     0.1896
+    ],
+    "se_twoway_for": 0.0269,
+    "se_twoway_against": 0.031,
+    "n_absent_player_matches": 955,
+    "n_team_matches_with_absence": 955,
+    "n_key_player_seasons": 214,
+    "n_key_player_seasons_with_absence": 161
+   },
+   {
+    "group": "CB",
+    "tier": "all",
+    "d_xg_for": -0.0254,
+    "se_for": 0.017,
+    "ci95_for": [
+     -0.0587,
+     0.0079
+    ],
+    "d_xg_against": 0.0763,
+    "se_against": 0.0191,
+    "ci95_against": [
+     0.0389,
+     0.1137
+    ],
+    "se_twoway_for": 0.0178,
+    "se_twoway_against": 0.0203,
+    "n_absent_player_matches": 3317,
+    "n_team_matches_with_absence": 3083,
+    "n_key_player_seasons": 437,
+    "n_key_player_seasons_with_absence": 404
+   },
+   {
+    "group": "FB",
+    "tier": "all",
+    "d_xg_for": -0.0319,
+    "se_for": 0.0159,
+    "ci95_for": [
+     -0.0631,
+     -0.0007
+    ],
+    "d_xg_against": 0.0505,
+    "se_against": 0.016,
+    "ci95_against": [
+     0.0191,
+     0.0819
+    ],
+    "se_twoway_for": 0.0169,
+    "se_twoway_against": 0.0154,
+    "n_absent_player_matches": 2711,
+    "n_team_matches_with_absence": 2505,
+    "n_key_player_seasons": 347,
+    "n_key_player_seasons_with_absence": 330
+   },
+   {
+    "group": "DM",
+    "tier": "all",
+    "d_xg_for": -0.0665,
+    "se_for": 0.0237,
+    "ci95_for": [
+     -0.113,
+     -0.02
+    ],
+    "d_xg_against": 0.1119,
+    "se_against": 0.0275,
+    "ci95_against": [
+     0.058,
+     0.1658
+    ],
+    "se_twoway_for": 0.0245,
+    "se_twoway_against": 0.0285,
+    "n_absent_player_matches": 1235,
+    "n_team_matches_with_absence": 1141,
+    "n_key_player_seasons": 153,
+    "n_key_player_seasons_with_absence": 147
+   },
+   {
+    "group": "CM",
+    "tier": "all",
+    "d_xg_for": -0.0426,
+    "se_for": 0.0174,
+    "ci95_for": [
+     -0.0767,
+     -0.0085
+    ],
+    "d_xg_against": 0.0554,
+    "se_against": 0.018,
+    "ci95_against": [
+     0.0201,
+     0.0907
+    ],
+    "se_twoway_for": 0.0175,
+    "se_twoway_against": 0.0178,
+    "n_absent_player_matches": 2577,
+    "n_team_matches_with_absence": 2310,
+    "n_key_player_seasons": 312,
+    "n_key_player_seasons_with_absence": 302
+   },
+   {
+    "group": "WIDE",
+    "tier": "all",
+    "d_xg_for": -0.0596,
+    "se_for": 0.0171,
+    "ci95_for": [
+     -0.0931,
+     -0.0261
+    ],
+    "d_xg_against": 0.0437,
+    "se_against": 0.0189,
+    "ci95_against": [
+     0.0067,
+     0.0807
+    ],
+    "se_twoway_for": 0.0176,
+    "se_twoway_against": 0.0189,
+    "n_absent_player_matches": 2649,
+    "n_team_matches_with_absence": 2477,
+    "n_key_player_seasons": 296,
+    "n_key_player_seasons_with_absence": 290
+   },
+   {
+    "group": "AM",
+    "tier": "all",
+    "d_xg_for": -0.103,
+    "se_for": 0.0315,
+    "ci95_for": [
+     -0.1647,
+     -0.0413
+    ],
+    "d_xg_against": 0.0638,
+    "se_against": 0.0312,
+    "ci95_against": [
+     0.0026,
+     0.125
+    ],
+    "se_twoway_for": 0.0316,
+    "se_twoway_against": 0.0298,
+    "n_absent_player_matches": 706,
+    "n_team_matches_with_absence": 699,
+    "n_key_player_seasons": 95,
+    "n_key_player_seasons_with_absence": 95
+   },
+   {
+    "group": "ST",
+    "tier": "all",
+    "d_xg_for": -0.1144,
+    "se_for": 0.0227,
+    "ci95_for": [
+     -0.1589,
+     -0.0699
+    ],
+    "d_xg_against": 0.0301,
+    "se_against": 0.0237,
+    "ci95_against": [
+     -0.0164,
+     0.0766
+    ],
+    "se_twoway_for": 0.0233,
+    "se_twoway_against": 0.0227,
+    "n_absent_player_matches": 1578,
+    "n_team_matches_with_absence": 1548,
+    "n_key_player_seasons": 191,
+    "n_key_player_seasons_with_absence": 189
+   }
+  ],
+  "by_group_x_start_share_tier": [
+   {
+    "group": "GK",
+    "tier": "core",
+    "d_xg_for": -0.0666,
+    "se_for": 0.0405,
+    "ci95_for": [
+     -0.146,
+     0.0128
+    ],
+    "d_xg_against": 0.0978,
+    "se_against": 0.0443,
+    "ci95_against": [
+     0.011,
+     0.1846
+    ],
+    "se_twoway_for": 0.0416,
+    "se_twoway_against": 0.0486,
+    "n_absent_player_matches": 323,
+    "n_team_matches_with_absence": 323,
+    "n_key_player_seasons": 156,
+    "n_key_player_seasons_with_absence": 103
+   },
+   {
+    "group": "GK",
+    "tier": "regular",
+    "d_xg_for": 0.0132,
+    "se_for": 0.0357,
+    "ci95_for": [
+     -0.0568,
+     0.0832
+    ],
+    "d_xg_against": 0.1476,
+    "se_against": 0.0381,
+    "ci95_against": [
+     0.0729,
+     0.2223
+    ],
+    "se_twoway_for": 0.0374,
+    "se_twoway_against": 0.0357,
+    "n_absent_player_matches": 632,
+    "n_team_matches_with_absence": 632,
+    "n_key_player_seasons": 58,
+    "n_key_player_seasons_with_absence": 58
+   },
+   {
+    "group": "CB",
+    "tier": "core",
+    "d_xg_for": -0.0991,
+    "se_for": 0.0286,
+    "ci95_for": [
+     -0.1552,
+     -0.043
+    ],
+    "d_xg_against": 0.088,
+    "se_against": 0.0351,
+    "ci95_against": [
+     0.0192,
+     0.1568
+    ],
+    "se_twoway_for": 0.0315,
+    "se_twoway_against": 0.0361,
+    "n_absent_player_matches": 744,
+    "n_team_matches_with_absence": 732,
+    "n_key_player_seasons": 216,
+    "n_key_player_seasons_with_absence": 183
+   },
+   {
+    "group": "CB",
+    "tier": "regular",
+    "d_xg_for": 0.0036,
+    "se_for": 0.0207,
+    "ci95_for": [
+     -0.037,
+     0.0442
+    ],
+    "d_xg_against": 0.0709,
+    "se_against": 0.02,
+    "ci95_against": [
+     0.0317,
+     0.1101
+    ],
+    "se_twoway_for": 0.0212,
+    "se_twoway_against": 0.0221,
+    "n_absent_player_matches": 2573,
+    "n_team_matches_with_absence": 2432,
+    "n_key_player_seasons": 221,
+    "n_key_player_seasons_with_absence": 221
+   },
+   {
+    "group": "FB",
+    "tier": "core",
+    "d_xg_for": -0.0239,
+    "se_for": 0.0309,
+    "ci95_for": [
+     -0.0845,
+     0.0367
+    ],
+    "d_xg_against": 0.0686,
+    "se_against": 0.0312,
+    "ci95_against": [
+     0.0074,
+     0.1298
+    ],
+    "se_twoway_for": 0.0307,
+    "se_twoway_against": 0.0323,
+    "n_absent_player_matches": 569,
+    "n_team_matches_with_absence": 555,
+    "n_key_player_seasons": 162,
+    "n_key_player_seasons_with_absence": 145
+   },
+   {
+    "group": "FB",
+    "tier": "regular",
+    "d_xg_for": -0.0277,
+    "se_for": 0.019,
+    "ci95_for": [
+     -0.0649,
+     0.0095
+    ],
+    "d_xg_against": 0.0455,
+    "se_against": 0.0186,
+    "ci95_against": [
+     0.009,
+     0.082
+    ],
+    "se_twoway_for": 0.0203,
+    "se_twoway_against": 0.0175,
+    "n_absent_player_matches": 2180,
+    "n_team_matches_with_absence": 2044,
+    "n_key_player_seasons": 188,
+    "n_key_player_seasons_with_absence": 188
+   },
+   {
+    "group": "DM",
+    "tier": "core",
+    "d_xg_for": -0.1624,
+    "se_for": 0.0363,
+    "ci95_for": [
+     -0.2335,
+     -0.0913
+    ],
+    "d_xg_against": 0.1808,
+    "se_against": 0.0425,
+    "ci95_against": [
+     0.0975,
+     0.2641
+    ],
+    "se_twoway_for": 0.0378,
+    "se_twoway_against": 0.046,
+    "n_absent_player_matches": 281,
+    "n_team_matches_with_absence": 277,
+    "n_key_player_seasons": 71,
+    "n_key_player_seasons_with_absence": 65
+   },
+   {
+    "group": "DM",
+    "tier": "regular",
+    "d_xg_for": -0.029,
+    "se_for": 0.0288,
+    "ci95_for": [
+     -0.0854,
+     0.0274
+    ],
+    "d_xg_against": 0.0871,
+    "se_against": 0.034,
+    "ci95_against": [
+     0.0205,
+     0.1537
+    ],
+    "se_twoway_for": 0.0294,
+    "se_twoway_against": 0.0339,
+    "n_absent_player_matches": 954,
+    "n_team_matches_with_absence": 886,
+    "n_key_player_seasons": 82,
+    "n_key_player_seasons_with_absence": 82
+   },
+   {
+    "group": "CM",
+    "tier": "core",
+    "d_xg_for": -0.064,
+    "se_for": 0.0348,
+    "ci95_for": [
+     -0.1322,
+     0.0042
+    ],
+    "d_xg_against": 0.0732,
+    "se_against": 0.0352,
+    "ci95_against": [
+     0.0042,
+     0.1422
+    ],
+    "se_twoway_for": 0.0346,
+    "se_twoway_against": 0.0341,
+    "n_absent_player_matches": 492,
+    "n_team_matches_with_absence": 485,
+    "n_key_player_seasons": 129,
+    "n_key_player_seasons_with_absence": 118
+   },
+   {
+    "group": "CM",
+    "tier": "regular",
+    "d_xg_for": -0.0326,
+    "se_for": 0.0195,
+    "ci95_for": [
+     -0.0708,
+     0.0056
+    ],
+    "d_xg_against": 0.0528,
+    "se_against": 0.021,
+    "ci95_against": [
+     0.0116,
+     0.094
+    ],
+    "se_twoway_for": 0.0204,
+    "se_twoway_against": 0.0202,
+    "n_absent_player_matches": 2080,
+    "n_team_matches_with_absence": 1897,
+    "n_key_player_seasons": 183,
+    "n_key_player_seasons_with_absence": 183
+   },
+   {
+    "group": "WIDE",
+    "tier": "core",
+    "d_xg_for": -0.0491,
+    "se_for": 0.035,
+    "ci95_for": [
+     -0.1177,
+     0.0195
+    ],
+    "d_xg_against": 0.1194,
+    "se_against": 0.0419,
+    "ci95_against": [
+     0.0373,
+     0.2015
+    ],
+    "se_twoway_for": 0.0357,
+    "se_twoway_against": 0.044,
+    "n_absent_player_matches": 341,
+    "n_team_matches_with_absence": 340,
+    "n_key_player_seasons": 78,
+    "n_key_player_seasons_with_absence": 73
+   },
+   {
+    "group": "WIDE",
+    "tier": "regular",
+    "d_xg_for": -0.0726,
+    "se_for": 0.0221,
+    "ci95_for": [
+     -0.1159,
+     -0.0293
+    ],
+    "d_xg_against": 0.0475,
+    "se_against": 0.0266,
+    "ci95_against": [
+     -0.0046,
+     0.0996
+    ],
+    "se_twoway_for": 0.0212,
+    "se_twoway_against": 0.0269,
+    "n_absent_player_matches": 1507,
+    "n_team_matches_with_absence": 1452,
+    "n_key_player_seasons": 126,
+    "n_key_player_seasons_with_absence": 126
+   },
+   {
+    "group": "AM",
+    "tier": "core",
+    "d_xg_for": -0.1325,
+    "se_for": 0.0491,
+    "ci95_for": [
+     -0.2287,
+     -0.0363
+    ],
+    "d_xg_against": 0.089,
+    "se_against": 0.0568,
+    "ci95_against": [
+     -0.0223,
+     0.2003
+    ],
+    "se_twoway_for": 0.0434,
+    "se_twoway_against": 0.0557,
+    "n_absent_player_matches": 220,
+    "n_team_matches_with_absence": 216,
+    "n_key_player_seasons": 55,
+    "n_key_player_seasons_with_absence": 55
+   },
+   {
+    "group": "AM",
+    "tier": "regular",
+    "d_xg_for": -0.1019,
+    "se_for": 0.0384,
+    "ci95_for": [
+     -0.1772,
+     -0.0266
+    ],
+    "d_xg_against": 0.0413,
+    "se_against": 0.0322,
+    "ci95_against": [
+     -0.0218,
+     0.1044
+    ],
+    "se_twoway_for": 0.0398,
+    "se_twoway_against": 0.032,
+    "n_absent_player_matches": 535,
+    "n_team_matches_with_absence": 534,
+    "n_key_player_seasons": 47,
+    "n_key_player_seasons_with_absence": 47
+   },
+   {
+    "group": "ST",
+    "tier": "core",
+    "d_xg_for": -0.1243,
+    "se_for": 0.0378,
+    "ci95_for": [
+     -0.1984,
+     -0.0502
+    ],
+    "d_xg_against": -0.0116,
+    "se_against": 0.0341,
+    "ci95_against": [
+     -0.0784,
+     0.0552
+    ],
+    "se_twoway_for": 0.0405,
+    "se_twoway_against": 0.034,
+    "n_absent_player_matches": 478,
+    "n_team_matches_with_absence": 461,
+    "n_key_player_seasons": 115,
+    "n_key_player_seasons_with_absence": 113
+   },
+   {
+    "group": "ST",
+    "tier": "regular",
+    "d_xg_for": -0.0676,
+    "se_for": 0.0219,
+    "ci95_for": [
+     -0.1105,
+     -0.0247
+    ],
+    "d_xg_against": 0.0337,
+    "se_against": 0.0215,
+    "ci95_against": [
+     -0.0084,
+     0.0758
+    ],
+    "se_twoway_for": 0.0227,
+    "se_twoway_against": 0.0218,
+    "n_absent_player_matches": 1819,
+    "n_team_matches_with_absence": 1735,
+    "n_key_player_seasons": 158,
+    "n_key_player_seasons_with_absence": 158
+   }
+  ],
+  "by_group_x_attack_rank_tier": [
+   {
+    "group": "GK",
+    "tier": "other",
+    "d_xg_for": -0.018,
+    "se_for": 0.027,
+    "ci95_for": [
+     -0.0709,
+     0.0349
+    ],
+    "d_xg_against": 0.1298,
+    "se_against": 0.0291,
+    "ci95_against": [
+     0.0728,
+     0.1868
+    ],
+    "se_twoway_for": 0.0269,
+    "se_twoway_against": 0.0309,
+    "n_absent_player_matches": 955,
+    "n_team_matches_with_absence": 955,
+    "n_key_player_seasons": 214,
+    "n_key_player_seasons_with_absence": 161
+   },
+   {
+    "group": "CB",
+    "tier": "other",
+    "d_xg_for": -0.0264,
+    "se_for": 0.0169,
+    "ci95_for": [
+     -0.0595,
+     0.0067
+    ],
+    "d_xg_against": 0.0772,
+    "se_against": 0.019,
+    "ci95_against": [
+     0.04,
+     0.1144
+    ],
+    "se_twoway_for": 0.0175,
+    "se_twoway_against": 0.0201,
+    "n_absent_player_matches": 3317,
+    "n_team_matches_with_absence": 3083,
+    "n_key_player_seasons": 437,
+    "n_key_player_seasons_with_absence": 404
+   },
+   {
+    "group": "FB",
+    "tier": "other",
+    "d_xg_for": -0.0316,
+    "se_for": 0.0157,
+    "ci95_for": [
+     -0.0624,
+     -0.0008
+    ],
+    "d_xg_against": 0.0537,
+    "se_against": 0.016,
+    "ci95_against": [
+     0.0223,
+     0.0851
+    ],
+    "se_twoway_for": 0.0166,
+    "se_twoway_against": 0.0157,
+    "n_absent_player_matches": 2737,
+    "n_team_matches_with_absence": 2527,
+    "n_key_player_seasons": 348,
+    "n_key_player_seasons_with_absence": 331
+   },
+   {
+    "group": "FB",
+    "tier": "top3",
+    "d_xg_for": -0.038,
+    "se_for": 0.125,
+    "ci95_for": [
+     -0.283,
+     0.207
+    ],
+    "d_xg_against": -0.107,
+    "se_against": 0.0512,
+    "ci95_against": [
+     -0.2074,
+     -0.0066
+    ],
+    "se_twoway_for": 0.129,
+    "se_twoway_against": 0.0681,
+    "n_absent_player_matches": 12,
+    "n_team_matches_with_absence": 12,
+    "n_key_player_seasons": 2,
+    "n_key_player_seasons_with_absence": 2
+   },
+   {
+    "group": "DM",
+    "tier": "other",
+    "d_xg_for": -0.0678,
+    "se_for": 0.0238,
+    "ci95_for": [
+     -0.1144,
+     -0.0212
+    ],
+    "d_xg_against": 0.1093,
+    "se_against": 0.0277,
+    "ci95_against": [
+     0.055,
+     0.1636
+    ],
+    "se_twoway_for": 0.0245,
+    "se_twoway_against": 0.0284,
+    "n_absent_player_matches": 1227,
+    "n_team_matches_with_absence": 1134,
+    "n_key_player_seasons": 151,
+    "n_key_player_seasons_with_absence": 145
+   },
+   {
+    "group": "DM",
+    "tier": "top3",
+    "d_xg_for": -0.0688,
+    "se_for": 0.1198,
+    "ci95_for": [
+     -0.3036,
+     0.166
+    ],
+    "d_xg_against": 0.4632,
+    "se_against": 0.1772,
+    "ci95_against": [
+     0.1159,
+     0.8105
+    ],
+    "se_twoway_for": 0.129,
+    "se_twoway_against": 0.1771,
+    "n_absent_player_matches": 8,
+    "n_team_matches_with_absence": 8,
+    "n_key_player_seasons": 2,
+    "n_key_player_seasons_with_absence": 2
+   },
+   {
+    "group": "CM",
+    "tier": "other",
+    "d_xg_for": -0.0345,
+    "se_for": 0.0175,
+    "ci95_for": [
+     -0.0688,
+     -0.0002
+    ],
+    "d_xg_against": 0.0553,
+    "se_against": 0.0188,
+    "ci95_against": [
+     0.0185,
+     0.0921
+    ],
+    "se_twoway_for": 0.0181,
+    "se_twoway_against": 0.0186,
+    "n_absent_player_matches": 2472,
+    "n_team_matches_with_absence": 2237,
+    "n_key_player_seasons": 299,
+    "n_key_player_seasons_with_absence": 290
+   },
+   {
+    "group": "CM",
+    "tier": "top3",
+    "d_xg_for": -0.1753,
+    "se_for": 0.0709,
+    "ci95_for": [
+     -0.3143,
+     -0.0363
+    ],
+    "d_xg_against": 0.096,
+    "se_against": 0.0911,
+    "ci95_against": [
+     -0.0826,
+     0.2746
+    ],
+    "se_twoway_for": 0.0603,
+    "se_twoway_against": 0.0884,
+    "n_absent_player_matches": 100,
+    "n_team_matches_with_absence": 100,
+    "n_key_player_seasons": 13,
+    "n_key_player_seasons_with_absence": 11
+   },
+   {
+    "group": "WIDE",
+    "tier": "other",
+    "d_xg_for": -0.0276,
+    "se_for": 0.0236,
+    "ci95_for": [
+     -0.0739,
+     0.0187
+    ],
+    "d_xg_against": 0.0611,
+    "se_against": 0.027,
+    "ci95_against": [
+     0.0082,
+     0.114
+    ],
+    "se_twoway_for": 0.0237,
+    "se_twoway_against": 0.028,
+    "n_absent_player_matches": 1201,
+    "n_team_matches_with_absence": 1182,
+    "n_key_player_seasons": 125,
+    "n_key_player_seasons_with_absence": 124
+   },
+   {
+    "group": "WIDE",
+    "tier": "top3",
+    "d_xg_for": -0.1455,
+    "se_for": 0.026,
+    "ci95_for": [
+     -0.1965,
+     -0.0945
+    ],
+    "d_xg_against": 0.0731,
+    "se_against": 0.0372,
+    "ci95_against": [
+     0.0002,
+     0.146
+    ],
+    "se_twoway_for": 0.0267,
+    "se_twoway_against": 0.0339,
+    "n_absent_player_matches": 647,
+    "n_team_matches_with_absence": 635,
+    "n_key_player_seasons": 79,
+    "n_key_player_seasons_with_absence": 75
+   },
+   {
+    "group": "AM",
+    "tier": "other",
+    "d_xg_for": -0.112,
+    "se_for": 0.0393,
+    "ci95_for": [
+     -0.189,
+     -0.035
+    ],
+    "d_xg_against": 0.1326,
+    "se_against": 0.0449,
+    "ci95_against": [
+     0.0446,
+     0.2206
+    ],
+    "se_twoway_for": 0.0397,
+    "se_twoway_against": 0.0463,
+    "n_absent_player_matches": 385,
+    "n_team_matches_with_absence": 383,
+    "n_key_player_seasons": 48,
+    "n_key_player_seasons_with_absence": 48
+   },
+   {
+    "group": "AM",
+    "tier": "top3",
+    "d_xg_for": -0.1225,
+    "se_for": 0.0476,
+    "ci95_for": [
+     -0.2158,
+     -0.0292
+    ],
+    "d_xg_against": -0.0195,
+    "se_against": 0.0367,
+    "ci95_against": [
+     -0.0914,
+     0.0524
+    ],
+    "se_twoway_for": 0.0463,
+    "se_twoway_against": 0.0368,
+    "n_absent_player_matches": 370,
+    "n_team_matches_with_absence": 366,
+    "n_key_player_seasons": 54,
+    "n_key_player_seasons_with_absence": 54
+   },
+   {
+    "group": "ST",
+    "tier": "other",
+    "d_xg_for": 0.0103,
+    "se_for": 0.0406,
+    "ci95_for": [
+     -0.0693,
+     0.0899
+    ],
+    "d_xg_against": 0.0353,
+    "se_against": 0.0383,
+    "ci95_against": [
+     -0.0398,
+     0.1104
+    ],
+    "se_twoway_for": 0.0451,
+    "se_twoway_against": 0.04,
+    "n_absent_player_matches": 508,
+    "n_team_matches_with_absence": 500,
+    "n_key_player_seasons": 49,
+    "n_key_player_seasons_with_absence": 49
+   },
+   {
+    "group": "ST",
+    "tier": "top3",
+    "d_xg_for": -0.1077,
+    "se_for": 0.0216,
+    "ci95_for": [
+     -0.15,
+     -0.0654
+    ],
+    "d_xg_against": 0.0148,
+    "se_against": 0.0209,
+    "ci95_against": [
+     -0.0262,
+     0.0558
+    ],
+    "se_twoway_for": 0.0221,
+    "se_twoway_against": 0.0202,
+    "n_absent_player_matches": 1789,
+    "n_team_matches_with_absence": 1723,
+    "n_key_player_seasons": 224,
+    "n_key_player_seasons_with_absence": 222
+   }
+  ],
+  "any_key_starter": {
+   "d_xg_for": -0.0499,
+   "se_for": 0.007,
+   "d_xg_against": 0.0656,
+   "se_against": 0.0074
+  }
+ },
+ "key_starter_summary": {
+  "n_key_player_seasons": 2045,
+  "per_team_season_mean": 8.520833333333334,
+  "by_group": {
+   "GK": 214,
+   "CB": 437,
+   "FB": 350,
+   "DM": 153,
+   "CM": 312,
+   "WIDE": 204,
+   "AM": 102,
+   "ST": 273
+  },
+  "share_quantiles": {
+   "0.1": 0.632,
+   "0.25": 0.684,
+   "0.5": 0.789,
+   "0.75": 0.895,
+   "0.9": 0.974
+  },
+  "absence_rate": 0.20239351434821773,
+  "absent_dnp_fraction": 0.6998982706002035,
+  "group_share_of_starts_quantiles": {
+   "0.1": 0.565,
+   "0.25": 0.75,
+   "0.5": 0.967
+  },
+  "absences_before_first_appearance_fraction": 0.06262716174974568
+ },
+ "out_of_sample": {
+  "design": "coefficients fit on train seasons; on test seasons the baseline (team-season + opp-season FE + home) is cross-fitted with 10 folds by match, so every test match is predicted from FE estimated without it. Model A = baseline; model B = baseline re-fitted on y minus the train-season absence offset, plus that offset. Loss = squared error of per-team-match xG. CI clusters by team-season (or by match, whichever is wider).",
+  "pooled_by_group_additive": {
+   "verdict": "improves",
+   "n_rows": 3040,
+   "n_matches": 1520,
+   "train_seasons": [
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021
+   ],
+   "test_seasons": [
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "mse_baseline": 0.67137,
+   "both_sides": {
+    "mse_reduction": 0.01307,
+    "mse_reduction_ci95": [
+     0.00699,
+     0.01914
+    ],
+    "mse_reduction_pct": 1.946,
+    "mae_reduction": 0.00586,
+    "rows_with_absence": 2974,
+    "mse_reduction_rows_with_absence": 0.01344,
+    "mse_reduction_rows_with_absence_ci95": [
+     0.00719,
+     0.01969
+    ],
+    "mse_reduction_rows_with_absence_pct": 1.991,
+    "calibration_slope": 1.173,
+    "calibration_slope_se": 0.154
+   },
+   "xg_for_terms_only": {
+    "mse_reduction": 0.00171,
+    "mse_reduction_ci95": [
+     -0.00289,
+     0.00632
+    ],
+    "mse_reduction_pct": 0.255,
+    "mae_reduction": -0.00021,
+    "rows_with_absence": 2542,
+    "mse_reduction_rows_with_absence": 0.00043,
+    "mse_reduction_rows_with_absence_ci95": [
+     -0.00455,
+     0.00541
+    ],
+    "mse_reduction_rows_with_absence_pct": 0.063,
+    "calibration_slope": 0.666,
+    "calibration_slope_se": 0.226
+   },
+   "xg_against_terms_only": {
+    "mse_reduction": 0.01125,
+    "mse_reduction_ci95": [
+     0.00705,
+     0.01544
+    ],
+    "mse_reduction_pct": 1.675,
+    "mae_reduction": 0.00573,
+    "rows_with_absence": 2542,
+    "mse_reduction_rows_with_absence": 0.00985,
+    "mse_reduction_rows_with_absence_ci95": [
+     0.00573,
+     0.01397
+    ],
+    "mse_reduction_rows_with_absence_pct": 1.428,
+    "calibration_slope": 1.706,
+    "calibration_slope_se": 0.226
+   }
+  },
+  "pooled_by_group_multiplicative": {
+   "verdict": "improves",
+   "n_rows": 3040,
+   "n_matches": 1520,
+   "train_seasons": [
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021
+   ],
+   "test_seasons": [
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "mse_baseline": 0.67383,
+   "both_sides": {
+    "mse_reduction": 0.01199,
+    "mse_reduction_ci95": [
+     0.0032,
+     0.02077
+    ],
+    "mse_reduction_pct": 1.779,
+    "mae_reduction": 0.00407,
+    "rows_with_absence": 2974,
+    "mse_reduction_rows_with_absence": 0.0124,
+    "mse_reduction_rows_with_absence_ci95": [
+     0.00343,
+     0.02137
+    ],
+    "mse_reduction_rows_with_absence_pct": 1.83,
+    "calibration_slope": 0.875,
+    "calibration_slope_se": 0.139
+   },
+   "xg_for_terms_only": {
+    "mse_reduction": 0.0028,
+    "mse_reduction_ci95": [
+     -0.00368,
+     0.00927
+    ],
+    "mse_reduction_pct": 0.415,
+    "mae_reduction": -0.00045,
+    "rows_with_absence": 2542,
+    "mse_reduction_rows_with_absence": 0.00242,
+    "mse_reduction_rows_with_absence_ci95": [
+     -0.00466,
+     0.0095
+    ],
+    "mse_reduction_rows_with_absence_pct": 0.359,
+    "calibration_slope": 0.658,
+    "calibration_slope_se": 0.178
+   },
+   "xg_against_terms_only": {
+    "mse_reduction": 0.00944,
+    "mse_reduction_ci95": [
+     0.00342,
+     0.01547
+    ],
+    "mse_reduction_pct": 1.402,
+    "mae_reduction": 0.00454,
+    "rows_with_absence": 2542,
+    "mse_reduction_rows_with_absence": 0.00637,
+    "mse_reduction_rows_with_absence_ci95": [
+     0.00031,
+     0.01243
+    ],
+    "mse_reduction_rows_with_absence_pct": 0.921,
+    "calibration_slope": 1.165,
+    "calibration_slope_se": 0.227
+   }
+  },
+  "tier_start_share_additive": {
+   "verdict": "improves",
+   "n_rows": 3040,
+   "n_matches": 1520,
+   "train_seasons": [
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021
+   ],
+   "test_seasons": [
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "mse_baseline": 0.67137,
+   "both_sides": {
+    "mse_reduction": 0.01441,
+    "mse_reduction_ci95": [
+     0.00771,
+     0.02111
+    ],
+    "mse_reduction_pct": 2.147,
+    "mae_reduction": 0.00611,
+    "rows_with_absence": 2974,
+    "mse_reduction_rows_with_absence": 0.01481,
+    "mse_reduction_rows_with_absence_ci95": [
+     0.00829,
+     0.02132
+    ],
+    "mse_reduction_rows_with_absence_pct": 2.193,
+    "calibration_slope": 1.116,
+    "calibration_slope_se": 0.131
+   },
+   "xg_for_terms_only": {
+    "mse_reduction": 0.00237,
+    "mse_reduction_ci95": [
+     -0.00289,
+     0.00763
+    ],
+    "mse_reduction_pct": 0.353,
+    "mae_reduction": -0.00043,
+    "rows_with_absence": 2542,
+    "mse_reduction_rows_with_absence": 0.0006,
+    "mse_reduction_rows_with_absence_ci95": [
+     -0.00517,
+     0.00637
+    ],
+    "mse_reduction_rows_with_absence_pct": 0.089,
+    "calibration_slope": 0.672,
+    "calibration_slope_se": 0.193
+   },
+   "xg_against_terms_only": {
+    "mse_reduction": 0.01176,
+    "mse_reduction_ci95": [
+     0.0073,
+     0.01622
+    ],
+    "mse_reduction_pct": 1.752,
+    "mae_reduction": 0.00623,
+    "rows_with_absence": 2542,
+    "mse_reduction_rows_with_absence": 0.0103,
+    "mse_reduction_rows_with_absence_ci95": [
+     0.00595,
+     0.01465
+    ],
+    "mse_reduction_rows_with_absence_pct": 1.493,
+    "calibration_slope": 1.662,
+    "calibration_slope_se": 0.217
+   }
+  },
+  "single_count_additive": {
+   "verdict": "improves",
+   "n_rows": 3040,
+   "n_matches": 1520,
+   "train_seasons": [
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021
+   ],
+   "test_seasons": [
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "mse_baseline": 0.67137,
+   "both_sides": {
+    "mse_reduction": 0.01178,
+    "mse_reduction_ci95": [
+     0.00669,
+     0.01687
+    ],
+    "mse_reduction_pct": 1.754,
+    "mae_reduction": 0.00529,
+    "rows_with_absence": 2974,
+    "mse_reduction_rows_with_absence": 0.01213,
+    "mse_reduction_rows_with_absence_ci95": [
+     0.00716,
+     0.01709
+    ],
+    "mse_reduction_rows_with_absence_pct": 1.796,
+    "calibration_slope": 1.347,
+    "calibration_slope_se": 0.17
+   },
+   "xg_for_terms_only": {
+    "mse_reduction": 0.00179,
+    "mse_reduction_ci95": [
+     -0.00218,
+     0.00575
+    ],
+    "mse_reduction_pct": 0.266,
+    "mae_reduction": -0.0,
+    "rows_with_absence": 2542,
+    "mse_reduction_rows_with_absence": 0.00089,
+    "mse_reduction_rows_with_absence_ci95": [
+     -0.00329,
+     0.00507
+    ],
+    "mse_reduction_rows_with_absence_pct": 0.132,
+    "calibration_slope": 0.738,
+    "calibration_slope_se": 0.267
+   },
+   "xg_against_terms_only": {
+    "mse_reduction": 0.00991,
+    "mse_reduction_ci95": [
+     0.00639,
+     0.01343
+    ],
+    "mse_reduction_pct": 1.476,
+    "mae_reduction": 0.00491,
+    "rows_with_absence": 2542,
+    "mse_reduction_rows_with_absence": 0.00831,
+    "mse_reduction_rows_with_absence_ci95": [
+     0.00517,
+     0.01146
+    ],
+    "mse_reduction_rows_with_absence_pct": 1.205,
+    "calibration_slope": 2.004,
+    "calibration_slope_se": 0.248
+   }
+  },
+  "by_line_additive": {
+   "verdict": "improves",
+   "n_rows": 3040,
+   "n_matches": 1520,
+   "train_seasons": [
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021
+   ],
+   "test_seasons": [
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "mse_baseline": 0.67137,
+   "both_sides": {
+    "mse_reduction": 0.01241,
+    "mse_reduction_ci95": [
+     0.00672,
+     0.01809
+    ],
+    "mse_reduction_pct": 1.848,
+    "mae_reduction": 0.00574,
+    "rows_with_absence": 2974,
+    "mse_reduction_rows_with_absence": 0.01277,
+    "mse_reduction_rows_with_absence_ci95": [
+     0.00696,
+     0.01858
+    ],
+    "mse_reduction_rows_with_absence_pct": 1.891,
+    "calibration_slope": 1.228,
+    "calibration_slope_se": 0.161
+   },
+   "xg_for_terms_only": {
+    "mse_reduction": 0.0019,
+    "mse_reduction_ci95": [
+     -0.00249,
+     0.0063
+    ],
+    "mse_reduction_pct": 0.284,
+    "mae_reduction": 8e-05,
+    "rows_with_absence": 2542,
+    "mse_reduction_rows_with_absence": 0.00069,
+    "mse_reduction_rows_with_absence_ci95": [
+     -0.00409,
+     0.00548
+    ],
+    "mse_reduction_rows_with_absence_pct": 0.103,
+    "calibration_slope": 0.706,
+    "calibration_slope_se": 0.239
+   },
+   "xg_against_terms_only": {
+    "mse_reduction": 0.0104,
+    "mse_reduction_ci95": [
+     0.00648,
+     0.01432
+    ],
+    "mse_reduction_pct": 1.549,
+    "mae_reduction": 0.00527,
+    "rows_with_absence": 2542,
+    "mse_reduction_rows_with_absence": 0.00878,
+    "mse_reduction_rows_with_absence_ci95": [
+     0.00514,
+     0.01242
+    ],
+    "mse_reduction_rows_with_absence_pct": 1.273,
+    "calibration_slope": 1.801,
+    "calibration_slope_se": 0.232
+   }
+  },
+  "no_lookahead_key_status_second_half": {
+   "verdict": "no significant change",
+   "n_rows": 1520,
+   "n_matches": 766,
+   "train_seasons": [
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021
+   ],
+   "test_seasons": [
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "mse_baseline": 0.73439,
+   "both_sides": {
+    "mse_reduction": 0.00456,
+    "mse_reduction_ci95": [
+     -0.00415,
+     0.01327
+    ],
+    "mse_reduction_pct": 0.621,
+    "mae_reduction": 0.00218,
+    "rows_with_absence": 1518,
+    "mse_reduction_rows_with_absence": 0.00457,
+    "mse_reduction_rows_with_absence_ci95": [
+     -0.00346,
+     0.0126
+    ],
+    "mse_reduction_rows_with_absence_pct": 0.622,
+    "calibration_slope": 0.749,
+    "calibration_slope_se": 0.221
+   },
+   "xg_for_terms_only": {
+    "mse_reduction": -0.00411,
+    "mse_reduction_ci95": [
+     -0.01085,
+     0.00263
+    ],
+    "mse_reduction_pct": -0.56,
+    "mae_reduction": -0.00304,
+    "rows_with_absence": 1483,
+    "mse_reduction_rows_with_absence": -0.00487,
+    "mse_reduction_rows_with_absence_ci95": [
+     -0.01162,
+     0.00187
+    ],
+    "mse_reduction_rows_with_absence_pct": -0.659,
+    "calibration_slope": 0.103,
+    "calibration_slope_se": 0.33
+   },
+   "xg_against_terms_only": {
+    "mse_reduction": 0.00769,
+    "mse_reduction_ci95": [
+     0.00155,
+     0.01383
+    ],
+    "mse_reduction_pct": 1.047,
+    "mae_reduction": 0.00411,
+    "rows_with_absence": 1483,
+    "mse_reduction_rows_with_absence": 0.00732,
+    "mse_reduction_rows_with_absence_ci95": [
+     0.00115,
+     0.01348
+    ],
+    "mse_reduction_rows_with_absence_pct": 0.991,
+    "calibration_slope": 1.273,
+    "calibration_slope_se": 0.311
+   }
+  }
+ },
+ "usage": {
+  "attack_multiplier": "1 + sum_i d_xg_for[group_i] / base_xg_for",
+  "defence_multiplier": "1 + sum_i d_xg_against[group_i] / base_xg_against   (applied to the opponent's expected xG)",
+  "multiplicative_alternative": "prod_i (1 + pct_xg_for_ppml[group_i]/100)  -- same idea on the log scale",
+  "recommended_lookup": [
+   "default: base_rates.by_group (all 12 seasons), d_xg_for for the absent team's attack, d_xg_against for its defence",
+   "known undisputed starter (started >= 80% when the season ends up counted) -> by_group_x_start_share_tier 'core'; known top-3 attacker of the team -> by_group_x_attack_rank_tier 'top3'",
+   "a winger in a front three (Understat FWL/FWR) sits in ST in by_group; for role-based lookup use by_group_alt_fwl_fwr_as_wide",
+   "xG-against side: 2022-25 effects are about twice the 2014-21 ones (robustness.era_split_any_key_starter; OOS calibration slope > 1 for the xG-against terms); by_group_recent_2022_25 is the recent-era alternative with larger SE",
+   "if the CI covers 0, treat the effect as 'small, sign uncertain', not as zero evidence of no effect"
+  ],
+  "worked_example": {
+   "case": "team baseline xG-for 1.60, xG-against 1.10; its key ST and key CB are both out",
+   "attack_multiplier": "1 + (-0.083 -0.026)/1.60 = 0.932",
+   "defence_multiplier": "1 + (+0.019 +0.077)/1.10 = 1.087",
+   "if_baseline_already_contains_typical_absences": "scale each d by 0.8 -> 0.946 and 1.070"
+  },
+  "baseline_caveat": "Coefficients are relative to all key starters starting. A baseline fitted on past results (M) already contains the team's typical absences (key starters miss ~20% of matches), so relative to such a baseline use d * (1 - p), p = that player's usual absence rate (default 0.2).",
+  "additivity_evidence": {
+   "extra_term_per_absence_beyond_first_for": {
+    "b": -0.0186,
+    "se": 0.0274,
+    "se_twoway": 0.0266
+   },
+   "extra_term_per_absence_beyond_first_against": {
+    "b": 0.0143,
+    "se": 0.0291,
+    "se_twoway": 0.0287
+   },
+   "count_dummies": {
+    "own|cnt1": {
+     "b": -0.033,
+     "se": 0.0249,
+     "se_twoway": 0.023
+    },
+    "opp|cnt1": {
+     "b": 0.0484,
+     "se": 0.026,
+     "se_twoway": 0.0253
+    },
+    "own|cnt2": {
+     "b": -0.0908,
+     "se": 0.0252,
+     "se_twoway": 0.0261
+    },
+    "opp|cnt2": {
+     "b": 0.1324,
+     "se": 0.0286,
+     "se_twoway": 0.0302
+    },
+    "own|cnt3": {
+     "b": -0.1694,
+     "se": 0.0296,
+     "se_twoway": 0.0297
+    },
+    "opp|cnt3": {
+     "b": 0.1715,
+     "se": 0.0301,
+     "se_twoway": 0.0309
+    },
+    "own|cnt4+": {
+     "b": -0.1751,
+     "se": 0.0366,
+     "se_twoway": 0.0366
+    },
+    "opp|cnt4+": {
+     "b": 0.2883,
+     "se": 0.0385,
+     "se_twoway": 0.0386
+    }
+   },
+   "own_absence_count_distribution": {
+    "0.0": 1452,
+    "1.0": 2792,
+    "2.0": 2647,
+    "3.0": 1527,
+    "4.0": 521,
+    "5.0": 130,
+    "6.0": 37,
+    "7.0": 8,
+    "8.0": 5,
+    "9.0": 1
+   }
+  }
+ },
+ "robustness": {
+  "strict_key_rule": {
+   "GK": {
+    "d_for": -0.022,
+    "se_for": 0.0268,
+    "d_against": 0.1348,
+    "se_against": 0.0293,
+    "n": 955
+   },
+   "CB": {
+    "d_for": -0.0447,
+    "se_for": 0.0192,
+    "d_against": 0.0875,
+    "se_against": 0.0205,
+    "n": 2707
+   },
+   "FB": {
+    "d_for": -0.0347,
+    "se_for": 0.0173,
+    "d_against": 0.0526,
+    "se_against": 0.0168,
+    "n": 2254
+   },
+   "DM": {
+    "d_for": -0.1006,
+    "se_for": 0.0359,
+    "d_against": 0.1164,
+    "se_against": 0.0541,
+    "n": 359
+   },
+   "CM": {
+    "d_for": -0.0399,
+    "se_for": 0.0243,
+    "d_against": 0.0385,
+    "se_against": 0.0268,
+    "n": 1147
+   },
+   "WIDE": {
+    "d_for": -0.0786,
+    "se_for": 0.0291,
+    "d_against": 0.0581,
+    "se_against": 0.0397,
+    "n": 605
+   },
+   "AM": {
+    "d_for": -0.1481,
+    "se_for": 0.0543,
+    "d_against": 0.0768,
+    "se_against": 0.0609,
+    "n": 219
+   },
+   "ST": {
+    "d_for": -0.0933,
+    "se_for": 0.025,
+    "d_against": 0.0258,
+    "se_against": 0.0234,
+    "n": 1476
+   }
+  },
+  "drop_each_team_last5": {
+   "GK": {
+    "d_for": -0.026,
+    "se_for": 0.0306,
+    "d_against": 0.104,
+    "se_against": 0.0354,
+    "n": 746
+   },
+   "CB": {
+    "d_for": -0.044,
+    "se_for": 0.018,
+    "d_against": 0.0702,
+    "se_against": 0.0196,
+    "n": 2833
+   },
+   "FB": {
+    "d_for": -0.0316,
+    "se_for": 0.0166,
+    "d_against": 0.0465,
+    "se_against": 0.0167,
+    "n": 2300
+   },
+   "DM": {
+    "d_for": -0.0714,
+    "se_for": 0.0257,
+    "d_against": 0.106,
+    "se_against": 0.0294,
+    "n": 1057
+   },
+   "CM": {
+    "d_for": -0.0463,
+    "se_for": 0.0189,
+    "d_against": 0.0588,
+    "se_against": 0.0203,
+    "n": 2177
+   },
+   "WIDE": {
+    "d_for": -0.0676,
+    "se_for": 0.0196,
+    "d_against": 0.0651,
+    "se_against": 0.0251,
+    "n": 1600
+   },
+   "AM": {
+    "d_for": -0.1113,
+    "se_for": 0.0328,
+    "d_against": 0.0385,
+    "se_against": 0.0329,
+    "n": 637
+   },
+   "ST": {
+    "d_for": -0.0814,
+    "se_for": 0.0207,
+    "d_against": 0.019,
+    "se_against": 0.0213,
+    "n": 1960
+   }
+  },
+  "rest_day_controls": {
+   "GK": {
+    "d_for": -0.02,
+    "se_for": 0.0267,
+    "d_against": 0.131,
+    "se_against": 0.0292,
+    "n": 955
+   },
+   "CB": {
+    "d_for": -0.0259,
+    "se_for": 0.0171,
+    "d_against": 0.077,
+    "se_against": 0.0191,
+    "n": 3317
+   },
+   "FB": {
+    "d_for": -0.0319,
+    "se_for": 0.0158,
+    "d_against": 0.0524,
+    "se_against": 0.0159,
+    "n": 2749
+   },
+   "DM": {
+    "d_for": -0.0671,
+    "se_for": 0.0235,
+    "d_against": 0.1131,
+    "se_against": 0.0275,
+    "n": 1235
+   },
+   "CM": {
+    "d_for": -0.0429,
+    "se_for": 0.0174,
+    "d_against": 0.056,
+    "se_against": 0.0181,
+    "n": 2572
+   },
+   "WIDE": {
+    "d_for": -0.0709,
+    "se_for": 0.0184,
+    "d_against": 0.0649,
+    "se_against": 0.0234,
+    "n": 1848
+   },
+   "AM": {
+    "d_for": -0.1147,
+    "se_for": 0.0307,
+    "d_against": 0.0577,
+    "se_against": 0.0301,
+    "n": 755
+   },
+   "ST": {
+    "d_for": -0.0824,
+    "se_for": 0.02,
+    "d_against": 0.0194,
+    "se_against": 0.0188,
+    "n": 2297
+   }
+  },
+  "recent_form_controls": {
+   "GK": {
+    "d_for": -0.0168,
+    "se_for": 0.0279,
+    "d_against": 0.1399,
+    "se_against": 0.0299,
+    "n": 955
+   },
+   "CB": {
+    "d_for": -0.0256,
+    "se_for": 0.0172,
+    "d_against": 0.0789,
+    "se_against": 0.0194,
+    "n": 3317
+   },
+   "FB": {
+    "d_for": -0.0341,
+    "se_for": 0.0161,
+    "d_against": 0.053,
+    "se_against": 0.0162,
+    "n": 2749
+   },
+   "DM": {
+    "d_for": -0.0661,
+    "se_for": 0.0236,
+    "d_against": 0.1154,
+    "se_against": 0.028,
+    "n": 1235
+   },
+   "CM": {
+    "d_for": -0.0447,
+    "se_for": 0.0175,
+    "d_against": 0.0567,
+    "se_against": 0.0186,
+    "n": 2572
+   },
+   "WIDE": {
+    "d_for": -0.071,
+    "se_for": 0.0189,
+    "d_against": 0.0671,
+    "se_against": 0.0237,
+    "n": 1848
+   },
+   "AM": {
+    "d_for": -0.1178,
+    "se_for": 0.0312,
+    "d_against": 0.0569,
+    "se_against": 0.0297,
+    "n": 755
+   },
+   "ST": {
+    "d_for": -0.0838,
+    "se_for": 0.0204,
+    "d_against": 0.0199,
+    "se_against": 0.019,
+    "n": 2297
+   }
+  },
+  "placebo_next_match_absence_by_line": {
+   "own|n:ATT": {
+    "b": -0.0741,
+    "se": 0.0137,
+    "se_twoway": 0.0138
+   },
+   "own|n:DEF": {
+    "b": -0.0378,
+    "se": 0.0144,
+    "se_twoway": 0.0151
+   },
+   "own|n:GK": {
+    "b": -0.0358,
+    "se": 0.0355,
+    "se_twoway": 0.0342
+   },
+   "own|n:MID": {
+    "b": -0.0456,
+    "se": 0.0155,
+    "se_twoway": 0.0159
+   },
+   "opp|n:ATT": {
+    "b": 0.0388,
+    "se": 0.0147,
+    "se_twoway": 0.0148
+   },
+   "opp|n:DEF": {
+    "b": 0.0445,
+    "se": 0.014,
+    "se_twoway": 0.014
+   },
+   "opp|n:GK": {
+    "b": 0.084,
+    "se": 0.038,
+    "se_twoway": 0.0382
+   },
+   "opp|n:MID": {
+    "b": 0.0584,
+    "se": 0.0176,
+    "se_twoway": 0.0171
+   },
+   "own|lead:ATT": {
+    "b": -0.0274,
+    "se": 0.013,
+    "se_twoway": 0.0115
+   },
+   "own|lead:DEF": {
+    "b": 0.0072,
+    "se": 0.0136,
+    "se_twoway": 0.0145
+   },
+   "own|lead:GK": {
+    "b": 0.0285,
+    "se": 0.0339,
+    "se_twoway": 0.0325
+   },
+   "own|lead:MID": {
+    "b": -0.019,
+    "se": 0.0161,
+    "se_twoway": 0.0159
+   },
+   "opp|lead:ATT": {
+    "b": 0.0094,
+    "se": 0.0148,
+    "se_twoway": 0.0156
+   },
+   "opp|lead:DEF": {
+    "b": 0.0348,
+    "se": 0.0135,
+    "se_twoway": 0.014
+   },
+   "opp|lead:GK": {
+    "b": 0.0686,
+    "se": 0.0357,
+    "se_twoway": 0.0358
+   },
+   "opp|lead:MID": {
+    "b": 0.0375,
+    "se": 0.0159,
+    "se_twoway": 0.0161
+   }
+  },
+  "placebo_next_match_absence_split_full90_vs_subbed_off": {
+   "own|n:ATT": {
+    "b": -0.0951,
+    "se": 0.0134,
+    "se_twoway": 0.0142
+   },
+   "own|n:DEF": {
+    "b": -0.0347,
+    "se": 0.0128,
+    "se_twoway": 0.0128
+   },
+   "own|n:GK": {
+    "b": -0.0158,
+    "se": 0.0273,
+    "se_twoway": 0.0275
+   },
+   "own|n:MID": {
+    "b": -0.0614,
+    "se": 0.0144,
+    "se_twoway": 0.0147
+   },
+   "opp|n:ATT": {
+    "b": 0.0471,
+    "se": 0.0137,
+    "se_twoway": 0.0141
+   },
+   "opp|n:DEF": {
+    "b": 0.0718,
+    "se": 0.0129,
+    "se_twoway": 0.0131
+   },
+   "opp|n:GK": {
+    "b": 0.1318,
+    "se": 0.0306,
+    "se_twoway": 0.0317
+   },
+   "opp|n:MID": {
+    "b": 0.0798,
+    "se": 0.0162,
+    "se_twoway": 0.016
+   },
+   "own|lead:ATT|full": {
+    "b": -0.0293,
+    "se": 0.0215,
+    "se_twoway": 0.0201
+   },
+   "own|lead:ATT|off": {
+    "b": -0.135,
+    "se": 0.0225,
+    "se_twoway": 0.023
+   },
+   "own|lead:DEF|full": {
+    "b": 0.0001,
+    "se": 0.017,
+    "se_twoway": 0.017
+   },
+   "own|lead:DEF|off": {
+    "b": -0.136,
+    "se": 0.027,
+    "se_twoway": 0.0281
+   },
+   "own|lead:GK|full": {
+    "b": 0.0127,
+    "se": 0.0447,
+    "se_twoway": 0.045
+   },
+   "own|lead:GK|off": {
+    "b": -0.1423,
+    "se": 0.1336,
+    "se_twoway": 0.1259
+   },
+   "own|lead:MID|full": {
+    "b": -0.0621,
+    "se": 0.0232,
+    "se_twoway": 0.0239
+   },
+   "own|lead:MID|off": {
+    "b": -0.0777,
+    "se": 0.029,
+    "se_twoway": 0.0286
+   },
+   "opp|lead:ATT|full": {
+    "b": 0.0287,
+    "se": 0.0218,
+    "se_twoway": 0.0227
+   },
+   "opp|lead:ATT|off": {
+    "b": 0.0805,
+    "se": 0.0232,
+    "se_twoway": 0.0252
+   },
+   "opp|lead:DEF|full": {
+    "b": 0.0719,
+    "se": 0.0181,
+    "se_twoway": 0.0185
+   },
+   "opp|lead:DEF|off": {
+    "b": 0.2246,
+    "se": 0.0308,
+    "se_twoway": 0.0305
+   },
+   "opp|lead:GK|full": {
+    "b": 0.0826,
+    "se": 0.0451,
+    "se_twoway": 0.0433
+   },
+   "opp|lead:GK|off": {
+    "b": 0.4633,
+    "se": 0.1436,
+    "se_twoway": 0.1391
+   },
+   "opp|lead:MID|full": {
+    "b": 0.047,
+    "se": 0.0253,
+    "se_twoway": 0.0248
+   },
+   "opp|lead:MID|off": {
+    "b": 0.0891,
+    "se": 0.0285,
+    "se_twoway": 0.0313
+   }
+  },
+  "placebo_split_event_counts": {
+   "ATT|full": 1108,
+   "ATT|off": 1163,
+   "DEF|full": 1771,
+   "DEF|off": 646,
+   "GK|full": 255,
+   "GK|off": 37,
+   "MID|full": 1012,
+   "MID|off": 721
+  },
+  "era_split_any_key_starter": {
+   "2014_21": {
+    "own|n:ALL": {
+     "b": -0.0527,
+     "se": 0.0081,
+     "se_twoway": 0.0078
+    },
+    "opp|n:ALL": {
+     "b": 0.0494,
+     "se": 0.0084,
+     "se_twoway": 0.0085
+    }
+   },
+   "2022_25": {
+    "own|n:ALL": {
+     "b": -0.0446,
+     "se": 0.0135,
+     "se_twoway": 0.0149
+    },
+    "opp|n:ALL": {
+     "b": 0.099,
+     "se": 0.0139,
+     "se_twoway": 0.0133
+    }
+   }
+  },
+  "did_not_play_only": {
+   "GK": {
+    "d_for": -0.0196,
+    "se_for": 0.027,
+    "d_against": 0.1324,
+    "se_against": 0.0293,
+    "n": 948
+   },
+   "CB": {
+    "d_for": -0.0289,
+    "se_for": 0.0172,
+    "d_against": 0.0768,
+    "se_against": 0.0202,
+    "n": 2908
+   },
+   "FB": {
+    "d_for": -0.0292,
+    "se_for": 0.018,
+    "d_against": 0.0547,
+    "se_against": 0.0186,
+    "n": 2164
+   },
+   "DM": {
+    "d_for": -0.0816,
+    "se_for": 0.0265,
+    "d_against": 0.1496,
+    "se_against": 0.0313,
+    "n": 855
+   },
+   "CM": {
+    "d_for": -0.0378,
+    "se_for": 0.0206,
+    "d_against": 0.0638,
+    "se_against": 0.0227,
+    "n": 1625
+   },
+   "WIDE": {
+    "d_for": -0.0729,
+    "se_for": 0.0224,
+    "d_against": 0.0849,
+    "se_against": 0.0266,
+    "n": 918
+   },
+   "AM": {
+    "d_for": -0.1383,
+    "se_for": 0.0383,
+    "d_against": 0.0528,
+    "se_against": 0.0401,
+    "n": 406
+   },
+   "ST": {
+    "d_for": -0.0931,
+    "se_for": 0.0253,
+    "d_against": 0.0211,
+    "se_against": 0.0229,
+    "n": 1184
+   }
+  },
+  "benched_came_on": {
+   "GK": {
+    "d_for": -0.4486,
+    "se_for": 0.1455,
+    "d_against": 0.1031,
+    "se_against": 0.2905,
+    "n": 7
+   },
+   "CB": {
+    "d_for": -0.0147,
+    "se_for": 0.0428,
+    "d_against": 0.0764,
+    "se_against": 0.0413,
+    "n": 409
+   },
+   "FB": {
+    "d_for": -0.0448,
+    "se_for": 0.0281,
+    "d_against": 0.0501,
+    "se_against": 0.0301,
+    "n": 585
+   },
+   "DM": {
+    "d_for": -0.0351,
+    "se_for": 0.0365,
+    "d_against": 0.0208,
+    "se_against": 0.0438,
+    "n": 380
+   },
+   "CM": {
+    "d_for": -0.0554,
+    "se_for": 0.025,
+    "d_against": 0.0422,
+    "se_against": 0.026,
+    "n": 947
+   },
+   "WIDE": {
+    "d_for": -0.0675,
+    "se_for": 0.029,
+    "d_against": 0.0429,
+    "se_against": 0.0306,
+    "n": 930
+   },
+   "AM": {
+    "d_for": -0.0787,
+    "se_for": 0.0463,
+    "d_against": 0.0499,
+    "se_against": 0.0384,
+    "n": 349
+   },
+   "ST": {
+    "d_for": -0.0719,
+    "se_for": 0.0273,
+    "d_against": 0.0155,
+    "se_against": 0.0254,
+    "n": 1113
+   }
+  },
+  "train_seasons_only": {
+   "GK": {
+    "d_for": -0.0333,
+    "se_for": 0.0346,
+    "d_against": 0.1262,
+    "se_against": 0.0327,
+    "n": 610
+   },
+   "CB": {
+    "d_for": -0.0415,
+    "se_for": 0.0194,
+    "d_against": 0.0477,
+    "se_against": 0.0225,
+    "n": 2335
+   },
+   "FB": {
+    "d_for": -0.0378,
+    "se_for": 0.0184,
+    "d_against": 0.0421,
+    "se_against": 0.0181,
+    "n": 1887
+   },
+   "DM": {
+    "d_for": -0.0452,
+    "se_for": 0.0342,
+    "d_against": 0.0835,
+    "se_against": 0.0339,
+    "n": 717
+   },
+   "CM": {
+    "d_for": -0.0259,
+    "se_for": 0.0187,
+    "d_against": 0.0304,
+    "se_against": 0.0198,
+    "n": 1898
+   },
+   "WIDE": {
+    "d_for": -0.065,
+    "se_for": 0.0214,
+    "d_against": 0.0448,
+    "se_against": 0.0258,
+    "n": 1242
+   },
+   "AM": {
+    "d_for": -0.1267,
+    "se_for": 0.0437,
+    "d_against": 0.0596,
+    "se_against": 0.0383,
+    "n": 396
+   },
+   "ST": {
+    "d_for": -0.0985,
+    "se_for": 0.0221,
+    "d_against": 0.0281,
+    "se_against": 0.0229,
+    "n": 1596
+   }
+  },
+  "test_seasons_only": {
+   "GK": {
+    "d_for": 0.0006,
+    "se_for": 0.0406,
+    "d_against": 0.1313,
+    "se_against": 0.058,
+    "n": 345
+   },
+   "CB": {
+    "d_for": 0.0124,
+    "se_for": 0.0347,
+    "d_against": 0.1397,
+    "se_against": 0.0349,
+    "n": 982
+   },
+   "FB": {
+    "d_for": -0.0158,
+    "se_for": 0.0302,
+    "d_against": 0.0723,
+    "se_against": 0.0311,
+    "n": 862
+   },
+   "DM": {
+    "d_for": -0.0939,
+    "se_for": 0.0296,
+    "d_against": 0.1474,
+    "se_against": 0.048,
+    "n": 518
+   },
+   "CM": {
+    "d_for": -0.0888,
+    "se_for": 0.0388,
+    "d_against": 0.1241,
+    "se_against": 0.0387,
+    "n": 674
+   },
+   "WIDE": {
+    "d_for": -0.0857,
+    "se_for": 0.0345,
+    "d_against": 0.1047,
+    "se_against": 0.047,
+    "n": 606
+   },
+   "AM": {
+    "d_for": -0.1063,
+    "se_for": 0.0451,
+    "d_against": 0.06,
+    "se_against": 0.0471,
+    "n": 359
+   },
+   "ST": {
+    "d_for": -0.0526,
+    "se_for": 0.0417,
+    "d_against": 0.0012,
+    "se_against": 0.033,
+    "n": 701
+   }
+  }
+ },
+ "limitations": [
+  "Endogeneity: rotation concentrates in matches against weak opponents and in congested weeks; opponent-season FE absorbs average opponent strength only, and European/cup fixtures are not in the data (rest-day control uses league fixtures only).",
+  "Injury, suspension and tactical rotation are not separated; did_not_play_only is the closest proxy for injury/suspension.",
+  "Dead rubbers and within-season form changes (manager sackings) are not modelled directly; drop_each_team_last5 and recent_form_controls (previous-5-match xG form of both sides) leave the estimates essentially unchanged.",
+  "Placebo: the match BEFORE an absence already shows part of the effect. Most of it sits in matches where the player was subbed off before 85' (in-match injury: the disruption starts in that match), but for defenders who played the full 90 the next-match absence still predicts +0.07 xG-against in the current match (cards/knocks picked up under pressure, or selection). Defensive coefficients may therefore be somewhat overstated; the GK estimate is the least trustworthy.",
+  "Era shift: absence effects on xG-against in 2022-25 are about 2x those of 2014-21 (any key starter +0.099 vs +0.049 per absence); the cause is not identified (five-substitute rule, style, sample noise).",
+  "Tiers are noisier than the pooled group estimates; GK 'regular' (60-80% starts) > 'core' is consistent with keepers being dropped after poor spells, i.e. selection.",
+  "Key status uses the whole season (look-ahead); out_of_sample.no_lookahead_key_status_second_half tests status from the first 19 matches only.",
+  "Replacement quality is not modelled: the coefficient is the average net effect after the manager's replacement choice.",
+  "Understat position labels are formation slots; wide forwards in a front three are FWL/FWR (ST group), wing-backs follow the back-three rule.",
+  "Absences include matches before a mid-season signing's arrival (see key_starter_summary.absences_before_first_appearance_fraction)."
+ ]
+}

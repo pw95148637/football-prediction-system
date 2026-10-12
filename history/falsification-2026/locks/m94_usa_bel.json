@@ -1,0 +1,137 @@
+{
+  "locked_at": "2026-07-03T04:08:27.896313+00:00",
+  "version": 1,
+  "payload": {
+    "match_id": "m94_usa_bel",
+    "pilot": false,
+    "teams": {
+      "home": "United States",
+      "away": "Belgium"
+    },
+    "kickoff_utc": "2026-07-07T00:00:00+00:00",
+    "kickoff_note": "Mon Jul 6 8:00pm ET / 5:00pm PT (CBS/FOX/Yahoo consensus + BST cross-check); ESPN fixtures page conflictingly lists 5pm ET - 3 sources vs 1, ESPN presumed error",
+    "mode": "A",
+    "probs_90": {
+      "home": 0.27254,
+      "draw": 0.301425,
+      "away": 0.426035
+    },
+    "qualify_home": 0.412786,
+    "lambdas": {
+      "home": 1.0531,
+      "away": 1.3431
+    },
+    "inputs": {
+      "instrument": "M v2 (calibration.json)",
+      "elo_home": 1798,
+      "elo_away": 1910,
+      "elo_diff_raw": -112,
+      "elo_diff_adjustment": 50,
+      "elo_diff_effective": -62,
+      "adjustment_reasons": [
+        "+75: pre-registered host-nation bonus (USA on home soil, Seattle, ~72k crowd; PROTOCOL section 6)",
+        "-25: Balogun suspended (straight red R32, no appeal) - USA's top scorer, 46% of team xG / 44% of shots this WC; magnitude conservative per pilot doctrine because replacement Pepi is a genuine starter (19-goal PSV season; started the 2-0 group win vs Australia)",
+        "0 net: Belgium played 120+min R32 (and is the older squad) vs Belgium's Seattle base camp / zero travel / 3rd match at Lumen Field while USA flies ~1,100km from Santa Clara - two real, opposite, small factors at 4 full rest days; recorded as offsetting",
+        "0: no other suspensions either side; no confirmed new injuries (Pulisic calf managed, started 87min on Jul 1, declared ready; Debast backup-CB status unresolved but he is not in Belgium's expected XI)"
+      ],
+      "pk_home": 0.5,
+      "pk_note": "Freese has documented shootout pedigree (3 saves, 2025 Gold Cup QF) but Courtois is elite with in-game PK saves at WC level; evidence too thin both ways - default kept"
+    },
+    "j": {
+      "probs_90": {
+        "home": 0.297247,
+        "draw": 0.306076,
+        "away": 0.396677
+      },
+      "qualify_home": 0.443428,
+      "basis": [
+        "single mechanism, single direction (per pilot mechanism list #3, evidence-graded 'use at half weight'): rating age/era distortion - Belgium's Elo 1910 carries golden-generation legacy; current squad in transition (De Bruyne 35 on minute limits, never 90' this WC; Lukaku half-fit bench-only; Silver's PELE model text explicitly describes Belgium 'trending down... transitioning to a new generation after peaking 2018-2020'). POR-CRO exhibit full size ~47 Elo -> half weight +22 -> d_J = -40",
+        "corroborating same-direction evidence (not separately counted): Senegal out-created Belgium 0.90-2.68 xG in regulation of the R32 (xGscore); quasi-independent models cluster at ~50% USA advance (Opta 50.06% - partial weight since Opta's own methodology page admits betting odds among its inputs; Caley PADDLIN' ~50% to QF; both published post-Balogun-red) vs M's 41.3%; USA Today expert panel 3 of 4 pick USA",
+        "held against going further (why J stops 5.7pp short of the model cluster at 44.3% advance): Opta is part-market so matching it would launder the market number into J; Belgium won the March 2026 H2H friendly convincingly (score disputed 5-2 vs 3-1 across sources); Belgium topped tournament group-stage xG-diff (+1.61/match); Courtois top-end in a one-off",
+        "no style/draw hedge, no lambda edits: J = calibrated curve evaluated at d=-40, nothing else (SUI-ALG clean-J pattern); fatigue vs venue-familiarity treated as an explicit wash, not stacked"
+      ]
+    },
+    "rationale": [
+      "Elo raw -112 (BE 1910 #12 vs US 1798 #26) is mostly offset by the pre-registered +75 host bonus; Balogun suspension (-25) leaves d_eff=-62: Belgium modest favorite in M",
+      "Belgium process split: group xG-diff #1 of tournament (+1.61/m, inflated by 5-1 NZ) but out-created badly in R32 regulation by Senegal and needed 86'/89'/120+5' goals; USA process steady but modest (#19 xG-diff +0.31/m), controlled 2-0 R32 with 10 men from 64'",
+      "goals model lambdas 1.05/1.34 (total ~2.40); weather non-factor (NWS: sunny, high 79F, dry, evening kickoff)"
+    ],
+    "invalidation": [
+      "Pulisic ruled out or absent from announced XI -> amend toward Belgium",
+      "De Bruyne, Doku, Courtois, or Trossard missing from announced XI -> amend toward USA",
+      "USA starts neither Pepi nor Wright (Pulisic false-9 wrinkle) -> no amend (selection variance, direction unclear)",
+      "Lukaku starting instead of bench -> no amend (selection; Belgian pundit Verheyen argues starting him weakens Belgium - direction ambiguous)",
+      "Debast in or out of squad -> no amend (backup CB, not in expected XI, zero WC minutes)",
+      "kickoff time resolves to ESPN's 5pm ET variant -> no probability change, fix kickoff_utc only"
+    ],
+    "sources": [
+      {
+        "item": "Elo verbatim rows: US 1798 (#26), BE 1910 (#12); code mapping audited via en.teams.tsv (line 24 BE=Belgium, line 312 US=United States); TSV fresh (Spain 2159 #1 post 3-0)",
+        "source": "eloratings.net World.tsv + en.teams.tsv (downloaded .cache/elo_*_20260703.tsv)",
+        "as_of": "2026-07-03"
+      },
+      {
+        "item": "Balogun suspended for M94: straight red 64' vs BIH (VAR, serious foul play), no appeal path; Pochettino disputes call",
+        "source": "CBS Sports / ESPN / ussoccer",
+        "as_of": "2026-07-02"
+      },
+      {
+        "item": "Balogun = 46% of USA xG, 44% of shots this WC; Pepi rated 37/100 Futi (lowest-rated American) but 19-goal PSV season, started 2-0 vs AUS; FOX ranks Pepi consensus replacement over Wright / Pulisic-false-9",
+        "source": "ESPN O'Hanlon / FOX Sports / FanSided",
+        "as_of": "2026-07-02"
+      },
+      {
+        "item": "Pulisic: calf managed all tournament (missed AUS, 32min vs TUR), started R32 ~87min, no new injury reported, expected ready",
+        "source": "ESPN / Athlon (403, search summary)",
+        "as_of": "2026-07-02"
+      },
+      {
+        "item": "USA path: Group D winners 6pts (4-1 PAR, 2-0 AUS, 2-3 TUR w/ 10 changes); R32 2-0 BIH at Santa Clara (xG 0.88-0.25), first KO win since 2002; venue path all Pacific region",
+        "source": "ussoccer / Wikipedia / RealGM xG tracker",
+        "as_of": "2026-07-03"
+      },
+      {
+        "item": "Belgium path: Group G winners 5pts on GD (1-1 EGY, 0-0 IRN, 5-1 NZL); R32 3-2 aet SEN at Lumen from 0-2 down (Lukaku 86, Tielemans 89, pen 120+5 after ~7min VAR); regulation xG 0.90-2.68 AGAINST (xGscore); latest goal in WC history",
+        "source": "Sky Sports / xGscore / Wikipedia",
+        "as_of": "2026-07-02"
+      },
+      {
+        "item": "Belgium team news: no suspensions (Ngoy ban served in groups); Debast (leg) unresolved-doubtful, zero WC minutes, FotMob lists unavailable Jul 3 vs AP 'returned to full training' Jun 30 - not in expected XI either way; Doku started R32 but subbed 56' after 7 no-training days (birth of son); KDB has completed no 90' this WC, subbed 56' vs SEN (tactical); Lukaku deliberate super-sub (Garcia: 'not ready to start'); expected XI = same 11 as R32 (FotMob 4-2-3-1: Courtois; Castagne, Mechele, Theate, De Cuyper; Tielemans, Vanaken; Doku, De Bruyne, Trossard; De Ketelaere)",
+        "source": "AP via FOX / FotMob / World Soccer Talk / citizen.digital (Garcia pressers)",
+        "as_of": "2026-07-03"
+      },
+      {
+        "item": "Opta supercomputer: USA 50.06% to advance past Belgium (advance prob incl ET/pens, not 1X2); winner probs BEL 2.36% vs USA 2.32% (near-identical equity); METHODOLOGY CAVEAT: Opta's own predictions hub states match model uses 'betting market odds and the Opta Power Rankings' -> partially market-derived, weighted accordingly",
+        "source": "SI (2026-07-02) / GiveMeSport (2026-07-02) / theanalyst.com methodology hub (fetched 2026-07-03)",
+        "as_of": "2026-07-02"
+      },
+      {
+        "item": "PADDLIN' (Caley, independent: results+xG+squad-value): USA 50% to reach QF, 16% SF, 2% title; Silver PELE (paywalled numbers): 'a pretty fair fight' with USA at home sans Balogun, Belgium 'trending down... transitioning after peaking 2018-2020'",
+        "source": "ESPN citing expectinggoals.com (2026-07-02) / natesilver.net (fetched 2026-07-03)",
+        "as_of": "2026-07-02"
+      },
+      {
+        "item": "Expert previews: USA Today panel 3/4 pick USA (Armour 2-1, Reineking 2-1 tired-legs, Morin 3-1) vs Hernandez BEL 2-1 (Lukaku decisive); Verheyen (VoetbalFocus) lists Belgian pain points (wants Ngoy for Theate, Raskin for Vanaken, Fernandez-Pardo for CDK); consensus themes: Balogun loss dominant, Belgium defense = weak link, aging core, USA press+fresher legs",
+        "source": "IBTimes AU relay / VoetbalFocus.be / SI / Sporza",
+        "as_of": "2026-07-02"
+      },
+      {
+        "item": "Match logistics: Lumen Field open-air, hybrid grass (95% natural) 105x68m, WC capacity 72k; Belgium 3rd match at venue + Seattle base camp 4 weeks, zero travel; USA 2nd match at venue (beat AUS there), ~1,100km from Santa Clara; NWS forecast Jul 6: sunny, high 79F, dry, low 56F; referee not yet appointed (R16 appointments unpublished as of Jul 3)",
+        "source": "KNKX / Seattle host committee / NWS / Refereeing World",
+        "as_of": "2026-07-03"
+      },
+      {
+        "item": "Discipline state: zero USA players on yellows; BEL Mechele one yellow from QF ban (R32 booking carries through R16); cards reset after groups and after QF",
+        "source": "FOX boxscores / Yahoo tracker / FIFA.com rules",
+        "as_of": "2026-07-03"
+      },
+      {
+        "item": "H2H context (already embedded in Elo, no separate adjustment): 2014 R16 BEL 2-1 aet; March 2026 Atlanta friendly BEL won - score DISPUTED across sources (5-2 per ESPN gamecast/Sporza vs 3-1 per FOX)",
+        "source": "FOX / Sporza / ESPN",
+        "as_of": "2026-07-01"
+      }
+    ],
+    "contamination_notes": "Evidence gathered by 6 subagents + 1 critic under an explicit no-odds firewall; analyst (J) read only their structured returns. Incidental exposures, all declared: (1) collector agents reported that search-result snippets displayed market lines several times; no odds numbers were copied into the evidence pack and none reached the analyst; (2) two logged exposure URLs carry direction-revealing slugs ('usmnt-opens-as-small-favorite-vs-belgium', 'usmnt-slight-favorite-to-advance') - the analyst thereby saw the qualitative direction 'USA slight advance-favorite' (no number) before locking; this is the same direction already implied by the allowed Opta/PADDLIN inputs, but it is market-origin and is declared as qualitative directional exposure; (3) an unattributed '57% lean' from an odds site appeared in one agent's search summary and was excluded from the pack (the number was quoted in the agent's exposure log, so the analyst has seen it; it was not used and J was derived from M + named mechanism before any gap comparison); (4) Opta match-model inputs include betting odds per its own methodology page - declared and down-weighted in J basis. No price for this match was retrieved, read, or snapshotted before lock. Kickoff-time conflict (ESPN 5pm ET vs consensus 8pm ET) and March-friendly score conflict (5-2 vs 3-1) unresolved and flagged."
+  },
+  "sha256": "7ca23e4b1c40ebc4b7aa3245f193188430d6dfa7409fb2032c31e70fda8b3669"
+}

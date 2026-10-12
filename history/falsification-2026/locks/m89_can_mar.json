@@ -1,0 +1,78 @@
+{
+  "locked_at": "2026-07-04T05:00:49.589844+00:00",
+  "version": 1,
+  "payload": {
+    "match_id": "m89_can_mar",
+    "pilot": false,
+    "teams": {
+      "home": "Canada",
+      "away": "Morocco"
+    },
+    "kickoff_utc": "2026-07-04T17:00:00+00:00",
+    "mode": "A",
+    "probs_90": {
+      "home": 0.203,
+      "draw": 0.2751,
+      "away": 0.5219
+    },
+    "qualify_home": 0.3202,
+    "lambdas": {
+      "home": 0.918,
+      "away": 1.5407
+    },
+    "inputs": {
+      "instrument": "M v2 (calibration.json)",
+      "elo_home": 1764,
+      "elo_away": 1886,
+      "elo_diff_raw": -122,
+      "elo_diff_adjustment": -10,
+      "elo_diff_effective": -132,
+      "adjustment_reasons": [
+        "-10 (toward Morocco): Kone out, broken ankle — starting midfielder",
+        "0: Davies just returned (75th-min sub last match) — Elo's recent info largely reflects Canada WITHOUT him, so his half-fit return is neutral vs the rating, not a plus",
+        "0: Morocco no reported injuries, full squad",
+        "0: Houston (NRG roof) — Canada NOT in Canada, no host adjustment; crowd likely pro-Morocco but unquantified, not adjusted"
+      ],
+      "pk_home": 0.5,
+      "goals_note": "goals from calibrated curves"
+    },
+    "j": {
+      "probs_90": {
+        "home": 0.203,
+        "draw": 0.2751,
+        "away": 0.5219
+      },
+      "qualify_home": 0.3202,
+      "basis": [
+        "J = M. No market-absent information identified. Considered and rejected: 'market overprices Davies name-value return' (pure speculation, no data); 'pro-Morocco crowd' (public knowledge, unquantified). Doctrine: no deviation without cause."
+      ]
+    },
+    "rationale": [
+      "Elo -122 raw: Morocco (#15, 2022 semifinalists' core: Hakimi/Mazraoui/Bono/Diaz) clearly above Canada (#30)",
+      "Canada's tournament run built without Davies at full tilt; Kone loss thins the midfield further"
+    ],
+    "invalidation": [
+      "Davies ruled out entirely -> amend toward Morocco",
+      "Morocco surprise rotation (4+ changes) -> amend"
+    ],
+    "sources": [
+      {
+        "item": "Elo verbatim rows, codes audited via en.teams.tsv (CA/MA/PY/FR); TSV fresh post-R32 (ES 2159 check)",
+        "source": "eloratings.net World.tsv + en.teams.tsv",
+        "as_of": "2026-07-04"
+      },
+      {
+        "item": "Kone out (broken ankle); Davies could start after 75th-min return; Morocco clean; predicted XIs",
+        "source": "sportsmole team-news 600555 + ESPN preview 49246432",
+        "as_of": "2026-07-04"
+      },
+      {
+        "item": "venue Houston, noon ET Jul 4",
+        "source": "goal.com/ESPN previews",
+        "as_of": "2026-07-04"
+      }
+    ],
+    "contamination_notes": "No odds for this match seen before lock. R16 odds never viewed; yesterday's API list call showed bookmaker names only."
+  },
+  "sha256": "8115609e7624bf7a8b06899045c4bb00736d23c4d8477cccc0cb99bb5eea6629"
+}

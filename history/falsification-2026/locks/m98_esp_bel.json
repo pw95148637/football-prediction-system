@@ -1,0 +1,131 @@
+{
+  "locked_at": "2026-07-07T07:22:38.471980+00:00",
+  "version": 1,
+  "payload": {
+    "match_id": "m98_esp_bel",
+    "teams": {
+      "home": "Spain",
+      "away": "Belgium"
+    },
+    "kickoff_utc": "2026-07-10T19:00:00Z",
+    "mode": "A",
+    "probs_90": {
+      "home": 0.704,
+      "draw": 0.1914,
+      "away": 0.1046
+    },
+    "qualify_home": 0.8288,
+    "lambdas": {
+      "home": 2.0316,
+      "away": 0.6964
+    },
+    "inputs": {
+      "elo_home_spain": 2177,
+      "elo_away_belgium": 1910,
+      "elo_source": "eloratings.net World.tsv, read 2026-07-07 (ES 2177 rank#1, BE 1910 rank#13; Belgium rating already carries its documented decline, -215 over the recent window)",
+      "elo_diff_raw": 267,
+      "d_eff": 273,
+      "d_eff_adjustments": [
+        "Belgium cumulative fatigue: played 120 min a.e.t. in the R32 vs Senegal (3-2, trailed 2-0 to 85') on an aging spine; more taxing knockout route than Spain (who has played zero ET). BEL -4. Kept small because the ET was ~9 days before the QF (physically recovered) and 3-day rest is equal.",
+        "Spain venue familiarity: Spain played its R32 vs Austria at this same SoFi Stadium and returns there for the QF; plus zero ET all tournament (freshest remaining side). ESP +2.",
+        "NOT adjusted (avoid double-count / doctrine): Belgium's age and De Bruyne being 'not 100% match-fit' are already reflected in the low Elo and in how they played (4-1 vs USA WITHOUT KDB/Lukaku/Doku starting); no extra dock."
+      ],
+      "venue": "SoFi Stadium (LA Stadium), Inglewood/Los Angeles CA (neutral; neither team is a host) -> no +75 host bonus",
+      "pk_h": 0.5,
+      "pk_note": "Kept default 0.5. Considered a small Spain shootout disadvantage (Courtois is an elite documented PK-saver; Spain's mixed shootout history) but held conservative; qualify prob is dominated by the 70% regulation win anyway."
+    },
+    "rationale": "M is calibrated Elo->1x2 (predict_1x2, neutral symmetrized) at d_eff=+273. Spain is Elo #1 and the process backs the rating: a World-Cup-record 6 consecutive clean sheets (EARNED, not variance) - lowest xGA of any remaining team (~0.85), opponent xG under 1.0 every match, Unai Simon 519 min without conceding - with a functional-not-explosive attack (won R16 1-0 late over Portugal, 1.74-0.72 xG). Belgium (Elo #13, aging) is result-flattered and volatile: out-xG'd by Senegal 3.18-1.84 in the R32 (one-way traffic for 86 min, survived on keeper/xGOT), then genuinely dominant vs USA (2.15-0.67) but the 4-1 margin inflated by clinical finishing (De Ketelaere, Lukaku super-sub); Belgium concedes quality chances, Spain does not. Expert consensus + Opta (Spain ~13% tournament / 3rd, Belgium ~2%) all favor Spain. M: Spain 70.4%, draw 19.1%, Belgium 10.5%. J = M: no market-unavailable information. The process edge (Belgium worse than its record) points toward Spain but is market-known (sharp books use xG) and pushing J higher would run into the documented 'Elo overconfidence on big favorites' tail (pilot +6.5~24pp, m95 Argentina +12.8pp); pushing J lower would require the forbidden 'Elo overrates favorites' input (m91/Rui-Alg lesson). So J=M, committed as a scorable datapoint carrying the big-favorite overconfidence risk transparently.",
+    "invalidation": [
+      "Confirmed pre-match XI shows Spain resting/missing multiple core starters (Yamal / Pedri / Rodri) -> amend toward Belgium.",
+      "Yamal's earlier hamstring flares and he is out or clearly limited -> amend toward Belgium.",
+      "Belgium confirmed to field De Bruyne + Lukaku + Doku all from the start AND at full fitness (a materially stronger XI than the one that beat USA) -> small amend toward Belgium.",
+      "Confirmed Spain missing a first-choice CB (Laporte/Cubarsi) with a clear downgrade -> small amend toward Belgium.",
+      "Extreme weather / major disruption -> note but do not repredict."
+    ],
+    "sources": [
+      {
+        "item": "Elo ES 2177 / BE 1910",
+        "source": "eloratings.net World.tsv",
+        "as_of": "2026-07-07"
+      },
+      {
+        "item": "Fixture: Match 98, SoFi Stadium LA, Fri 10 Jul 2026, 19:00 UTC, Spain listed first",
+        "source": "Al Jazeera schedule + World Soccer Talk + ticket listings (Vivid Seats/Event Ticket Center)",
+        "as_of": "2026-07-06/07"
+      },
+      {
+        "item": "No suspensions either side (FIFA knockout yellow-card counts reset to 0 at the QF); no R16 red cards",
+        "source": "Yahoo Sports yellow-card tracker + ESPN/Al Jazeera R16 reports",
+        "as_of": "2026-07-06/07"
+      },
+      {
+        "item": "Spain injuries: Nico Williams (adductor, impact sub not restored to XI), Yeremy Pino (AC-joint, doubtful), Victor Munoz (doubtful); core FIT (Yamal, Pedri, Rodri back to full fitness, Cucurella 2 assists R16, Laporte, Merino)",
+        "source": "RotoWire + injuriesandsuspensions.com + World Soccer Talk",
+        "as_of": "2026-07-06/07"
+      },
+      {
+        "item": "Belgium fitness: De Bruyne 'not 100% match-fit' (benched vs USA); Lukaku hamstring-managed (super-sub, scored vs USA); Doku benched (tactical); Courtois + De Ketelaere fit. R16 XI beat USA WITHOUT KDB/Lukaku/Doku starting.",
+        "source": "Bolavip/cryptobriefing + ESPN + search",
+        "as_of": "2026-07-06/07"
+      },
+      {
+        "item": "Rest/load: equal 3 days (both R16 on 6 Jul, QF 10 Jul); neither R16 went to ET; Belgium played 120 min a.e.t. in R32 vs Senegal (Spain zero ET all tournament)",
+        "source": "Al Jazeera/ESPN/FIFA reports",
+        "as_of": "2026-07-01/06"
+      },
+      {
+        "item": "Travel: Spain Dallas(AT&T)->LA(SoFi), already played R32 at SoFi; Belgium Seattle->LA (shorter hop, stayed in PNW)",
+        "source": "FIFA/ESPN match reports + soundersfc/katu",
+        "as_of": "2026-07-01/06"
+      },
+      {
+        "item": "xG Spain: group 5.5 for / 0.7 against; R16 vs Portugal 1.74/0.72; 6 straight clean sheets (WC record), lowest xGA ~0.85, opponent xG <1.0 every game -> earned defense",
+        "source": "xgscore.io + theanalyst/Yahoo defensive feature via firewalled subagent",
+        "as_of": "2026-07-07"
+      },
+      {
+        "item": "xG Belgium: group 6.8 for / 2.1 against; R32 vs Senegal out-xG'd 3.18-1.84 (open play 3.03-0.80), survived on xGOT 2.43-1.64; R16 vs USA 2.15-0.67 dominant but 4-1 margin finishing-inflated (De Ketelaere/Lukaku)",
+        "source": "xgscore.io + theanalyst match-stats + ESPN via firewalled subagent",
+        "as_of": "2026-07-07"
+      },
+      {
+        "item": "Model context (line layer): Opta tournament-win Spain ~13.0% (3rd, France ~28.9% leads) / Belgium ~2.0%; no published head-to-head. Dimers page 503'd (no number). Nate Silver PELE has Spain co-favorite but numbers paywalled. Opta match-model odds-input caveat could not be confirmed in these 2026 articles; treat as possibly market-influenced.",
+        "source": "theanalyst.com + si.com + natesilver.net + dimers.com(503) via firewalled subagent",
+        "as_of": "2026-07-04/07"
+      },
+      {
+        "item": "Expert previews: unanimous Spain favored (tempo/press/record defense); Belgium relied on comebacks not consistency, aging spine, KDB 'flickered'; Belgium's hope = transitions/Courtois/De Ketelaere/variance",
+        "source": "SportsAdda + CBS/James Benge + World Soccer Talk + Squawka via firewalled subagent",
+        "as_of": "2026-07-07"
+      }
+    ],
+    "j": {
+      "probs_90": {
+        "home": 0.704,
+        "draw": 0.1914,
+        "away": 0.1046
+      },
+      "qualify_home": 0.8288,
+      "basis": [
+        "J = M by deliberate discipline. Consulted the full evidence pack (Opta tournament-win, Nate Silver co-favorite, both teams' full xG/process, injuries/fitness, unanimous expert previews favoring Spain).",
+        "No LEGITIMATE market-unavailable information found to move J off M: all injuries/fitness (KDB not match-fit, Lukaku managed, Nico Williams out), Belgium's fatigue, Spain's venue familiarity, and both teams' underlying xG are public and priced by sharp books.",
+        "The process asymmetry (Spain's earned elite defense vs Belgium's finishing-inflated, out-xG'd run) is real and points toward Spain, but it is MARKET-KNOWN (xG is public) -> not a J-vs-market edge. Pushing J higher than M's 70.4% would drive deeper into the documented 'Elo/Poisson overconfidence on big favorites' tail (pilot +6.5~24pp, m95 Argentina +12.8pp), which is precisely the failure mode this experiment tracks.",
+        "Rejected input (doctrine): 'Elo overrates a +267 favorite, so shade J down toward the market.' This is the forbidden 'Elo-vs-market known divergence' mechanism; it would make J a market simulator (m91/Rui-Alg lesson). Explanation-only: it predicts the market may price Spain BELOW M's 70.4%, but J does not move on it.",
+        "Expected M/J-vs-market posture: most likely the market prices Spain somewhat below 70.4% (the big-favorite tail) -> any Spain-side gap is my model's overconfidence bias, not a market error -> Pass per m95 discipline. On Belgium, M is already at only 10.5% (likely at or below market) so no fade-Belgium edge either. Committed to J=M as a real, scorable data point."
+      ]
+    },
+    "contamination_notes": {
+      "analyst_saw_prices": false,
+      "method": "All web research done by two odds-firewalled subagents; the locking analyst never saw any betting price. M computed purely from Elo + concrete situational facts.",
+      "firewall_exposure": [
+        "betmgm spain-vs-belgium prediction/odds page - a moneyline price leaked in a search snippet, NOT reported to analyst (subagent withheld the number)",
+        "sportsbettingdime 3-way moneyline/total/odds-to-advance page - NOT opened",
+        "easyodds / dknetwork 'opening odds' / bleacherreport 'bracket odds' / yahoo betting picks - appeared as search-result titles carrying 'odds', NOT opened, no numbers",
+        "Kalshi semifinal-advance prediction market - a price leaked in a snippet (prediction market, not sportsbook), number NOT reported",
+        "polymarket / cryptobriefing DAZN blockchain prediction markets - contextual, no price read",
+        "Directional leak acknowledged: multiple slugs/snippets described Spain as 'favourite/favored to advance' (consistent with Elo/Opta/expert consensus already in the evidence pack; no price magnitude reached the analyst)"
+      ]
+    }
+  },
+  "sha256": "b80f22b5adde90128ad45a3555ff698842adf116e7416696e6a0987af323f267"
+}

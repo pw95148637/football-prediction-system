@@ -1,0 +1,59 @@
+{
+  "locked_at": "2026-07-08T10:21:19.750401+00:00",
+  "version": 1,
+  "payload": {
+    "match_id": "m100_arg_sui",
+    "pilot": false,
+    "teams": {
+      "home": "Argentina",
+      "away": "Switzerland"
+    },
+    "kickoff_utc": "2026-07-12T01:00:00+00:00",
+    "mode": "A",
+    "probs_90": {
+      "home": 0.6229929986583926,
+      "draw": 0.2329637886679829,
+      "away": 0.14404321267362447
+    },
+    "qualify_home": 0.7664272631498539,
+    "lambdas": {
+      "home": 1.7850138893117973,
+      "away": 0.7926398328516412
+    },
+    "inputs": {
+      "instrument": "M v2 (calibration.json) — AUTO-M-LOCK: pure Elo, no situational tuning; locked mechanically at pairing-known time (CHANGELOG 2026-07-08)",
+      "elo_home": 2156,
+      "elo_away": 1949,
+      "elo_diff_raw": 207,
+      "elo_diff_adjustment": 0,
+      "elo_diff_effective": 207,
+      "adjustment_reasons": [
+        "0 net, neutral venue: no host nation playing at home; M kept as pure-Elo control — all situational synthesis lives in J (added later via amend, pre-market)"
+      ],
+      "pk_home": 0.5,
+      "goals_note": "lambdas from calibrated curves"
+    },
+    "rationale": [
+      "Elo +207: Argentina 2156 vs Switzerland 1949, eloratings.net World.tsv fetched 2026-07-08T10:21:18.646464+00:00 (raw snapshots: 20260708T102118Z_World.tsv, 20260708T102118Z_en.teams.tsv).",
+      "AUTO-M-LOCK: mechanical price-blind arithmetic at pairing-known time — eliminates the m92 MISSING failure class. No analyst judgment is embedded in this version."
+    ],
+    "invalidation": [
+      "Situational facts (injuries/suspensions/lineups) belong to J or to a reasoned amend with the concrete new information — this v1 is the pure-Elo control and needs no invalidation conditions of its own.",
+      "Instrument J must be added by an odds-clean session via lock.py amend BEFORE any odds contact for this match; score.py drops a post-market j mechanically (contaminated_j)."
+    ],
+    "sources": [
+      {
+        "item": "Elo Argentina 2156 (AR), Switzerland 1949 (CH); diff +207",
+        "source": "https://www.eloratings.net/World.tsv + https://www.eloratings.net/en.teams.tsv (raw in data/elo_snapshots/)",
+        "as_of": "2026-07-08T10:21:18.646464+00:00"
+      },
+      {
+        "item": "Fixture: Match 100, Kansas City Stadium (GEHA Field at Arrowhead), Kansas City, neutral, ko 2026-07-12T01:00:00+00:00",
+        "source": "Al Jazeera QF schedule 2026-07-06 + ESPN fixtures + worldcupwiki M100 page, cross-verified via odds-firewalled subagent, accessed 2026-07-08 (kickoff 8pm CDT 7/11 = 01:00 UTC 7/12, 5 sources self-consistent)",
+        "as_of": "2026-07-08"
+      }
+    ],
+    "contamination_notes": "AUTO-M-LOCK (CHANGELOG 2026-07-08): this lock was produced mechanically from eloratings.net only — the process cannot see an odds source, and no analyst formed a judgment. Instrument J is absent in v1 by design; it must be added pre-market by an odds-clean session (score.py audits the j-bearing version's timestamp against first odds contact)."
+  },
+  "sha256": "2892e11c8cd0b8b6b608accab15ea59f2239be80ae9ab49ace8384d81c49c698"
+}

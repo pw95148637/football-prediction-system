@@ -1,0 +1,59 @@
+{
+  "locked_at": "2026-07-16T02:40:16.409903+00:00",
+  "version": 1,
+  "payload": {
+    "match_id": "m104_esp_arg",
+    "pilot": false,
+    "teams": {
+      "home": "Spain",
+      "away": "Argentina"
+    },
+    "kickoff_utc": "2026-07-19T19:00:00+00:00",
+    "mode": "A",
+    "probs_90": {
+      "home": 0.38626619651350724,
+      "draw": 0.3071467056688232,
+      "away": 0.3065870978176696
+    },
+    "qualify_home": 0.5453440589477874,
+    "lambdas": {
+      "home": 1.2665146044499451,
+      "away": 1.1171391990986546
+    },
+    "inputs": {
+      "instrument": "M v2 (calibration.json) — AUTO-M-LOCK: pure Elo, no situational tuning; locked mechanically at pairing-known time (CHANGELOG 2026-07-08)",
+      "elo_home": 2232,
+      "elo_away": 2200,
+      "elo_diff_raw": 32,
+      "elo_diff_adjustment": 0,
+      "elo_diff_effective": 32,
+      "adjustment_reasons": [
+        "0 net, neutral venue: no host nation playing at home; M kept as pure-Elo control — all situational synthesis lives in J (added later via amend, pre-market)"
+      ],
+      "pk_home": 0.5,
+      "goals_note": "lambdas from calibrated curves"
+    },
+    "rationale": [
+      "Elo +32: Spain 2232 vs Argentina 2200, eloratings.net World.tsv fetched 2026-07-16T02:40:15.311862+00:00 (raw snapshots: 20260716T024015Z_World.tsv, 20260716T024015Z_en.teams.tsv).",
+      "AUTO-M-LOCK: mechanical price-blind arithmetic at pairing-known time — eliminates the m92 MISSING failure class. No analyst judgment is embedded in this version."
+    ],
+    "invalidation": [
+      "Situational facts (injuries/suspensions/lineups) belong to J or to a reasoned amend with the concrete new information — this v1 is the pure-Elo control and needs no invalidation conditions of its own.",
+      "Instrument J must be added by an odds-clean session via lock.py amend BEFORE any odds contact for this match; score.py drops a post-market j mechanically (contaminated_j)."
+    ],
+    "sources": [
+      {
+        "item": "Elo Spain 2232 (ES), Argentina 2200 (AR); diff +32",
+        "source": "https://www.eloratings.net/World.tsv + https://www.eloratings.net/en.teams.tsv (raw in data/elo_snapshots/)",
+        "as_of": "2026-07-16T02:40:15.311862+00:00"
+      },
+      {
+        "item": "Fixture: Match 104, MetLife Stadium, East Rutherford NJ, ko 2026-07-19T19:00:00+00:00",
+        "source": "sports.yahoo.com / worldcupwiki.com World Cup 2026 final schedule, 2026-07-15/16",
+        "as_of": "2026-07-16"
+      }
+    ],
+    "contamination_notes": "AUTO-M-LOCK (CHANGELOG 2026-07-08): this lock was produced mechanically from eloratings.net only — the process cannot see an odds source, and no analyst formed a judgment. Instrument J is absent in v1 by design; it must be added pre-market by an odds-clean session (score.py audits the j-bearing version's timestamp against first odds contact)."
+  },
+  "sha256": "00a2839b587699677e6ebb62cb908f99a6729a39e816504c6452ebb807b930cc"
+}

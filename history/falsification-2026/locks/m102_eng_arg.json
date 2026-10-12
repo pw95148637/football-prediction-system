@@ -1,0 +1,59 @@
+{
+  "locked_at": "2026-07-12T04:27:41.805889+00:00",
+  "version": 1,
+  "payload": {
+    "match_id": "m102_eng_arg",
+    "pilot": false,
+    "teams": {
+      "home": "England",
+      "away": "Argentina"
+    },
+    "kickoff_utc": "2026-07-15T19:00:00+00:00",
+    "mode": "A",
+    "probs_90": {
+      "home": 0.275856334465237,
+      "draw": 0.3020282585078941,
+      "away": 0.42211540702686895
+    },
+    "qualify_home": 0.4168916502107145,
+    "lambdas": {
+      "home": 1.0595315060006727,
+      "away": 1.3353761571494625
+    },
+    "inputs": {
+      "instrument": "M v2 (calibration.json) — AUTO-M-LOCK: pure Elo, no situational tuning; locked mechanically at pairing-known time (CHANGELOG 2026-07-08)",
+      "elo_home": 2097,
+      "elo_away": 2156,
+      "elo_diff_raw": -59,
+      "elo_diff_adjustment": 0,
+      "elo_diff_effective": -59,
+      "adjustment_reasons": [
+        "0 net, neutral venue: no host nation playing at home; M kept as pure-Elo control — all situational synthesis lives in J (added later via amend, pre-market)"
+      ],
+      "pk_home": 0.5,
+      "goals_note": "lambdas from calibrated curves"
+    },
+    "rationale": [
+      "Elo -59: England 2097 vs Argentina 2156, eloratings.net World.tsv fetched 2026-07-12T04:27:40.730530+00:00 (raw snapshots: 20260712T042740Z_World.tsv, 20260712T042740Z_en.teams.tsv).",
+      "AUTO-M-LOCK: mechanical price-blind arithmetic at pairing-known time — eliminates the m92 MISSING failure class. No analyst judgment is embedded in this version."
+    ],
+    "invalidation": [
+      "Situational facts (injuries/suspensions/lineups) belong to J or to a reasoned amend with the concrete new information — this v1 is the pure-Elo control and needs no invalidation conditions of its own.",
+      "Instrument J must be added by an odds-clean session via lock.py amend BEFORE any odds contact for this match; score.py drops a post-market j mechanically (contaminated_j)."
+    ],
+    "sources": [
+      {
+        "item": "Elo England 2097 (EN), Argentina 2156 (AR); diff -59",
+        "source": "https://www.eloratings.net/World.tsv + https://www.eloratings.net/en.teams.tsv (raw in data/elo_snapshots/)",
+        "as_of": "2026-07-12T04:27:40.730530+00:00"
+      },
+      {
+        "item": "Fixture: Match 102, Atlanta Stadium (Mercedes-Benz Stadium), Atlanta GA, ko 2026-07-15T19:00:00+00:00",
+        "source": "FIFA match centre 400021540 title (England v Argentina, England listed first) + FOX Sports updated 2026-07-12 + World Soccer Talk 2026-07-11 + SI 2026-07-09, cross-verified by odds-firewalled subagent 2026-07-12 (15:00 EDT = 19:00 UTC)",
+        "as_of": "2026-07-12"
+      }
+    ],
+    "contamination_notes": "AUTO-M-LOCK (CHANGELOG 2026-07-08): this lock was produced mechanically from eloratings.net only — the process cannot see an odds source, and no analyst formed a judgment. Instrument J is absent in v1 by design; it must be added pre-market by an odds-clean session (score.py audits the j-bearing version's timestamp against first odds contact)."
+  },
+  "sha256": "56bec5a30d38b86771fa4e5305a55c05ec82ad1064c89277e2fe10ad35dc2bfa"
+}

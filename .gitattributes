@@ -1,0 +1,6 @@
+# Append-only audit trails: never let git renormalise line endings.
+# The store is a tamper-evidence surface (sha256 over payloads) and a
+# whole-file line-ending flip makes every historical line show as changed,
+# which buries a real edit in noise. Caught 2026-09-02.
+football_ai/store/data/*.jsonl -text
+history/falsification-2026/** -text

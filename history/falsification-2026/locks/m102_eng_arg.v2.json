@@ -1,0 +1,103 @@
+{
+  "locked_at": "2026-07-12T09:32:26.073803+00:00",
+  "version": 2,
+  "amend_reason": "instrument J synthesis (pre-market, auto-M-lock process): net +5 England from two offsetting anchored factors (aerial/cross mismatch +10, Rice uncertainty -5), pk_h 0.45 Dibu premium (m100 precedent)",
+  "original_sha256": "56bec5a30d38b86771fa4e5305a55c05ec82ad1064c89277e2fe10ad35dc2bfa",
+  "payload": {
+    "match_id": "m102_eng_arg",
+    "pilot": false,
+    "teams": {
+      "home": "England",
+      "away": "Argentina"
+    },
+    "kickoff_utc": "2026-07-15T19:00:00+00:00",
+    "mode": "A",
+    "probs_90": {
+      "home": 0.275856334465237,
+      "draw": 0.3020282585078941,
+      "away": 0.42211540702686895
+    },
+    "qualify_home": 0.4168916502107145,
+    "lambdas": {
+      "home": 1.0595315060006727,
+      "away": 1.3353761571494625
+    },
+    "inputs": {
+      "instrument": "M v2 (calibration.json) — AUTO-M-LOCK: pure Elo, no situational tuning; locked mechanically at pairing-known time (CHANGELOG 2026-07-08)",
+      "elo_home": 2097,
+      "elo_away": 2156,
+      "elo_diff_raw": -59,
+      "elo_diff_adjustment": 0,
+      "elo_diff_effective": -59,
+      "adjustment_reasons": [
+        "0 net, neutral venue: no host nation playing at home; M kept as pure-Elo control — all situational synthesis lives in J (added later via amend, pre-market)"
+      ],
+      "pk_home": 0.5,
+      "goals_note": "lambdas from calibrated curves"
+    },
+    "rationale": [
+      "Elo -59: England 2097 vs Argentina 2156, eloratings.net World.tsv fetched 2026-07-12T04:27:40.730530+00:00 (raw snapshots: 20260712T042740Z_World.tsv, 20260712T042740Z_en.teams.tsv).",
+      "AUTO-M-LOCK: mechanical price-blind arithmetic at pairing-known time — eliminates the m92 MISSING failure class. No analyst judgment is embedded in this version."
+    ],
+    "invalidation": [
+      "Situational facts (injuries/suspensions/lineups) belong to J or to a reasoned amend with the concrete new information — this v1 is the pure-Elo control and needs no invalidation conditions of its own.",
+      "Instrument J must be added by an odds-clean session via lock.py amend BEFORE any odds contact for this match; score.py drops a post-market j mechanically (contaminated_j).",
+      "PRE-REGISTERED ACTION TREE (T-75min lineup window, 2026-07-15 ~17:45 UTC): (1) Rice STARTS -> amend: remove the injury_replacement -5 (factor 2); (2) Rice confirmed OUT -> amend: deepen factor 2 to -10 with the concrete fact; (3) Kane/Bellingham or Messi/L.Martinez shock absence -> amend with the concrete fact; (4) anything else (Guehi/James/Konsa rotations, Argentina Lautaro-vs-Alvarez choice) -> stand (squad-depth noise). Market price is never an amend reason."
+    ],
+    "sources": [
+      {
+        "item": "Elo England 2097 (EN), Argentina 2156 (AR); diff -59",
+        "source": "https://www.eloratings.net/World.tsv + https://www.eloratings.net/en.teams.tsv (raw in data/elo_snapshots/)",
+        "as_of": "2026-07-12T04:27:40.730530+00:00"
+      },
+      {
+        "item": "Fixture: Match 102, Atlanta Stadium (Mercedes-Benz Stadium), Atlanta GA, ko 2026-07-15T19:00:00+00:00",
+        "source": "FIFA match centre 400021540 title (England v Argentina, England listed first) + FOX Sports updated 2026-07-12 + World Soccer Talk 2026-07-11 + SI 2026-07-09, cross-verified by odds-firewalled subagent 2026-07-12 (15:00 EDT = 19:00 UTC)",
+        "as_of": "2026-07-12"
+      },
+      {
+        "item": "Evidence bundle: full six-match xG logs both teams, styles, injuries, set-piece/aerial data, GK data, H2H",
+        "source": "m102_eng_arg_prelock.md — gathered by odds-firewalled subagent, mechanically firewall-validated CLEAN (one rewrite cycle: keyword-proximity false positives) before analyst read, 2026-07-12",
+        "as_of": "2026-07-12"
+      }
+    ],
+    "contamination_notes": "AUTO-M-LOCK v1 was mechanical. J added 2026-07-12 by an odds-clean session: analyst has seen NO market price for m101 or m102 (odds files do not exist yet; the only market data touched this session was for already-locked m98/m99/m100). Evidence bundle passed firewall.py CLEAN before reading. Opta supercomputer output was quarantined inside the bundle as self-declared odds-ingesting and was NOT used in J. Dimers had not published an m102 read as of compile time.",
+    "j": {
+      "probs_90": {
+        "home": 0.2814,
+        "draw": 0.3032,
+        "away": 0.4154
+      },
+      "qualify_home": 0.4159,
+      "basis": [
+        "J deviates from M by NET +5 d_eff toward England (M d=-59 -> J d=-54; ~+0.6pp on the 90' vector), the net of TWO OFFSETTING decomposed factors (m96 lesson: no undecomposed bundles). The small net size is the honest output of a two-sided situation, not timidity: each factor is anchored to its own data and they nearly cancel.",
+        "FACTOR 1, tactical_stylistic_matchup +10 (England): England's aerial/cross attack maps directly onto Argentina's documented aerial/cross concessions. England side: 4 headed goals (co-most at the tournament), Kane 3 headers (most of any player), 4.4 headed shots/match, 3 open-play goals from left-wing crosses, 56.7% aerial success (Opta 07-10). Argentina side: both Egypt concessions were finished from crosses off counter sequences, one a back-post header rising OVER Lisandro Martinez (Opta 07-07); ESPN 07-10 names cross defense (L.Martinez in the air) and counter vulnerability as Argentina's biggest worries; opponents converted 5 of 9 SOT through the R16 (56%). Anchored type: data-backed structural asymmetry citing both teams' actual numbers. Absorption: the mismatch is publicly written up -> residual only, magnitude conservative (+10, the m100 Manzambi size class).",
+        "FACTOR 2, injury_replacement -5 (i.e., toward Argentina): England's midfield anchor Rice is publicly UNRESOLVED for the semi after a half-time withdrawal vs Norway (sciatica-type nerve pain, hamstring structurally intact, plus illness; ESPN/Yahoo/FourFourTwo 07-11-12); Guehi is carrying a hamstring, Reece James on managed minutes, Konsa/O'Reilly came off the QF with knocks. Argentina reported no new injuries. Quansah's ban contributes ZERO marginal delta (he already missed the QF; the corrected 4-source read is a 2-match ban covering this semi). Uncertainty-weighted small discount (-5) with amend triggers registered BOTH directions at the lineup window.",
+        "CONSIDERED AND DECLINED — fatigue asymmetry: both teams played 120 minutes on 7/11 with identical 4-day turnarounds. Argentina's cumulative load is heavier (two ETs + Messi at 39 playing every minute of both) but England's own ledger includes a 10-man altitude game and a longer active-injury list; rest_travel is 0.5-for-2 on materialization in this project's ledger; partially offsetting and fully public -> no deviation. Argentina's venue familiarity (played at Atlanta Stadium 7/7) noted, sub-noise.",
+        "CONSIDERED AND DECLINED — 'Argentina's Elo is results-inflated' (+3.8 finishing overrun, 56% SOT-against conversion, i.e. both ends flattered): this is the m99-banned family — a systematic-divergence story usable later as a GAP EXPLANATION but never fed into J (feeding it in makes J a market simulator; m99's B1 outcome vindicated the refusal).",
+        "CONSIDERED AND DECLINED — Kane finisher premium (+2.6 tournament, positive career record): symmetric with Messi (8 goals despite two missed pens) and Argentina's own team-level overrun; m99 precedent.",
+        "CONSIDERED AND DECLINED — tempo axis: neither team bunkers by plan; no anchored low-event evidence (England's low-block problem is about opponents bunkering vs THEM, which Argentina will not do).",
+        "qualify_home uses pk_h=0.45 (not the 0.5 default): E.Martinez has a documented multi-shootout record (2022 WC QF vs Netherlands: van Dijk + Berghuis; final vs France: Coman) vs Pickford's career 4-of-14 shootout saves; conservative magnitude, mirrors the m100 precedent (pk .55 for the Dibu side). Affects the qualify layer only, not the B1 1x2 vector."
+      ],
+      "factors": [
+        {
+          "mechanism_type": "tactical_stylistic_matchup",
+          "direction": "home",
+          "d_eff_shift": 10,
+          "evidence": "ENG: 4 headed goals co-lead, Kane 3 (most), 4.4 headed shots/match, 3 left-wing cross goals, 56.7% aerial (Opta 07-10). ARG: both Egypt concessions cross-finished incl. back-post header over L.Martinez (Opta 07-07); ESPN 07-10 flags cross/counter defense as biggest worry; 5 of 9 SOT against converted through R16.",
+          "absorption_case": "publicly written up (ESPN) -> residual only, conservative sizing",
+          "magnitude_note": "anchored data-backed structural asymmetry, both teams' numbers cited; m100 Manzambi size class"
+        },
+        {
+          "mechanism_type": "injury_replacement",
+          "direction": "away",
+          "d_eff_shift": 5,
+          "evidence": "Rice unresolved (HT withdrawal vs Norway, sciatica-type nerve pain + illness, status publicly open as of 07-12); Guehi carrying, James managed, Konsa/O'Reilly QF knocks; Argentina no new injuries. Quansah ban = zero marginal delta vs QF.",
+          "absorption_case": "injury news public but final status finer than Elo; uncertainty-weighted",
+          "magnitude_note": "amend triggers registered both directions (starts -> remove; ruled out -> deepen to -10)"
+        }
+      ]
+    }
+  },
+  "sha256": "72ee384e98725fdd6ea5ecba0eb941553c33a97cefe13a02a0581eb22d6b3c25"
+}

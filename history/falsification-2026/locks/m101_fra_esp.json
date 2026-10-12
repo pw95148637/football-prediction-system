@@ -1,0 +1,59 @@
+{
+  "locked_at": "2026-07-12T04:27:30.792895+00:00",
+  "version": 1,
+  "payload": {
+    "match_id": "m101_fra_esp",
+    "pilot": false,
+    "teams": {
+      "home": "France",
+      "away": "Spain"
+    },
+    "kickoff_utc": "2026-07-14T19:00:00+00:00",
+    "mode": "A",
+    "probs_90": {
+      "home": 0.312483178671794,
+      "draw": 0.3077685801116389,
+      "away": 0.37974824121656714
+    },
+    "qualify_home": 0.46171358009151164,
+    "lambdas": {
+      "home": 1.1281460597715438,
+      "away": 1.2541577383592344
+    },
+    "inputs": {
+      "instrument": "M v2 (calibration.json) — AUTO-M-LOCK: pure Elo, no situational tuning; locked mechanically at pairing-known time (CHANGELOG 2026-07-08)",
+      "elo_home": 2163,
+      "elo_away": 2190,
+      "elo_diff_raw": -27,
+      "elo_diff_adjustment": 0,
+      "elo_diff_effective": -27,
+      "adjustment_reasons": [
+        "0 net, neutral venue: no host nation playing at home; M kept as pure-Elo control — all situational synthesis lives in J (added later via amend, pre-market)"
+      ],
+      "pk_home": 0.5,
+      "goals_note": "lambdas from calibrated curves"
+    },
+    "rationale": [
+      "Elo -27: France 2163 vs Spain 2190, eloratings.net World.tsv fetched 2026-07-12T04:27:29.369850+00:00 (raw snapshots: 20260712T042729Z_World.tsv, 20260712T042729Z_en.teams.tsv).",
+      "AUTO-M-LOCK: mechanical price-blind arithmetic at pairing-known time — eliminates the m92 MISSING failure class. No analyst judgment is embedded in this version."
+    ],
+    "invalidation": [
+      "Situational facts (injuries/suspensions/lineups) belong to J or to a reasoned amend with the concrete new information — this v1 is the pure-Elo control and needs no invalidation conditions of its own.",
+      "Instrument J must be added by an odds-clean session via lock.py amend BEFORE any odds contact for this match; score.py drops a post-market j mechanically (contaminated_j)."
+    ],
+    "sources": [
+      {
+        "item": "Elo France 2163 (FR), Spain 2190 (ES); diff -27",
+        "source": "https://www.eloratings.net/World.tsv + https://www.eloratings.net/en.teams.tsv (raw in data/elo_snapshots/)",
+        "as_of": "2026-07-12T04:27:29.369850+00:00"
+      },
+      {
+        "item": "Fixture: Match 101, Dallas Stadium (AT&T Stadium), Arlington TX, ko 2026-07-14T19:00:00+00:00",
+        "source": "FIFA match centre 400021541 title + ESPN schedule + NBC DFW 2026-07-11 + SI 2026-07-09 + World Soccer Talk 2026-07-10, cross-verified by odds-firewalled subagent 2026-07-12 (14:00 CDT = 19:00 UTC)",
+        "as_of": "2026-07-12"
+      }
+    ],
+    "contamination_notes": "AUTO-M-LOCK (CHANGELOG 2026-07-08): this lock was produced mechanically from eloratings.net only — the process cannot see an odds source, and no analyst formed a judgment. Instrument J is absent in v1 by design; it must be added pre-market by an odds-clean session (score.py audits the j-bearing version's timestamp against first odds contact)."
+  },
+  "sha256": "266b67e880247124364ec16ac89a79fce887c82c8fe639feb92d2b5fc3e0c91c"
+}

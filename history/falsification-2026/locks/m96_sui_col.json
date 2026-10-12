@@ -1,0 +1,84 @@
+{
+  "locked_at": "2026-07-06T02:49:00.369505+00:00",
+  "version": 1,
+  "payload": {
+    "match_id": "m96_sui_col",
+    "pilot": false,
+    "teams": {
+      "home": "Switzerland",
+      "away": "Colombia"
+    },
+    "kickoff_utc": "2026-07-07T20:00:00+00:00",
+    "mode": "A",
+    "probs_90": {
+      "home": 0.26818790629816674,
+      "draw": 0.3003757466831617,
+      "away": 0.4314363470186716
+    },
+    "qualify_home": 0.4072738744830441,
+    "lambdas": {
+      "home": 1.0449131314297944,
+      "away": 1.3536639762281668
+    },
+    "inputs": {
+      "instrument": "M v2 (calibration.json) — pure Elo, neutral venue, no situational tuning",
+      "elo_home": 1943,
+      "elo_away": 2009,
+      "elo_diff_raw": -66,
+      "elo_diff_adjustment": 0,
+      "elo_diff_effective": -66,
+      "adjustment_reasons": [
+        "0 net, neutral venue: BC Place (Vancouver) — Canada (host) is not playing; Switzerland and Colombia both non-hosts, so no +75.",
+        "M kept as pure-Elo control; all situational synthesis lives in J."
+      ],
+      "pk_home": 0.5,
+      "goals_note": "lambdas from calibrated curves; total 2.40"
+    },
+    "rationale": [
+      "Elo -66: Switzerland #10 (1943) vs Colombia #6 (2009), eloratings.net World.tsv read 2026-07-06 — Colombia slightly higher-rated (Switzerland is only the nominal first slot; venue is neutral).",
+      "M (pure Elo, neutral) => SUI 26.8 / draw 30.0 / COL 43.1; qualify SUI 40.7%. A near coin-flip leaning slightly Colombia.",
+      "Process context: both won R32 in regulation (no ET, no fatigue asymmetry) — Switzerland 2-0 Algeria (xG 2.52-0.73), Colombia 1-0 Ghana (xG 2.06-0.26, 3rd straight clean sheet)."
+    ],
+    "invalidation": [
+      "Amend toward Switzerland if Colombia loses James Rodriguez or Luis Diaz, or the camp illness spreads to confirmed starters.",
+      "Amend toward Colombia if Switzerland's spine (Akanji/Xhaka/Embolo) is scratched or Yakin rotates heavily.",
+      "If either lines up materially weaker than the projected XI, re-weigh the J deviation."
+    ],
+    "sources": [
+      {
+        "item": "Elo Switzerland 1943 (rank 10), Colombia 2009 (rank 6); diff -66",
+        "source": "eloratings.net World.tsv (verified via direct raw parse)",
+        "as_of": "2026-07-06"
+      },
+      {
+        "item": "Fixture: R16 Match 96, BC Place Vancouver (neutral), ko 2026-07-07 20:00 UTC; identity cross-checked 3 ways incl. this project's own R32 pilots (sui_alg, col_gha)",
+        "source": "FIFA / ESPN / Al Jazeera / Yahoo / Destination Vancouver",
+        "as_of": "2026-07-06"
+      },
+      {
+        "item": "Switzerland R32 beat Algeria 2-0 (no ET, xG 2.52-0.73); 5 days rest at SAME venue (zero travel); clean discipline (0 R32 cards); doubts Aebischer/Jaquez/Widmer (muscle/hip), Yakin 'no fresh absentees'; strong continuity XI expected",
+        "source": "ESPN / Opta Analyst / Sports Mole",
+        "as_of": "2026-07-06"
+      },
+      {
+        "item": "Colombia R32 beat Ghana 1-0 (no ET, xG 2.06-0.26, 3rd clean sheet); cross-continental KC->Vancouver on ~2-3 days rest; striker J.Cordoba OUT for tournament (adductor), Luis Suarez replaces; flu-like symptoms in camp (James withdrawn HT vs Ghana, expected to start); no R16 suspensions",
+        "source": "ESPN / Yahoo / AS Colombia / Sports Mole",
+        "as_of": "2026-07-06"
+      }
+    ],
+    "j": {
+      "probs_90": {
+        "home": 0.30771734509563997,
+        "draw": 0.30741822344673286,
+        "away": 0.38486443145762717
+      },
+      "qualify_home": 0.4560889281101528,
+      "basis": [
+        "J deviates from M by +35 d_eff toward Switzerland (M d=-66 -> J d=-31; ~+4pp), from CONCRETE physical/squad facts (allowed J inputs — NOT Elo-vs-market rating abstractions, which are banned): (1) rest+logistics — Switzerland has 5 days' rest at the SAME venue (BC Place, zero travel) vs Colombia's cross-continental Kansas City->Vancouver hop on ~2-3 days; (2) Colombia's first-choice striker Jhon Cordoba ruled OUT for the tournament (adductor), only partly mitigated by Luis Suarez (assisted the R32 winner); (3) flu-like symptoms in the Colombia camp (James withdrawn HT vs Ghana, expected but not certain to start).",
+        "Magnitude kept modest (+35) because rest/travel is partly market-priced — J claims only the residual, not the whole edge. Colombia REMAINS the slight favourite in J (COL 38.5 vs SUI 30.8), consistent with its Elo edge and dominant R32 process. J does not flip the tie; it tightens it."
+      ]
+    },
+    "contamination_notes": "CLEAN independent lock (main sample). No odds for this match seen before lock: no per-match odds file exists (odds/m96_sui_col.jsonl absent as of lock), and Elo + team-news were gathered via odds-firewalled subagents that reported NO prices (their incidental exposure to odds/prediction pages is declared in their firewall_exposure logs). The analyst has read no price for this match. Locked BEFORE any Phase-2 market contact per PROTOCOL section 3; the fetch_odds.py no-lock guard now also blocks any pre-lock grab, so this match is protected from the r16_por_esp/m92 orphan-grab contamination."
+  },
+  "sha256": "015b3ab5e788a13e2d3f14cc79a3fd135bd5cbe5c6e23ff0fa9e6e769a4c3f17"
+}

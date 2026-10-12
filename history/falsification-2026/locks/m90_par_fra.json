@@ -1,0 +1,74 @@
+{
+  "locked_at": "2026-07-04T05:00:49.591542+00:00",
+  "version": 1,
+  "payload": {
+    "match_id": "m90_par_fra",
+    "pilot": false,
+    "teams": {
+      "home": "Paraguay",
+      "away": "France"
+    },
+    "kickoff_utc": "2026-07-04T21:00:00+00:00",
+    "mode": "A",
+    "probs_90": {
+      "home": 0.084,
+      "draw": 0.1643,
+      "away": 0.7517
+    },
+    "qualify_home": 0.1372,
+    "lambdas": {
+      "home": 0.6387,
+      "away": 2.2146
+    },
+    "inputs": {
+      "instrument": "M v2 (calibration.json)",
+      "elo_home": 1823,
+      "elo_away": 2134,
+      "elo_diff_raw": -311,
+      "elo_diff_adjustment": -6,
+      "elo_diff_effective": -317,
+      "adjustment_reasons": [
+        "-10 (toward France): Alderete (starting CB) expected out, knee",
+        "+5 (toward Paraguay): D.Gomez back from suspension — recent Elo includes the match he missed",
+        "-1 net: France missing Kante (+8 toward PY) and Thuram (+3 toward PY) offsets most of Alderete loss; Mbappe/Olise/Dembele all fit",
+        "0: Enciso + Avalos carrying knocks but projected to start — monitor, amend if either ruled out"
+      ],
+      "pk_home": 0.5,
+      "goals_note": "goals from calibrated curves"
+    },
+    "j": {
+      "probs_90": {
+        "home": 0.084,
+        "draw": 0.1643,
+        "away": 0.7517
+      },
+      "qualify_home": 0.1372,
+      "basis": [
+        "J = M. No market-absent information identified. Considered and rejected: 'Paraguay cycle-high rating may be qualifier-inflated' (that's an Elo-vs-market mechanism, banned as J input per doctrine); H1 bunker-draw (formation unconfirmed until lineup, and H1 needs n>=6 before feeding J)."
+      ]
+    },
+    "rationale": [
+      "Elo -311 raw: France #3 (2134) vs Paraguay #22 (1823) — but Paraguay's rating is at a cycle high (+133 over recent windows per TSV row)",
+      "France attack fully loaded (Mbappe 6 goals, Olise 5 assists, Dembele 4); Paraguay compact 4-4-2 under Alfaro"
+    ],
+    "invalidation": [
+      "Enciso or Avalos ruled out -> amend toward France",
+      "France heavy rotation -> amend toward Paraguay",
+      "Paraguay lines up 5-at-back low block -> tag H1"
+    ],
+    "sources": [
+      {
+        "item": "Elo verbatim rows, codes audited via en.teams.tsv (CA/MA/PY/FR); TSV fresh post-R32 (ES 2159 check)",
+        "source": "eloratings.net World.tsv + en.teams.tsv",
+        "as_of": "2026-07-04"
+      },
+      {
+        "item": "Alderete expected out (knee); Enciso/Avalos knocks, expected to start; Gomez back from suspension; France without Kante and Thuram; Mbappe/Olise fit; predicted XIs 4-4-2 vs 4-2-3-1",
+        "source": "sportsmole team-news 600506 + rotowire preview",
+        "as_of": "2026-07-04"
+      }
+    ],
+    "contamination_notes": "No odds for this match seen before lock. R16 odds never viewed; yesterday's API list call showed bookmaker names only."
+  },
+  "sha256": "02dca1fa5beeac37901088e69041508eb879b70487a9e8d6a40c8a06f122cf5b"
+}

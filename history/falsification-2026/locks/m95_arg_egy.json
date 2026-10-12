@@ -1,0 +1,84 @@
+{
+  "locked_at": "2026-07-06T02:48:59.978248+00:00",
+  "version": 1,
+  "payload": {
+    "match_id": "m95_arg_egy",
+    "pilot": false,
+    "teams": {
+      "home": "Argentina",
+      "away": "Egypt"
+    },
+    "kickoff_utc": "2026-07-07T16:00:00+00:00",
+    "mode": "A",
+    "probs_90": {
+      "home": 0.8303205704855995,
+      "draw": 0.11599359502357903,
+      "away": 0.05368583449082149
+    },
+    "qualify_home": 0.9142587658668816,
+    "lambdas": {
+      "home": 2.6266461105931302,
+      "away": 0.5385046956268034
+    },
+    "inputs": {
+      "instrument": "M v2 (calibration.json) — pure Elo, neutral venue, no situational tuning",
+      "elo_home": 2151,
+      "elo_away": 1747,
+      "elo_diff_raw": 404,
+      "elo_diff_adjustment": 0,
+      "elo_diff_effective": 404,
+      "adjustment_reasons": [
+        "0 net, neutral venue: Mercedes-Benz Stadium (Atlanta) — neither Argentina nor Egypt is a 2026 host, so no +75.",
+        "M kept as pure-Elo control (all situational synthesis lives in J). d=+404 sits in the calibration's known over-confident cross-continental tail (meta: +439 tail unreliable) — flagged, not corrected in M (correcting toward market is a banned J input too)."
+      ],
+      "pk_home": 0.5,
+      "goals_note": "lambdas from calibrated curves; total 3.17"
+    },
+    "rationale": [
+      "Elo +404: Argentina #2 (2151) vs Egypt #32 (1747), eloratings.net World.tsv read 2026-07-06. Huge favorite.",
+      "M (pure Elo, neutral) => ARG 83.0 / draw 11.6 / EGY 5.4; qualify ARG 91.4%.",
+      "Process context (narrative): both won R32 the hard way — Argentina 3-2 Cape Verde AET (xG 2.28-0.76), Egypt 1-1 Australia then 4-2 pens (first-ever WC knockout win). Both carry a full 120-min load into a 3-day turnaround (fatigue roughly symmetric).",
+      "Egypt's defence is depleted: both first-choice LBs (Fatouh, Hafez) and CB Abdelmonem doubtful/out — a patched back line vs Messi/Lautaro/Almada. Salah fit."
+    ],
+    "invalidation": [
+      "Amend toward Egypt if Argentina heavily rotates a fatigued XI (Scaloni floated ~3 changes) or a spine starter (E.Martinez/Romero/L.Martinez/Mac Allister/Messi) is scratched.",
+      "Amend toward Argentina if Salah is ruled out or Egypt's back line loses another starter."
+    ],
+    "sources": [
+      {
+        "item": "Elo Argentina 2151 (rank 2), Egypt 1747 (rank 32); diff +404",
+        "source": "eloratings.net World.tsv (verified via direct raw parse)",
+        "as_of": "2026-07-06"
+      },
+      {
+        "item": "Fixture: R16 Match 95, Mercedes-Benz Stadium Atlanta (neutral), ko 2026-07-07 16:00 UTC; identity cross-checked 3 ways incl. this project's own R32 pilots (arg_cpv, aus_egy)",
+        "source": "FIFA / ESPN / Al Jazeera / Yahoo / worldcupwiki",
+        "as_of": "2026-07-06"
+      },
+      {
+        "item": "Argentina R32 beat Cape Verde 3-2 AET (xG 2.28-0.76); no suspensions/OUT; minor doubts Medina/N.Gonzalez/E.Fernandez expected fit; ~3 rotations floated; Messi fit",
+        "source": "Sky Sports / xgscore.io / ESPN / Sports Mole",
+        "as_of": "2026-07-06"
+      },
+      {
+        "item": "Egypt R32 drew Australia 1-1, won 4-2 pens (120 min + shootout); depleted defence — Fatouh+Hafez (LB) & Abdelmonem (CB) doubtful/out; Salah fit; Lasheen returns from suspension; no R16 suspensions",
+        "source": "Opta Analyst / Sports Mole / Yahoo tracker",
+        "as_of": "2026-07-06"
+      }
+    ],
+    "j": {
+      "probs_90": {
+        "home": 0.8303205704855995,
+        "draw": 0.11599359502357903,
+        "away": 0.05368583449082149
+      },
+      "qualify_home": 0.9142587658668816,
+      "basis": [
+        "J = M. No market-absent information identified. Considered and judged offsetting/public: Egypt's depleted defence (both LBs + a CB doubtful) points further toward Argentina but is fully public; Argentina's 120-min R32 + floated ~3 rotations points slightly toward Egypt but is symmetric with Egypt's own 120-min+shootout load and equally public.",
+        "Declined to push J above M at d=+404: that region is the calibration's known over-confident cross-continental tail, and 'Elo over-rates big favourites' is a banned J input (using it would make J a market-simulator — the ruiz-alg lesson). So J=M and the over-confidence risk is carried as a real, scored experimental data point."
+      ]
+    },
+    "contamination_notes": "CLEAN independent lock (main sample). No odds for this match seen before lock: no per-match odds file exists (odds/m95_arg_egy.jsonl absent as of lock), and Elo + team-news were gathered via odds-firewalled subagents that reported NO prices (their incidental exposure to odds/prediction pages is declared in their firewall_exposure logs). The analyst has read no price for this match. Locked BEFORE any Phase-2 market contact per PROTOCOL section 3; the fetch_odds.py no-lock guard now also blocks any pre-lock grab, so this match is protected from the r16_por_esp/m92 orphan-grab contamination."
+  },
+  "sha256": "dcdaaeb543cbe6514273b6eca0e6a54ef65b87addac7df9161675934be17d6ac"
+}

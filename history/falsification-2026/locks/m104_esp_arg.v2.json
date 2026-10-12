@@ -1,0 +1,99 @@
+{
+  "locked_at": "2026-07-16T05:41:13.070877+00:00",
+  "version": 2,
+  "amend_reason": "instrument J synthesis (pre-market, auto-M-lock process): net +1 Spain from two offsetting decomposed factors (ARG set-piece structural edge -4, ESP rest/ET differential +5), pk_h 0.45 Dibu premium (m100/m102 precedent); Fable acceptance in-session (owner switched model), Yamal-out trigger pre-committed at -10",
+  "original_sha256": "00a2839b587699677e6ebb62cb908f99a6729a39e816504c6452ebb807b930cc",
+  "payload": {
+    "match_id": "m104_esp_arg",
+    "pilot": false,
+    "teams": {
+      "home": "Spain",
+      "away": "Argentina"
+    },
+    "kickoff_utc": "2026-07-19T19:00:00+00:00",
+    "mode": "A",
+    "probs_90": {
+      "home": 0.38626619651350724,
+      "draw": 0.3071467056688232,
+      "away": 0.3065870978176696
+    },
+    "qualify_home": 0.5453440589477874,
+    "lambdas": {
+      "home": 1.2665146044499451,
+      "away": 1.1171391990986546
+    },
+    "inputs": {
+      "instrument": "M v2 (calibration.json) — AUTO-M-LOCK: pure Elo, no situational tuning; locked mechanically at pairing-known time (CHANGELOG 2026-07-08)",
+      "elo_home": 2232,
+      "elo_away": 2200,
+      "elo_diff_raw": 32,
+      "elo_diff_adjustment": 0,
+      "elo_diff_effective": 32,
+      "adjustment_reasons": [
+        "0 net, neutral venue: no host nation playing at home; M kept as pure-Elo control — all situational synthesis lives in J (added later via amend, pre-market)"
+      ],
+      "pk_home": 0.5,
+      "goals_note": "lambdas from calibrated curves"
+    },
+    "rationale": [
+      "Elo +32: Spain 2232 vs Argentina 2200, eloratings.net World.tsv fetched 2026-07-16T02:40:15.311862+00:00 (raw snapshots: 20260716T024015Z_World.tsv, 20260716T024015Z_en.teams.tsv).",
+      "AUTO-M-LOCK: mechanical price-blind arithmetic at pairing-known time — eliminates the m92 MISSING failure class. No analyst judgment is embedded in this version."
+    ],
+    "invalidation": [
+      "Situational facts (injuries/suspensions/lineups) belong to J or to a reasoned amend with the concrete new information — this v1 is the pure-Elo control and needs no invalidation conditions of its own.",
+      "Instrument J must be added by an odds-clean session via lock.py amend BEFORE any odds contact for this match; score.py drops a post-market j mechanically (contaminated_j).",
+      "PRE-REGISTERED ACTION TREE (T-75min lineup window, 2026-07-19 ~17:45 UTC, session must be present): (1) Yamal starts healthy -> stand; (2) Yamal confirmed OUT of the XI -> amend: ADD injury_replacement -10 toward Argentina (confirmed-out star wide creator; m100/m102 size-class precedent) -- magnitude pre-committed at Fable acceptance, NOT recomputed ad hoc at the window; (3) Messi shock absence -> amend +10 toward Spain; (4) Molina/Medina/Romero (ARG) or Porro/Pino (ESP) confirmed out -> amend with the concrete fact, +/-5 class; (5) anything else (Pedri vs Fabian Ruiz, Lautaro vs Alvarez, other rotations) -> stand (squad-depth noise). Market price is never an amend reason."
+    ],
+    "sources": [
+      {
+        "item": "Elo Spain 2232 (ES), Argentina 2200 (AR); diff +32",
+        "source": "https://www.eloratings.net/World.tsv + https://www.eloratings.net/en.teams.tsv (raw in data/elo_snapshots/)",
+        "as_of": "2026-07-16T02:40:15.311862+00:00"
+      },
+      {
+        "item": "Fixture: Match 104, MetLife Stadium, East Rutherford NJ, ko 2026-07-19T19:00:00+00:00",
+        "source": "sports.yahoo.com / worldcupwiki.com World Cup 2026 final schedule, 2026-07-15/16",
+        "as_of": "2026-07-16"
+      }
+    ],
+    "contamination_notes": "AUTO-M-LOCK (CHANGELOG 2026-07-08): this lock was produced mechanically from eloratings.net only — the process cannot see an odds source, and no analyst formed a judgment. Instrument J is absent in v1 by design; it must be added pre-market by an odds-clean session (score.py audits the j-bearing version's timestamp against first odds contact). | J added 2026-07-16 by an odds-clean session: analyst has seen NO market price for m103 or m104 (odds/ contains no file for either match at amend time -- verified immediately before this amend). Evidence bundle m104_esp_arg_prelock.md was gathered by an odds-firewalled subagent and passed firewall.py CLEAN on first validation before the analyst read it. No Opta final-specific win probability existed (the gathering agent deliberately withheld a stale pre-semifinal tournament-winner number rather than misattribute it); Dimers (quarantine-adjacent) and Nate Silver PELE (paywalled) numbers were not extracted. advisor() unavailable this session; owner switched the session model to Fable 5 mid-session and the DECISION_PROTOCOL section-7 J-basis acceptance was performed by Fable in-session (recorded in j.basis).",
+    "j": {
+      "probs_90": {
+        "home": 0.3876,
+        "draw": 0.307,
+        "away": 0.3054
+      },
+      "qualify_home": 0.5387,
+      "basis": [
+        "J deviates from M by NET +1 d_eff toward Spain (M d=32 -> J d=33; ~0.1pp on the 90' vector), the net of TWO OFFSETTING decomposed factors (m96 lesson: no undecomposed bundles). J~=M on the 90' vector is the honest output of a two-sided situation; the real J content is in the qualify layer (pk_h 0.45, see below). J=M would also have been legitimate; the tiny net is computed, not engineered.",
+        "FACTOR 1, tactical_stylistic_matchup -4 (toward Argentina): Argentina's tournament-leading set-piece output maps onto the ONLY crack in Spain's historic defensive record. Argentina side (well-anchored): 5 set-piece goals, most at the tournament, up from 2 at WC2022 (real YoY improvement); 3 headed goals despite third-shortest squad by average height; 3 further goalscoring possessions originating from corners; aerial win rate only 48.1% -> the output comes from delivery/movement/finishing, not raw aerial dominance (ESPN/Sofascore 07-16). Spain side (thin, n=1, honestly flagged): the single goal conceded all tournament was a crossed header (De Ketelaere rising over Cubarsi, Belgium QF) -- against 0.31 xGA/match and 0.05 avg shot-quality conceded, both joint-historic lows since 1966. Anchored type: data-backed structural asymmetry citing both teams' actual numbers. Absorption: Argentina's set-piece story is publicly written up -> residual only. Mechanism-type self-flag: tactical_stylistic_matchup is 0/2 J-better in this project's ledger (r32_esp_aut, m102 -- where the aerial mechanism materialized in the OPPOSITE direction on the pitch; n<5, informational). All of the above -> smallest size class (-4), deliberately below the m100/m102 +10 class.",
+        "FACTOR 2, rest_travel +5 (toward Spain): Argentina has 4 rest days (semi 07-15) vs Spain's 5 (semi 07-14), AND Argentina played two extra-time matches earlier in the knockouts (R16 Cape Verde: level at 111' before winning in ET; QF Switzerland: winner at 121') vs Spain's zero ET all tournament; Messi (39) played every minute of the semi and was visibly fatigued late (match reporting 07-15) though uninjured. Partial offset folded into the size: Spain's longer travel leg (Dallas->NJ vs Atlanta->NJ; no sourced mileage found, flagged as gap not estimated). Absorption: rest-day counts fully public -> partly market-priced (m96 lesson), residual only. Mechanism-type self-flag: rest_travel n=2, J-better 1/2, mean RPS delta -0.0071 (mixed; n<5, informational). Conservative +5, well below m100's +20 which had a far larger asymmetry (120min+PK + charter + venue change).",
+        "CONSIDERED AND DECLINED -- Messi finisher premium: tournament overrun is real (5.3 xG -> 8 goals) but the doctrine requires CAREER goals-minus-xG anchoring and the bundle only sourced tournament-level figures; m99/m102 precedent (finisher premium declined when symmetric/unanchored). Spain's mirror-image xG underperformance (14.96 xG -> 8 goals) is equally public process data; feeding either side in is regression-to-mean speculation the market prices fine.",
+        "CONSIDERED AND DECLINED -- Argentina flank vulnerability vs Spain's wide attack (Yamal/overlapping backs): the 50.0% left / 30.6% right chance-concession split is real Opta data, but the bundle itself flags the Spain-specific mapping as the gathering agent's own inference ('no source directly stated this'), AND it shares the wide/cross theme with Factor 1's counter-consideration -- including both would double-count one underlying structure. Declined on anchoring discipline, not because the story is implausible; it is the tempting Spain-ward narrative and declining it is the two-sidedness check.",
+        "CONSIDERED AND DECLINED -- tempo axis: preview prose speculates Argentina may sit deeper, but no confirmed low-block formation, no extreme weather, no anchored low-event evidence. J_SPEC requires concrete evidence; declined.",
+        "CONSIDERED AND DECLINED -- 'Argentina's Elo is results-inflated / ran hot through the knockouts': m99-banned family (systematic-divergence story usable as GAP EXPLANATION only; feeding it in makes J a market simulator).",
+        "qualify_home uses pk_h=0.45 (not the 0.5 default): E.Martinez is undefeated across four international shootouts (2022 WC QF Netherlands + final France; Copa America 2021 Colombia, 2024 Ecuador) and Argentina's cycle-level shootout success (86%, only semifinalist above 50%) vs Unai Simon's career shootout save rate ~26% (7 of 27 -- near GK base rate, NOT a standout weakness) and Spain's 1-of-5 World Cup shootout history (small-n, mostly different eras). SAME keeper, SAME magnitude as m102 (0.45) and m100 (0.55 for the Dibu side) -- deliberately identical to avoid evidence-reuse inflation across matches. Counterweight logged: Martinez's in-tournament save rate 57.2% (down from 70.7% club form), close-range 33.3% among the tournament's three lowest (Opta 07-16) -- that is shot-stopping, not shootout, so it does not negate the pk premium but caps any temptation to deepen it. Affects the qualify layer only, not the B1 1x2 vector.",
+        "FABLE ACCEPTANCE (DECISION_PROTOCOL section 7): advisor() unavailable this session; owner switched the session model to Fable 5 mid-session (2026-07-16) and the J-basis acceptance was performed by Fable in-session: both factor magnitudes and the pk layer approved; one tightening applied -- the Yamal-out amend trigger was pre-registered with a CONCRETE magnitude (see invalidation) instead of 'recompute at the window'."
+      ],
+      "factors": [
+        {
+          "mechanism_type": "tactical_stylistic_matchup",
+          "direction": "away",
+          "d_eff_shift": 4,
+          "evidence": "ARG: 5 set-piece goals (tournament-most; 2 at WC2022), 3 headed goals despite third-shortest squad, +3 corner-origin goal possessions, aerial win 48.1% (ESPN/Sofascore 07-16). ESP: only concession all tournament was a crossed header (De Ketelaere over Cubarsi) -- n=1 against 0.31 xGA/match historic record.",
+          "absorption_case": "set-piece story publicly written up -> residual only; Spain-side evidence n=1 -> smallest size class",
+          "magnitude_note": "type is 0/2 J-better in ledger (r32_esp_aut, m102; n<5 informational); sized below the m100/m102 +10 class"
+        },
+        {
+          "mechanism_type": "rest_travel",
+          "direction": "home",
+          "d_eff_shift": 5,
+          "evidence": "ARG 4 rest days vs ESP 5; ARG two earlier ET matches (Cape Verde R16, Switzerland QF winner at 121') vs ESP zero ET; Messi 39 played all minutes of the semi, visibly fatigued late. Offset folded in: ESP longer travel leg Dallas->NJ vs Atlanta->NJ (no sourced mileage).",
+          "absorption_case": "rest-day counts fully public -> partly market-priced (m96 lesson), residual only",
+          "magnitude_note": "ledger: rest_travel n=2, J-better 1/2, mean RPS delta -0.0071 (n<5 informational); +5 well below m100's +20 for a far larger asymmetry"
+        }
+      ]
+    }
+  },
+  "sha256": "b3d52ec3b53a62860cea02f01456a7855d6ef6fadf81ce29a5be02f49f8394e2"
+}

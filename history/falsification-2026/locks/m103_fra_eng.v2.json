@@ -1,0 +1,129 @@
+{
+  "locked_at": "2026-07-16T14:08:18.722546+00:00",
+  "version": 2,
+  "amend_reason": "instrument J synthesis (pre-market, auto-M-lock process): net -3 England-ward from three decomposed factors (rest_travel +3 FRA confirmed by Tuchel quote; incentive_rotation -4 FRA from asymmetric rotation/motivation signals with Mbappe Golden-Boot cap; injury_replacement -2 FRA Saliba confirmed out, surgery pending); pk_h 0.5 (no anchored shootout asymmetry); Fable 5 acceptance in-session; Bellingham-suspension and rotation-count action tree pre-registered with dead magnitudes",
+  "original_sha256": "960254fb482a951af01e328d828e61f7c1e71b9e5499ed30dc6486c1c29f1cc9",
+  "payload": {
+    "match_id": "m103_fra_eng",
+    "pilot": false,
+    "teams": {
+      "home": "France",
+      "away": "England"
+    },
+    "kickoff_utc": "2026-07-18T21:00:00+00:00",
+    "mode": "A",
+    "probs_90": {
+      "home": 0.4060570897422979,
+      "draw": 0.3046645659581265,
+      "away": 0.28927834429957555
+    },
+    "qualify_home": 0.5664084013255744,
+    "lambdas": {
+      "home": 1.304320505279452,
+      "away": 1.0847587729664827
+    },
+    "inputs": {
+      "instrument": "M v2 (calibration.json) — AUTO-M-LOCK: pure Elo, no situational tuning; locked mechanically at pairing-known time (CHANGELOG 2026-07-08)",
+      "elo_home": 2121,
+      "elo_away": 2074,
+      "elo_diff_raw": 47,
+      "elo_diff_adjustment": 0,
+      "elo_diff_effective": 47,
+      "adjustment_reasons": [
+        "0 net, neutral venue: no host nation playing at home; M kept as pure-Elo control — all situational synthesis lives in J (added later via amend, pre-market)"
+      ],
+      "pk_home": 0.5,
+      "goals_note": "lambdas from calibrated curves"
+    },
+    "rationale": [
+      "Elo +47: France 2121 vs England 2074, eloratings.net World.tsv fetched 2026-07-16T02:40:00.207646+00:00 (raw snapshots: 20260716T024000Z_World.tsv, 20260716T024000Z_en.teams.tsv).",
+      "AUTO-M-LOCK: mechanical price-blind arithmetic at pairing-known time — eliminates the m92 MISSING failure class. No analyst judgment is embedded in this version."
+    ],
+    "invalidation": [
+      "Situational facts (injuries/suspensions/lineups) belong to J or to a reasoned amend with the concrete new information — this v1 is the pure-Elo control and needs no invalidation conditions of its own.",
+      "Instrument J must be added by an odds-clean session via lock.py amend BEFORE any odds contact for this match; score.py drops a post-market j mechanically (contaminated_j).",
+      "PRE-REGISTERED ACTION TREE (T-75min lineup window, 2026-07-18 ~19:45 UTC, session must be present; magnitudes pre-committed at Fable acceptance, never recomputed ad hoc; market price is never an amend reason): (1) Bellingham suspended by FIFA over the Barco incident before kickoff -> amend +8 France (star class, below the Messi/Yamal 10-class; England's joint-top scorer and primary engine). (2) Mbappe NOT in the France XI -> amend -4 France (removes Factor 2's size cap). (3) Kane NOT in the England XI -> amend +4 France. (4) Rotation-count trigger, baseline = each team's semifinal starting XI, Saliba excluded from France's count: if England's change count >= France's -> amend +6 France (Factor 2's premise reversed); if France's changes minus England's >= 5 -> amend an ADDITIONAL -3 France. (5) GK: uncapped Risser starts for France -> additional -3 France; Dean Henderson starts for England -> +2 France. (6) Anything else (Stones rested, Konsa/O'Reilly in, Doue/Cherki starts, etc.) -> stand (squad-depth noise, already inside Factor 2)."
+    ],
+    "sources": [
+      {
+        "item": "Elo France 2121 (FR), England 2074 (EN); diff +47",
+        "source": "https://www.eloratings.net/World.tsv + https://www.eloratings.net/en.teams.tsv (raw in data/elo_snapshots/)",
+        "as_of": "2026-07-16T02:40:00.207646+00:00"
+      },
+      {
+        "item": "Fixture: Match 103, Hard Rock Stadium, Miami Gardens FL, ko 2026-07-18T21:00:00+00:00",
+        "source": "worldsoccertalk.com France vs England third-place match preview + englandfootball.com fixture details, both 2026-07-15/16",
+        "as_of": "2026-07-16"
+      },
+      {
+        "item": "Saliba OUT, surgery looming, ~4-5 months (multi-source)",
+        "source": "nbcsports.com / goal.com / sports.orange.fr / footmercato.net",
+        "as_of": "2026-07-15/16"
+      },
+      {
+        "item": "Tuchel: 'one less day of recovery than France... professionalism'; 'none of our players and none of the French players want to play this match'; stays through Euro 2028",
+        "source": "goal.com blt74d5409807732276 / espn.com id 49371265",
+        "as_of": "2026-07-16"
+      },
+      {
+        "item": "France heavy-rotation press consensus (Kante, L.Hernandez, Gusto, Zaire-Emery, Cherki playing time; Olise/Dembele drained; only Digne+Rabiot outdoors on 07-15); squad-morale entourage quote (single-source)",
+        "source": "touteleurope.eu / maxifoot article-65384 / franceinfo (training report)",
+        "as_of": "2026-07-15/16"
+      },
+      {
+        "item": "England near-full predicted XI (Pickford; Spence, Konsa, Guehi, O'Reilly; Rice, Anderson; Rogers, Bellingham, Gordon; Kane); Reece James out (media consensus, unofficial); Stones possible precautionary rest",
+        "source": "sportsmole.co.uk 601292 / 601289",
+        "as_of": "2026-07-16"
+      },
+      {
+        "item": "Bellingham-Barco slap incident; FIFA proceedings NOT confirmed open as of 07-16 (suspension risk = action-tree trigger 1)",
+        "source": "sportbible.com / gbnews.com / bolavip.com",
+        "as_of": "2026-07-16"
+      },
+      {
+        "item": "Golden Boot: Mbappe 8 = Messi 8 (assists tiebreaker Messi 4); Kane 6, Bellingham 6; bronze-match goals count; Mbappe reported 'tempted' to start (RMC-derived)",
+        "source": "goal.com standings / espn.com tracker / touteleurope.eu",
+        "as_of": "2026-07-16"
+      },
+      {
+        "item": "Brice Samba right-calf knock at 07-15 training, exams pending (France GK depth: Maignan or uncapped Risser)",
+        "source": "info.fr / footmercato.net a1283395420303175477",
+        "as_of": "2026-07-16"
+      },
+      {
+        "item": "NWS Miami point forecast Sat 07-18: high 93F, 40% storms after 2pm / 30% before 8pm (brackets 5pm ET kickoff)",
+        "source": "forecast.weather.gov MapClick lat=25.958 lon=-80.2389 (issued 7:01am EDT)",
+        "as_of": "2026-07-16"
+      },
+      {
+        "item": "Deschamps final match (185th, 14 years); presser: 'on va tout faire pour aller la chercher' + duty framing",
+        "source": "fr.news.yahoo.com 103724303 / franceinfo 8109125 / worldsoccertalk",
+        "as_of": "2026-07-16"
+      }
+    ],
+    "contamination_notes": "AUTO-M-LOCK (CHANGELOG 2026-07-08): this lock was produced mechanically from eloratings.net only — the process cannot see an odds source, and no analyst formed a judgment. Instrument J is absent in v1 by design; it must be added pre-market by an odds-clean session (score.py audits the j-bearing version's timestamp against first odds contact). | J added 2026-07-16 by an odds-clean session: analyst has seen NO market price for m103 (odds/ contains no m103 file at amend time -- verified programmatically immediately before this build; the same session settled m101/m102 and read THOSE matches' closing prices, which is per-match-irrelevant to m103). Evidence: base bundle m103_fra_eng_prelock.md passed firewall.py CLEAN before reading; two refresh bundles (FRA/ENG sides) gathered by odds-firewalled subagents -- ENG bundle CLEAN on first validation; FRA bundle FLAGGED on first validation (digit inside a French bookmaker page TITLE within its odds_exposure section, '3e place' adjacent to 'Cotes' -- benign class), returned to the subagent for self-fix WITHOUT the analyst reading it, re-validated CLEAN, only then read. Golden-Boot-adjacent searches surfaced odds-page titles in result listings on both sides; no market number was transcribed anywhere (per odds_exposure sections). DECISION_PROTOCOL section-7 acceptance: performed by Fable 5 in-session (owner switched the session model before the amend; recorded in j.basis).",
+    "j": {
+      "probs_90": {
+        "home": 0.4021,
+        "draw": 0.3052,
+        "away": 0.2927
+      },
+      "qualify_home": 0.5622,
+      "basis": [
+        "J deviates from M by NET -3 d_eff toward England (M d=+47 -> J d=+44), the net of THREE decomposed factors (m96 lesson: no undecomposed bundles): rest_travel +3 France, incentive_rotation -4 France, injury_replacement -2 France (Saliba). qualify_home = P(France wins the bronze match incl ET+PK) at pk_h=0.5. First England-ward net deviation in the sample; the direction is computed from the evidence, not engineered.",
+        "FACTOR 1, rest_travel +3 (toward France): England has 3 rest days (semi 07-15 Atlanta) vs France's 4 (semi 07-14 Arlington) -- confirmed by Tuchel himself on 07-15: 'We have one less day of recovery than France, but we will do it with professionalism' (Goal.com 07-16). England additionally carried a 120-minute QF (Norway, 07-11 AET) vs France's 90-minute QF two days EARLIER (Morocco, 07-09) -- a heavier cumulative load over the last two rounds. Partial offset folded into the size: France's longer travel leg to Miami (Boston camp ~1,250mi vs Atlanta ~600mi, both arriving J-2). Absorption: maximal -- the asymmetry was stated by the England coach in a televised presser, so only residual is priced. Mechanism-type self-flag: rest_travel ledger n=2, J-better 1/2, mixed (n<5, informational). Conservative +3, deliberately below m104's +5 (which had two extra ETs plus a 39-year-old playing every minute).",
+        "FACTOR 2, incentive_rotation -4 (toward England): asymmetric rotation and motivation signals, France-negative. France side: multi-outlet French press consensus (RMC-derived: touteleurope, maxifoot ~07-16) expects HEAVY rotation -- reported playing time for Kante and L. Hernandez (unused all tournament), Gusto, Konate, Zaire-Emery, Cherki; attack 'largement remaniee' with Olise and Dembele named as physically drained; at the 07-15 recovery session only Digne and Rabiot of the Spain starters did outdoor laps; Kante appeared at the M103 presser alongside Deschamps (weak XI signal). Squad-morale signal folded in AT REDUCED WEIGHT (single-source maxifoot, entourage: players 'disgusted at having to play', some planning vacations) -- counted inside this factor, NOT as a standalone. England side: UK media consensus expects a NEAR-FULL XI ('Tuchel should otherwise field a strong XI', Sports Mole 07-16 predicted XI keeps Pickford-Rice-Anderson-Rogers-Bellingham-Gordon-Kane; no Rashford/Toney/Madueke starts predicted anywhere), Tuchel publicly committed to 'professionalism' and stays through Euro 2028. SIZE CAP applied: Mbappe is reported 'tempted' to start chasing the Golden Boot (tied 8 with Messi; FIFA tiebreaker is assists, Messi 4 leads -> Mbappe must OUT-score, and bronze-match goals count; five prior Golden Boots were decided in third-place matches) -- France's highest-leverage attacker likely plays, capping the factor at -4 instead of deeper. Honesty flag: BOTH XIs are preview-grade until T-75; the pre-registered action tree below re-adjusts on the actual team sheets. Mechanism-type: incentive/rotation signals (legal J family); no ledger precedent for a dead-rubber context (first bronze match in the sample) -> novel-context flag, size kept in the smallest class.",
+        "FACTOR 3, injury_replacement -2 (toward England): William Saliba is confirmed OUT (multi-source 07-15/16: nbcsports, goal.com, footmercato; back surgery looming, ~4-5 months out; absent from 07-15 training; French media call him 'the only confirmed forfait'). First-choice CB out would normally rate the +/-5 secondary-starter class (m104 tree precedent), but two blunting facts cap it at -2: France's CB depth is strong (Konate/Upamecano/Lacroix -- the predicted XIs slot Konate or Lacroix in without reaching for a makeshift), and in an expected-rotation match the replacement-level gap narrows. Overlap guard: Saliba is EXCLUDED from Factor 2's rotation-change counting (see action tree) so the forced change is not double-priced.",
+        "CONSIDERED AND DECLINED -- France morale collapse as a standalone factor: single-source (maxifoot entourage quote), and two-sided against the same camp's counter-signals (Deschamps 07-16 presser: 'on va tout faire pour aller la chercher', duty framing, plus his 185th-and-final match farewell narrative with Mbappe's earlier 'play the best game for him' quote). Folded into Factor 2 at reduced weight instead; declining the standalone is the m96 anti-bundle discipline.",
+        "CONSIDERED AND DECLINED -- Deschamps farewell win-incentive as +France: the France-positive mirror of the morale story, resting on narrative quotes only; declining the flattering side of a two-sided story is the two-sidedness check (m101/m104 pattern).",
+        "CONSIDERED AND DECLINED -- Reece James out (+France): strong media consensus but no official confirmation, AND the replacement (Spence) had a standout semifinal and keeps the predicted RB slot regardless -- net impact below the smallest size class.",
+        "CONSIDERED AND DECLINED -- third-place-match openness/draw-suppression base rate (approx. 1 draw-in-90 in the 17 editions since 1954, zero since 1990; no sub-2-goal bronze match since 1974; recent-era high-scoring tendency): (i) fully public and heavily cited in previews -> market-priced, feeding it in makes J a market simulator; (ii) the preregistered ordered-logit 1x2 instrument takes only d_eff and admits no draw-specific shape deviation, and the lock schema has no j.lambdas field to carry a tempo multiplier (m104 precedent). Logged for the decision-support layer only.",
+        "CONSIDERED AND DECLINED -- semifinal form/process (France 0.30 xG vs Spain, a 60-year low; England 0.53 xG vs Argentina): both processes were poor, roughly symmetric, and both losses are already inside the 07-16 Elo fetch; trading either side is noise.",
+        "CONSIDERED AND DECLINED -- Miami heat/thunderstorm (NWS 07-16 point forecast: high 93F, 30-40% storms bracketing the 5pm ET kickoff): affects both sides symmetrically, tempo-axis only, uncodable in schema; logged for the decision layer.",
+        "qualify_home uses pk_h=0.5 (the default): neither keeper carries a Dibu-class shootout record -- Pickford's international shootout save record was already characterized in this project's m102 lock as near GK base rate (career 4/14), and no anchored Maignan shootout evidence was found; both GK identities additionally carry rotation uncertainty (Samba's 07-15 calf knock means France's options are Maignan again or an uncapped debutant Risser; Pickford predicted but unconfirmed). No deviation without anchoring.",
+        "FABLE ACCEPTANCE (DECISION_PROTOCOL section 7): owner switched the session model to Fable 5 before this amend; the J-basis acceptance was performed by Fable in-session -- all three factor magnitudes and the pk layer approved; one tightening applied: the action tree's rotation-change counting got a crisp baseline (changes counted vs each team's semifinal starting XI; Saliba excluded from France's count to avoid double-pricing Factor 3)."
+      ]
+    }
+  },
+  "sha256": "a870b9ece174048b453a9db8493a0f64aaf1cd00c3a7d969c91f1628006a56d4"
+}

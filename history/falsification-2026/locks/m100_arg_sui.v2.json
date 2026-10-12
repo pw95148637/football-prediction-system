@@ -1,0 +1,105 @@
+{
+  "locked_at": "2026-07-09T08:03:56.114238+00:00",
+  "version": 2,
+  "amend_reason": "instrument J synthesis (pre-market, auto-M-lock process, CHANGELOG 2026-07-08): fresh firewalled team news both sides (Manzambi likely out per Yakin 7/8; SUI 120min+PK+charter+venue change vs ARG 90min) -> J = M+30 d_eff decomposed into rest_travel +20 / injury_replacement +10; prelock pro-SUI transition thesis expired per its own Manzambi condition",
+  "original_sha256": "2892e11c8cd0b8b6b608accab15ea59f2239be80ae9ab49ace8384d81c49c698",
+  "payload": {
+    "match_id": "m100_arg_sui",
+    "pilot": false,
+    "teams": {
+      "home": "Argentina",
+      "away": "Switzerland"
+    },
+    "kickoff_utc": "2026-07-12T01:00:00+00:00",
+    "mode": "A",
+    "probs_90": {
+      "home": 0.6229929986583926,
+      "draw": 0.2329637886679829,
+      "away": 0.14404321267362447
+    },
+    "qualify_home": 0.7664272631498539,
+    "lambdas": {
+      "home": 1.7850138893117973,
+      "away": 0.7926398328516412
+    },
+    "inputs": {
+      "instrument": "M v2 (calibration.json) — AUTO-M-LOCK: pure Elo, no situational tuning; locked mechanically at pairing-known time (CHANGELOG 2026-07-08)",
+      "elo_home": 2156,
+      "elo_away": 1949,
+      "elo_diff_raw": 207,
+      "elo_diff_adjustment": 0,
+      "elo_diff_effective": 207,
+      "adjustment_reasons": [
+        "0 net, neutral venue: no host nation playing at home; M kept as pure-Elo control — all situational synthesis lives in J (added later via amend, pre-market)"
+      ],
+      "pk_home": 0.5,
+      "goals_note": "lambdas from calibrated curves"
+    },
+    "rationale": [
+      "Elo +207: Argentina 2156 vs Switzerland 1949, eloratings.net World.tsv fetched 2026-07-08T10:21:18.646464+00:00 (raw snapshots: 20260708T102118Z_World.tsv, 20260708T102118Z_en.teams.tsv).",
+      "AUTO-M-LOCK: mechanical price-blind arithmetic at pairing-known time — eliminates the m92 MISSING failure class. No analyst judgment is embedded in this version."
+    ],
+    "invalidation": [
+      "Situational facts (injuries/suspensions/lineups) belong to J or to a reasoned amend with the concrete new information — this v1 is the pure-Elo control and needs no invalidation conditions of its own.",
+      "Instrument J must be added by an odds-clean session via lock.py amend BEFORE any odds contact for this match; score.py drops a post-market j mechanically (contaminated_j).",
+      "PRE-REGISTERED ACTION TREE (T-75min lineup window, 2026-07-11 ~23:45 UTC): (1) Manzambi STARTS -> amend: remove injury_replacement +10 AND evaluate the prelock pro-SUI transition thesis (could swing J to ~M or slightly SUI); (2) Argentina loses Messi/Romero/L.Martinez to injury -> amend toward SUI with the concrete fact; (3) Aebischer/Jaquez return or Vargas doubt -> no amend (squad-depth noise); (4) anything else -> stand. Market price is never an amend reason."
+    ],
+    "sources": [
+      {
+        "item": "Elo Argentina 2156 (AR), Switzerland 1949 (CH); diff +207",
+        "source": "https://www.eloratings.net/World.tsv + https://www.eloratings.net/en.teams.tsv (raw in data/elo_snapshots/)",
+        "as_of": "2026-07-08T10:21:18.646464+00:00"
+      },
+      {
+        "item": "Fixture: Match 100, Kansas City Stadium (GEHA Field at Arrowhead), Kansas City, neutral, ko 2026-07-12T01:00:00+00:00",
+        "source": "Al Jazeera QF schedule 2026-07-06 + ESPN fixtures + worldcupwiki M100 page, cross-verified via odds-firewalled subagent, accessed 2026-07-08 (kickoff 8pm CDT 7/11 = 01:00 UTC 7/12, 5 sources self-consistent)",
+        "as_of": "2026-07-08"
+      },
+      {
+        "item": "Switzerland team news: Manzambi likely out (Yakin quotes 7/8), Vargas fit (scored winning pen), Aebischer/Jaquez status unknown for QF, no new injuries from COL match, charter Vancouver->KC 7/8 PM, first venue change",
+        "source": "ESPN / Yahoo / Watson.ch / kicker.ch / SRF / Daily Gazette-AP via odds-firewalled subagent, file m100_sui_news.md (mechanically sanitized + firewall-validated)",
+        "as_of": "2026-07-08"
+      },
+      {
+        "item": "Argentina team news: no new injuries from Egypt match (Molina/Romero/L.Martinez started and finished; Medina cramp/rotation), no suspensions either side (QF card reset verified), no announced transition-defense adjustment, 90-minute match + short travel",
+        "source": "football-italia / ESPN / Mundo Albiceleste / Squawka / MLSSoccer via odds-firewalled subagent, file m100_arg_news.md (firewall-validated CLEAN)",
+        "as_of": "2026-07-08"
+      }
+    ],
+    "contamination_notes": "AUTO-M-LOCK (CHANGELOG 2026-07-08): this lock was produced mechanically from eloratings.net only — the process cannot see an odds source, and no analyst formed a judgment. Instrument J is absent in v1 by design; it must be added pre-market by an odds-clean session (score.py audits the j-bearing version's timestamp against first odds contact).",
+    "j": {
+      "probs_90": {
+        "home": 0.661,
+        "draw": 0.2142,
+        "away": 0.1248
+      },
+      "qualify_home": 0.8016,
+      "basis": [
+        "J deviates from M by +30 d_eff toward Argentina (M d=+207 -> J d=+237; ~+3.8pp), decomposed into TWO factors (m96 lesson: no undecomposed bundles): (1) rest_travel +20 -- Switzerland played 120 minutes + penalty shootout on 7/7 and only departed Vancouver by charter on 7/8 afternoon (no direct flights, SRF 2026-07-08), facing its FIRST venue change of the tournament after being based at BC Place for 3+ matches; Argentina played 90 minutes on 7/7 with a far shorter Atlanta->KC hop. Partly market-priced -> residual only. SELF-FLAG: this mechanism type is 0-for-1 on pitch-materialization in this project s own ledger (m96: the more-fatigued side outplayed the rested side and lost on penalties anyway). (2) injury_replacement +10 -- Johan Manzambi (Switzerland s breakout attacker, 3g+2a, the only Salah/Al-Tamari-class carrier per m100 prelock) is LIKELY OUT: Yakin 2026-07-08 quotes (Yahoo/Watson.ch): -We still had hopes until this morning. But I don t think you can recover from an injury like that in such a short time-; -Rather not. I don t know if it would be medically responsible to deploy him again.- Not formally ruled out -> magnitude kept small; amend trigger registered. Without him Switzerland produced 0.35 xG vs Colombia (tournament-low 0.7 combined) -- pure Elo cannot see this squad-strength downgrade.",
+        "The prelock pro-Switzerland thesis (Argentina transition-defense weakness x Swiss counter weapon, m100_arg_sui_prelock.md) was evaluated and NOT applied, per the prelock s own pre-registered decision rule: it required Manzambi fit -- without him Switzerland demonstrably cannot exploit that weakness (0.35 xG vs Colombia), and Argentina announced no structural adjustment either way (Scaloni made no QF-specific tactical statement; the weakness stays real but unexploitable by this opponent). Ndoye alone was judged insufficient: he was Switzerland s only counter outlet vs Colombia and it still produced the tournament s bluntest attacking display.",
+        "Deliberately NOT applied: -Elo overrates a +207 favourite, shade toward market- (banned market-simulator input); -Argentina 62->66% walks further into the documented Elo favourite-overconfidence tail- is acknowledged as a SELF-FLAG but doctrine forbids correcting J with market-vs-Elo abstractions -- committed and scoreable, as in m95/m98.",
+        "qualify_home uses pk_h=0.55 (not the 0.5 default): E. Martinez has a documented multi-shootout record (2022 WC QF + final, 2024 Copa) vs Kobel s single recent shootout; conservative magnitude, m95 pilot precedent (pk .6). Affects qualify only, not the B1 1x2 vector.",
+        "Both evidence files passed the mechanical odds firewall (firewall.py) before the analyst read them: m100_arg_news.md CLEAN on first pass; m100_sui_news.md flagged on URL-slug digits (bet365/promo slugs) + its own disclaimer sentences, sanitized mechanically (digits stripped in URLs and near residual market-word disclaimers) and re-validated CLEAN before reading -- no market-computed number reached the analyst. Session is odds-clean for m100 (no odds file existed pre-amend; Phase 2 pull happens only after this lock)."
+      ],
+      "factors": [
+        {
+          "mechanism_type": "rest_travel",
+          "direction": "home",
+          "d_eff_shift": 20,
+          "evidence": "120min+PK 7/7 + charter Vancouver->KC 7/8 PM + first venue change (SRF 2026-07-08) vs ARG 90min + short hop",
+          "absorption_case": "match-length fatigue is priced; the venue-continuity loss and late charter specifics are fresher (reported 7/8)",
+          "magnitude_note": "residual only; self-flagged 0-for-1 materialization (m96)"
+        },
+        {
+          "mechanism_type": "injury_replacement",
+          "direction": "home",
+          "d_eff_shift": 10,
+          "evidence": "Manzambi likely out (Yakin 7/8: medically irresponsible to deploy); SUI 0.35 xG without him vs COL",
+          "absorption_case": "public since 7/6 but pure-Elo M cannot see it; magnitude small because not formally ruled out",
+          "magnitude_note": "amend trigger registered if he starts"
+        }
+      ]
+    }
+  },
+  "sha256": "c15301d5d852350139d0c267eb23921d0026bac805fb01c57bff9c0662aa98a3"
+}

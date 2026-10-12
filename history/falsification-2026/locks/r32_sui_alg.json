@@ -1,0 +1,92 @@
+{
+  "locked_at": "2026-07-03T01:57:40.207237+00:00",
+  "version": 1,
+  "payload": {
+    "match_id": "r32_sui_alg",
+    "pilot": true,
+    "teams": {
+      "home": "Switzerland",
+      "away": "Algeria"
+    },
+    "kickoff_utc": "2026-07-03T02:00:00+00:00",
+    "kickoff_note": "kickoff ~1h after lock per user; schedule sources conflicted (ESPN said Jul 2 PT evening, TechRadar Jul 3 EST) — user statement wins",
+    "mode": "A",
+    "probs_90": {
+      "home": 0.5316,
+      "draw": 0.2716,
+      "away": 0.1968
+    },
+    "qualify_home": 0.6885,
+    "lambdas": {
+      "home": 1.562,
+      "away": 0.9055
+    },
+    "inputs": {
+      "instrument": "M v2 (calibration.json)",
+      "elo_home": 1914,
+      "elo_away": 1785,
+      "elo_diff_raw": 129,
+      "elo_diff_adjustment": 10,
+      "elo_diff_effective": 139,
+      "adjustment_reasons": [
+        "+10: Amoura (Algeria's in-form forward) injured, unlikely to start — small because he already missed the Jordan and Austria games, so recent Elo movement partly reflects Algeria without him",
+        "0: Switzerland fully fit (Widmer back in training); Manzambi start-or-bench is selection, not availability",
+        "0: BC Place roofed, neutral, both sides ~6 days rest"
+      ],
+      "pk_home": 0.5
+    },
+    "j": {
+      "probs_90": {
+        "home": 0.4848,
+        "draw": 0.2871,
+        "away": 0.2281
+      },
+      "qualify_home": 0.6452,
+      "basis": [
+        "single mechanism, single direction (ESP-AUT lesson: no double hedge): cross-confederation Elo uncertainty. AUS-EGY pilot showed the market's implied rating of a CAF side ~90 Elo above eloratings' relative view; UEFA-CAF links are thin",
+        "partial weight (-34 on d_eff, ~40% of the AUS-EGY inversion) because Algeria's Elo has ALREADY surged (+81/+144 over recent windows) — the system partly caught their rise, unlike Egypt's case",
+        "player-quality check supports the shade: Mahrez/Ait-Nouri/Gouiri/Aouar/Bentaleb is premium-league core comparable to Switzerland's (Kobel/Akanji/Xhaka/Embolo)",
+        "no extra draw bump, no style hedge: J = M curve evaluated at d=105, nothing else"
+      ]
+    },
+    "rationale": [
+      "Elo +129 raw: solid but not crushing favorite; Switzerland topped group (4-1 BIH, 2-1 CAN, 1-1 QAT), Algeria third in J via 3-3 Austria",
+      "defense contrast mild: CH conceded 3 in 3; DZ conceded 3 to Austria alone in the chaos game",
+      "goals model lambdas 1.55/0.93 (total ~2.5)"
+    ],
+    "invalidation": [
+      "Amoura declared fit and starts -> amend -10",
+      "Mahrez or Gouiri missing from announced XI -> amend toward CH",
+      "Manzambi starting does not trigger amendment (selection variance, already in rating)"
+    ],
+    "sources": [
+      {
+        "item": "Elo: Switzerland CH 1914 (#11), Algeria DZ 1785 (#27), verbatim rows + code mapping audited; TSV fresh (Spain already 2159 post 3-0)",
+        "source": "eloratings.net World.tsv + en.teams.tsv",
+        "as_of": "2026-07-03"
+      },
+      {
+        "item": "Switzerland fully fit, Widmer (hip) back in training; predicted XI Kobel-Akanji-Xhaka-Embolo core; Manzambi selection question",
+        "source": "sportsmole.co.uk team-news 600443 + preview 600371",
+        "as_of": "2026-07-03"
+      },
+      {
+        "item": "Algeria: Amoura injured (missed JOR+AUT), unlikely to start; otherwise clean; predicted XI Mahrez/Gouiri/Aouar/Bentaleb/Ait-Nouri",
+        "source": "sportsmole.co.uk team-news 600443",
+        "as_of": "2026-07-03"
+      },
+      {
+        "item": "group results: CH 7pts top (4-1 BIH, 2-1 CAN, 1-1 QAT); DZ third Group J incl. 3-3 AUT final MD",
+        "source": "goal.com preview + moroccoworldnews",
+        "as_of": "2026-07-03"
+      },
+      {
+        "item": "venue BC Place Vancouver (roof); kickoff ~1h after this lock per user",
+        "source": "goal.com/user",
+        "as_of": "2026-07-03"
+      }
+    ],
+    "contamination_notes": "Preview pages consulted for team news only; no odds numbers read before this lock. Opta match-specific number not available; only the directional fact that Egypt (54.08%) was Opta's highest African advance probability, implying Algeria below that."
+  },
+  "sha256": "01ec610234ea5f8f4f16c1e1ebfa8c9ebd5ed9321cd001c234ab3826b7c98b6a"
+}

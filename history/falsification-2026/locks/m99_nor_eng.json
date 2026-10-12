@@ -1,0 +1,125 @@
+{
+  "locked_at": "2026-07-07T06:16:38.310539+00:00",
+  "version": 1,
+  "payload": {
+    "match_id": "m99_nor_eng",
+    "teams": {
+      "home": "Norway",
+      "away": "England"
+    },
+    "kickoff_utc": "2026-07-11T21:00:00Z",
+    "mode": "A",
+    "probs_90": {
+      "home": 0.237,
+      "draw": 0.2905,
+      "away": 0.4725
+    },
+    "qualify_home": 0.3666,
+    "lambdas": {
+      "home": 0.9854,
+      "away": 1.4359
+    },
+    "inputs": {
+      "elo_home_norway": 1972,
+      "elo_away_england": 2076,
+      "elo_source": "eloratings.net World.tsv, read 2026-07-07 (NO 1972 rank#8, EN 2076 rank#4)",
+      "elo_diff_raw": -104,
+      "d_eff": -96,
+      "d_eff_adjustments": [
+        "Quansah suspension (ENG straight red vs Mexico, auto 1-match ban; treat OUT pending FA appeal): -10 ENG. CB depth loss + forces RB reshuffle with Reece James also a hamstring doubt. Modest because first-choice CB pair Stones+Guehi remain and RB cover is deep (Walker/Konsa/Spence).",
+        "Moller Wolfe (NOR starting LB) fitness doubt after knock vs Brazil: -4 NOR (half-weight of a full LB downgrade, he may still play).",
+        "England harder R16 (36 min with 10 men, Azteca altitude + longer international trip to Miami): -2 ENG net, offset by ~5-6 days rest, altitude-drop recovery benefit, and Miami heat/humidity hitting both sides."
+      ],
+      "venue": "Hard Rock Stadium, Miami Gardens FL (neutral; neither team is a host) -> no +75 host bonus",
+      "pk_h": 0.5,
+      "pk_note": "Kept default 0.5. Considered a small England shootout edge (Pickford's documented PK-save record, England's improved recent shootout history) but held conservative to avoid overfitting a single-datapoint keeper adjustment; England lean noted, not priced in."
+    },
+    "rationale": "M is calibrated Elo->1x2 (predict_1x2, neutral symmetrized) at d_eff=-96. England is a genuine top-4 side (Elo #4, elite defensive xG ~0.58/game) vs Norway (Elo #8 but on a large recent surge; first-ever WC QF). Norway's R16 win over Brazil massively flattered their process (0.84 xG vs Brazil 2.73) - a pure Haaland finishing/keeper heist; England's R16 win over Mexico also flattered process (out-xG'd, won a man down on finishing + game-state). Net: England clear but not overwhelming favorite (47.3%), live draw (29.0%), Norway 23.7%. J = M: no market-unavailable information exists to justify deviating. All material facts (Quansah suspension, injuries, Haaland's quality) are public and priced. Haaland's finishing premium is real but SYMMETRIC (England's Kane +2.37 over xG, Bellingham also overperform) so it ~cancels in the 1x2, and is constrained by Norway's weak chance creation vs England's elite defense. The loud 'Norway is Elo-inflated / R16 was variance' signal is the doctrine-forbidden 'Elo overrates' input (would make J a market simulator - the m91/Rui-Alg lesson); it is explanation-only and NOT fed to J.",
+    "invalidation": [
+      "Quansah suspension overturned on FA appeal AND he starts -> remove the -10 ENG adjustment (amend toward England).",
+      "Confirmed pre-match XI shows Norway missing Odegaard OR Haaland (injury, not rotation) -> large amend toward England.",
+      "Confirmed pre-match XI shows England resting/missing multiple first-choice starters (Kane/Bellingham/Rice) -> amend toward Norway.",
+      "Moller Wolfe confirmed OUT and replaced by a clear downgrade -> extend the -4 NOR adjustment.",
+      "Extreme weather / lightning delay materially altering the game -> note but do not repredict."
+    ],
+    "sources": [
+      {
+        "item": "Elo NO 1972 / EN 2076",
+        "source": "eloratings.net World.tsv",
+        "as_of": "2026-07-07"
+      },
+      {
+        "item": "Fixture: Match 99, Hard Rock Stadium Miami, Sat 11 Jul 2026, 21:00 UTC, Norway listed first",
+        "source": "englandfootball.com Match Centre + World Soccer Talk + worldcupwiki.com",
+        "as_of": "2026-07-07"
+      },
+      {
+        "item": "Quansah suspended (54' straight red vs Mexico, auto 1-match ban; FA considering appeal, unresolved)",
+        "source": "ESPN + Bolavip/FanSided red-card explainers",
+        "as_of": "2026-07-06/07"
+      },
+      {
+        "item": "England injuries: Henderson out (wrist, rest of WC); Reece James doubtful (hamstring, could not train); Saka managed Achilles / Rice playing through pain (both expected)",
+        "source": "ESPN England hub + Sky Sports",
+        "as_of": "2026-07-07"
+      },
+      {
+        "item": "Norway: no suspensions; Moller Wolfe LB fitness doubt; Haaland fully fit (7 goals, joint Golden Boot); Odegaard fit (group benching was rotation)",
+        "source": "Norway QF team-news previews + Al Jazeera + Sky Sports match report",
+        "as_of": "2026-07-07"
+      },
+      {
+        "item": "Rest/travel: both no ET in R16; Norway 2-1 Brazil (5 Jul, MetLife) ~6 days rest; England 3-2 Mexico (5/6 Jul, Azteca) ~5-6 days, harder R16 (10 men 36 min) + longer trip",
+        "source": "ESPN + Al Jazeera + englandfootball.com",
+        "as_of": "2026-07-07"
+      },
+      {
+        "item": "xG: Norway R16 0.84 vs Brazil 2.73 (heist); England group ~2.13 for / ~0.58 against per game, out-xG'd by Mexico in R16",
+        "source": "xgscore.io + theanalyst.com/Opta via firewalled subagent",
+        "as_of": "2026-07-07"
+      },
+      {
+        "item": "Finishing: Haaland 7g/18 shots (39%, best since Lineker 86); Kane 5g/2.63 xG (+2.37); Bellingham 4g overperforming; tournament running ~21-23% goals-over-xG",
+        "source": "ESPN stats + search-aggregated finishing data via firewalled subagent",
+        "as_of": "2026-07-07"
+      },
+      {
+        "item": "Independent model context (Phase-2 layer): Dimers xG-ML England 54.1/Draw 22.9/Norway 23.0 (does not disclose market inputs); Opta tournament-win ENG 17% (2nd) / NOR 7%, Opta MATCH model self-admits using betting-odds inputs (circular, downweighted)",
+        "source": "dimers.com + theanalyst.com/tntsports via firewalled subagent",
+        "as_of": "2026-07-07"
+      },
+      {
+        "item": "Expert previews: unanimous England narrow favorites (~2-1), upset believable; Quansah suspension the key destabilizer; key duel Guehi vs Haaland, Odegaard vs England press",
+        "source": "goalscorner.com + Squawka/aggregated previews via firewalled subagent",
+        "as_of": "2026-07-07"
+      }
+    ],
+    "j": {
+      "probs_90": {
+        "home": 0.237,
+        "draw": 0.2905,
+        "away": 0.4725
+      },
+      "qualify_home": 0.3666,
+      "basis": [
+        "J = M by deliberate discipline. Consulted the full evidence pack (Opta tournament-win, Dimers 54.1% England, xG both teams, Haaland/Kane/Bellingham finishing data, unanimous expert previews favoring England).",
+        "No LEGITIMATE market-unavailable information found to move J off M: Quansah suspension, all injuries, and Haaland's finishing quality are public and priced by sharp books.",
+        "Haaland 'finisher premium' (a permitted J input per revised protocol) was weighed but NOT applied net, because it is symmetric with England's own overperforming finishers (Kane +2.37/xG, Bellingham) and is throttled by Norway's weak chance creation (0.84 xG vs Brazil) against England's elite defense (~0.58 xGA/game) -> no clean directional 1x2 edge.",
+        "Rejected input (doctrine): 'Norway's Elo is inflated by a recent surge and their R16 was variance.' This is the forbidden 'Elo-vs-market known divergence' mechanism; it would turn J into a market simulator (m91/Rui-Alg lesson). Explanation-only: it predicts the market may price Norway at or below M's 23.7%, but J does not move on it.",
+        "Expected M/J-vs-market posture: if market prices Norway <= ~23.7% (England >= ~47%, likely toward Dimers' 54%), any Norway-side gap is my model's inflation bias, not a market error -> Pass per m95 discipline. Committed to J=M as a real, scorable data point."
+      ]
+    },
+    "contamination_notes": {
+      "analyst_saw_prices": false,
+      "method": "All web research done by two odds-firewalled subagents; the locking analyst never saw any betting price. M computed purely from Elo + concrete situational facts.",
+      "firewall_exposure": [
+        "squawka.com norway-vs-england predictions/best-bets/odds page - subagent saw title slug only ('best bets/latest odds'), not opened, no numbers",
+        "dimers.com bet-hub nor_eng - betting hub; subagent extracted xG-ML model % only, ignored posted markets",
+        "tntsports supercomputer-'favourite' article - directional slug 'favourite'; only Opta model % extracted",
+        "sportsbettingdime / covers / foxsports / prizepicks / yahoo / oddschecker / natesilver (paywalled) / neilpaine 'odds tracker' - appeared as search-result titles carrying 'odds', NOT opened, no prices read",
+        "Directional leak acknowledged: multiple slugs implied England-favourite (consistent with Elo/Opta/Dimers/expert consensus already in the evidence pack; no price magnitude seen)"
+      ]
+    }
+  },
+  "sha256": "922b4f603d535778783a7d5b4c7e08b3590c806a8731e5b082ebfd846e137330"
+}

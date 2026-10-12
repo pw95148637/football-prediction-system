@@ -1,0 +1,110 @@
+{
+  "locked_at": "2026-07-06T03:41:46.786432+00:00",
+  "version": 2,
+  "amend_reason": "FIFA independent disciplinary committee overturned Folarin Balogun's suspension on 2026-07-05 (Article 27 probation), ~24h before kickoff -- he is now available and predicted to start alongside Pulisic. This reverses the -25 Elo adjustment applied at v1 lock (built on his suspension + 46% team-xG share). Real new information per PROTOCOL's amend rule (SUI-ALG precedent: 'Amoura declared fit and starts -> amend'), not a market-driven revision. v1 payload untouched.",
+  "original_sha256": "7ca23e4b1c40ebc4b7aa3245f193188430d6dfa7409fb2032c31e70fda8b3669",
+  "payload": {
+    "match_id": "m94_usa_bel",
+    "pilot": false,
+    "teams": {
+      "home": "United States",
+      "away": "Belgium"
+    },
+    "kickoff_utc": "2026-07-07T00:00:00+00:00",
+    "kickoff_note": "Mon Jul 6 8:00pm ET / 5:00pm PT, Lumen Field — reconfirmed by every source checked 2026-07-06 (ESPN gamecast now agrees; the earlier ESPN-fixtures-page 5pm-ET conflict did not reappear and is treated as resolved in favor of the 8pm ET consensus)",
+    "mode": "A",
+    "probs_90": {
+      "home": 0.300714,
+      "draw": 0.306561,
+      "away": 0.392725
+    },
+    "qualify_home": 0.447642,
+    "lambdas": {
+      "home": 1.1061,
+      "away": 1.2788
+    },
+    "inputs": {
+      "instrument": "M v2 (calibration.json)",
+      "elo_home": 1798,
+      "elo_away": 1910,
+      "elo_diff_raw": -112,
+      "elo_diff_adjustment": 75,
+      "elo_diff_effective": -37,
+      "adjustment_reasons": [
+        "+75: pre-registered host-nation bonus (unchanged from v1)",
+        "0 (was -25 in v1): Folarin Balogun's one-match suspension was OVERTURNED by FIFA's independent disciplinary committee on 2026-07-05 (Article 27, one-year probation) roughly 24h before kickoff. He is available and the latest predicted XIs (SI.com, 2026-07-06, two independent articles) have him starting alongside Pulisic in a 3-5-2. This is real new information under PROTOCOL's amend rule (cf. SUI-ALG 'Amoura declared fit and starts -> amend'), not a market-driven revision -- the v1 -25 penalty (built on his 46% team-xG share) is removed entirely rather than partially, since the player who earned that share is back, not a diminished replacement",
+        "0 net: Belgium played 120+min R32 vs Belgium's zero-travel Seattle base camp -- unchanged offsetting wash from v1, no new information on this axis",
+        "0: no new suspensions either side; Debast (BEL, leg) still 'closer to return but starting unlikely' per 2026-07-05 reporting -- no material change from v1's doubtful tag, so no adjustment; McKenzie/Roldan (USA) questionable tags but not projected starters",
+        "0, deliberately unscored: political controversy around the reversal (reported Trump-Infantino call; RBFA called the ruling 'astonishing' and is weighing options incl. a possible CAS appeal) is real context but has no defensible single direction -- could rally the USA dressing room or destabilize Belgium's focus, or the reverse; scoring it either way would violate J's single-direction-only discipline (ESP-AUT lesson), so it is logged and left at zero"
+      ],
+      "pk_home": 0.5,
+      "pk_note": "unchanged from v1 -- no new PK-relevant information found"
+    },
+    "j": {
+      "probs_90": {
+        "home": 0.326824,
+        "draw": 0.308973,
+        "away": 0.364203
+      },
+      "qualify_home": 0.478715,
+      "basis": [
+        "mechanism unchanged from v1 (age/era distortion, half-weight per pilot mechanism list #3): Belgium's current squad is still in transition regardless of the Balogun news -- De Bruyne has completed no 90' this tournament, Lukaku remains a deliberate impact-sub per Garcia, nothing in the 2026-07-04/06 evidence changes that read. Applied to the NEW M base (d=-37, Balogun back): half-weight +22 -> d_J = -15. The mechanism's weight itself is not increased just because a partly-market-derived model (Opta, see below) now shows something closer to parity -- matching Opta would launder a market signal into J, the exact trap named in v1",
+        "residual disagreement recorded, not resolved: Opta's per-match preview (published 2026-07-05, theanalyst.com, first time a match-specific split existed for M94) gives USA 37.2% / ET-bound 26.3% / Belgium 36.5% in 90 minutes -- i.e. a razor-thin USA lean. J v2 still has Belgium favored by 3.7pp (36.4 vs 32.7). Both moved the same direction after the Balogun news (toward USA, from J v1's BEL +9.5pp lean) but did not converge; the gap between J and Opta is left standing rather than forced shut, per the same non-laundering principle",
+        "no style/draw hedge, no lambda edits beyond the d shift: J = calibrated curve evaluated at d=-15, nothing else"
+      ]
+    },
+    "rationale": [
+      "v1->v2 driver: Balogun's suspension reversal removes the -25 adjustment entirely (d_eff -62 -> -37); this is the single largest lock revision possible under the pre-registered inputs, on genuine new information arriving ~36h after the v1 lock and ~14h before kickoff",
+      "Everything else from v1 rationale still holds: Belgium process split (group xG-diff #1 of tournament but out-created 0.90-2.68 by Senegal in R32 regulation) vs USA's steadier, more modest process; goals model lambdas now 1.11/1.28 (total ~2.38); weather reconfirmed dry/mild, non-factor"
+    ],
+    "invalidation": [
+      "Pulisic ruled out or absent from confirmed XI -> amend toward Belgium (still open, unchanged from v1)",
+      "De Bruyne, Doku, Courtois, or Trossard missing from confirmed XI -> amend toward USA (unchanged from v1)",
+      "Lukaku starting instead of De Ketelaere -> no amend (SI.com's newest preview has him starting, ESPN's does not; direction stays ambiguous per v1's Verheyen reasoning either way)",
+      "Debast starts -> amend toward USA (still doubtful per all 2026-07-05/06 sources; not expected)",
+      [
+        "Belgium's federation succeeds in a CAS appeal before kickoff and Balogun is barred after all -> revert toward v1 basis (procedurally very unlikely in the remaining hours, logged for completeness)"
+      ],
+      "kickoff time resolves differently than 8pm ET -> no probability change, fix kickoff_utc only"
+    ],
+    "sources": [
+      {
+        "item": "Folarin Balogun's suspension OVERTURNED by FIFA's independent disciplinary committee, 2026-07-05, ~3:20pm ET (~24h before kickoff), citing Article 27 (probationary period); he is available and expected to start",
+        "source": "ESPN / CBS Sports / NPR / Al Jazeera / Sky Sports / Yahoo / CNN (multiply corroborated)",
+        "as_of": "2026-07-05"
+      },
+      {
+        "item": "Latest predicted USA XI (two independent SI.com articles, most recent ~2h before this check on 2026-07-06): 3-5-2 with Balogun and Pulisic BOTH starting up front; Pepi now bench-only. This supersedes every July 1-4 preview that had Pepi starting for the suspended Balogun",
+        "source": "SI.com (two articles, 2026-07-06)",
+        "as_of": "2026-07-06"
+      },
+      {
+        "item": "Political context to the reversal: a call between President Trump and FIFA president Infantino (reported as occurring 2026-07-02) preceded the ruling; White House aide Giuliani and Commerce Secretary Lutnick also reportedly communicated with FIFA. Belgium's federation (RBFA) called the decision 'astonishing' and said it is exploring options including a CAS appeal, citing specific FIFA regulation articles it believes were contradicted. Logged as context; NOT scored (see inputs.adjustment_reasons -- no defensible single direction)",
+        "source": "CBS News / Sports Mole / Yahoo Sports (RBFA statement)",
+        "as_of": "2026-07-05"
+      },
+      {
+        "item": "Matchday-1 press conferences, 2026-07-05 (Sunday): Garcia (BEL) said the ruling changes '0 percent' of Belgium's game plan and floated rotation given recent bench impact, while cautioning against changing a winning team; Courtois flagged Pulisic specifically as a threat alongside Balogun. Pochettino (USA) called the original red card unfair ('99.9% agree'), said he was not personally involved in the appeal, and praised Garcia. No tactical or fitness news beyond what is already scored above",
+        "source": "Sporza (NL) / ESPN / FOX Sports / CBS Sports / Bolavip",
+        "as_of": "2026-07-05"
+      },
+      {
+        "item": "Referee: Adham Makhadmeh (Jordan), assistants Al-Kalaf and Al-Roalle (Jordan), 4th official Atcho (Gabon); has already worked a Belgium group match this tournament (Belgium-New Zealand). Non-odds card-rate trackers show ~3.4-3.6 (one source: 4.7) yellows/match career average, no penalty-rate data found. No established directional bias toward either team; not scored",
+        "source": "FIFA.com match centre / ESPN / Wikipedia / law5-theref.blogspot.com / WhoScored / 4score.ru",
+        "as_of": "2026-07-05"
+      },
+      {
+        "item": "Opta per-match preview (theanalyst.com, by Jon O'Shea, published 2026-07-05 -- the first match-specific Opta split available for M94; v1's lock only had the bracket-wide 50.06% ADVANCE number): 90-minute USA 37.2% / draw-to-ET 26.3% / Belgium 36.5%. Cited as corroborating context in J's basis, not matched directly (same part-market-methodology caveat as v1)",
+        "source": "theanalyst.com (Opta Analyst)",
+        "as_of": "2026-07-05"
+      },
+      {
+        "item": "Reconfirmed, unchanged from v1: weather forecast dry/mild (~77F falling to 72F, light wind, no rain) -- milder than an earlier-tournament heat advisory at the same venue, non-factor; Debast (BEL) still doubtful/unlikely-to-start; McKenzie/Roldan (USA) questionable, not projected starters; no new disciplinary issues beyond Balogun; no security/crowd concerns",
+        "source": "AccuWeather via local outlets / RotoWire (2026-07-05 updates)",
+        "as_of": "2026-07-05/06"
+      }
+    ],
+    "contamination_notes": "AMEND EVIDENCE GATHERING (2026-07-06): 4 parallel subagents dispatched BLIND -- given no knowledge of this lock's existing M/J values or v1 conclusions, only told 'today is 2026-07-06, match is tonight, check for real news since 2026-07-03' -- specifically to avoid the analyst anchoring on its own prior conclusion while looking for confirming evidence. All ran under the same no-odds firewall as v1. Incidental exposures (all declared, no numbers used): several search-result titles for odds-centric sites (racingpost, vsin, stadiumrant, covers, fanduel, bet365, deadspin, sportytrader) surfaced with generic 'prediction/odds' framing in the snippet text; one racingpost title fragment showed '8-1 Bet Builder tip' (a correct-score/props boosted-price format, not the match-winner line) -- not opened, not used, and not clearly direction-revealing for 1X2/qualify. No bookmaker odds numbers for USA-Belgium were read, copied, or reached the analyst in this amend round. BETS LEDGER NOTE: the two v1 paper bets (BEL ML @2.80 DraftKings; BEL qualify @2.05 DraftKings, both taken 2026-07-03 against the PRE-reversal Pinnacle/DK reference) are NOT modified, hedged, or removed following this amendment, per the pre-registered bets-ledger-is-irreversible rule (protocol addendum 2026-07-03: a prior-information downgrade is recorded in the verdict record, not fixed in bets.jsonl). The Balogun reversal is a genuine adverse-information event arriving AFTER entry on both positions -- this will register honestly as poor CLV at closing-line settlement and is flagged here for transparency, not corrected. Max-2-bets-per-match means no new position is opened on this match regardless of what a fresh market read shows post-reversal."
+  },
+  "sha256": "6f75e0fbdbe7c9c206feb1755dfb4085e6e16c41d87a1261c1c41ab9b63376d8"
+}

@@ -1,0 +1,381 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG
+E0,09/08/2019,Liverpool,Norwich,4,1
+E0,10/08/2019,West Ham,Man City,0,5
+E0,10/08/2019,Bournemouth,Sheffield United,1,1
+E0,10/08/2019,Burnley,Southampton,3,0
+E0,10/08/2019,Crystal Palace,Everton,0,0
+E0,10/08/2019,Watford,Brighton,0,3
+E0,10/08/2019,Tottenham,Aston Villa,3,1
+E0,11/08/2019,Leicester,Wolves,0,0
+E0,11/08/2019,Newcastle,Arsenal,0,1
+E0,11/08/2019,Man United,Chelsea,4,0
+E0,17/08/2019,Arsenal,Burnley,2,1
+E0,17/08/2019,Aston Villa,Bournemouth,1,2
+E0,17/08/2019,Brighton,West Ham,1,1
+E0,17/08/2019,Everton,Watford,1,0
+E0,17/08/2019,Norwich,Newcastle,3,1
+E0,17/08/2019,Southampton,Liverpool,1,2
+E0,17/08/2019,Man City,Tottenham,2,2
+E0,18/08/2019,Sheffield United,Crystal Palace,1,0
+E0,18/08/2019,Chelsea,Leicester,1,1
+E0,19/08/2019,Wolves,Man United,1,1
+E0,23/08/2019,Aston Villa,Everton,2,0
+E0,24/08/2019,Norwich,Chelsea,2,3
+E0,24/08/2019,Brighton,Southampton,0,2
+E0,24/08/2019,Man United,Crystal Palace,1,2
+E0,24/08/2019,Sheffield United,Leicester,1,2
+E0,24/08/2019,Watford,West Ham,1,3
+E0,24/08/2019,Liverpool,Arsenal,3,1
+E0,25/08/2019,Bournemouth,Man City,1,3
+E0,25/08/2019,Tottenham,Newcastle,0,1
+E0,25/08/2019,Wolves,Burnley,1,1
+E0,31/08/2019,Southampton,Man United,1,1
+E0,31/08/2019,Chelsea,Sheffield United,2,2
+E0,31/08/2019,Crystal Palace,Aston Villa,1,0
+E0,31/08/2019,Leicester,Bournemouth,3,1
+E0,31/08/2019,Man City,Brighton,4,0
+E0,31/08/2019,Newcastle,Watford,1,1
+E0,31/08/2019,West Ham,Norwich,2,0
+E0,31/08/2019,Burnley,Liverpool,0,3
+E0,01/09/2019,Everton,Wolves,3,2
+E0,01/09/2019,Arsenal,Tottenham,2,2
+E0,14/09/2019,Liverpool,Newcastle,3,1
+E0,14/09/2019,Brighton,Burnley,1,1
+E0,14/09/2019,Man United,Leicester,1,0
+E0,14/09/2019,Sheffield United,Southampton,0,1
+E0,14/09/2019,Tottenham,Crystal Palace,4,0
+E0,14/09/2019,Wolves,Chelsea,2,5
+E0,14/09/2019,Norwich,Man City,3,2
+E0,15/09/2019,Bournemouth,Everton,3,1
+E0,15/09/2019,Watford,Arsenal,2,2
+E0,16/09/2019,Aston Villa,West Ham,0,0
+E0,20/09/2019,Southampton,Bournemouth,1,3
+E0,21/09/2019,Leicester,Tottenham,2,1
+E0,21/09/2019,Burnley,Norwich,2,0
+E0,21/09/2019,Everton,Sheffield United,0,2
+E0,21/09/2019,Man City,Watford,8,0
+E0,21/09/2019,Newcastle,Brighton,0,0
+E0,22/09/2019,Crystal Palace,Wolves,1,1
+E0,22/09/2019,West Ham,Man United,2,0
+E0,22/09/2019,Arsenal,Aston Villa,3,2
+E0,22/09/2019,Chelsea,Liverpool,1,2
+E0,28/09/2019,Sheffield United,Liverpool,0,1
+E0,28/09/2019,Aston Villa,Burnley,2,2
+E0,28/09/2019,Bournemouth,West Ham,2,2
+E0,28/09/2019,Chelsea,Brighton,2,0
+E0,28/09/2019,Crystal Palace,Norwich,2,0
+E0,28/09/2019,Tottenham,Southampton,2,1
+E0,28/09/2019,Wolves,Watford,2,0
+E0,28/09/2019,Everton,Man City,1,3
+E0,29/09/2019,Leicester,Newcastle,5,0
+E0,30/09/2019,Man United,Arsenal,1,1
+E0,05/10/2019,Brighton,Tottenham,3,0
+E0,05/10/2019,Burnley,Everton,1,0
+E0,05/10/2019,Liverpool,Leicester,2,1
+E0,05/10/2019,Norwich,Aston Villa,1,5
+E0,05/10/2019,Watford,Sheffield United,0,0
+E0,05/10/2019,West Ham,Crystal Palace,1,2
+E0,06/10/2019,Arsenal,Bournemouth,1,0
+E0,06/10/2019,Man City,Wolves,0,2
+E0,06/10/2019,Southampton,Chelsea,1,4
+E0,06/10/2019,Newcastle,Man United,1,0
+E0,19/10/2019,Everton,West Ham,2,0
+E0,19/10/2019,Aston Villa,Brighton,2,1
+E0,19/10/2019,Bournemouth,Norwich,0,0
+E0,19/10/2019,Chelsea,Newcastle,1,0
+E0,19/10/2019,Leicester,Burnley,2,1
+E0,19/10/2019,Tottenham,Watford,1,1
+E0,19/10/2019,Wolves,Southampton,1,1
+E0,19/10/2019,Crystal Palace,Man City,0,2
+E0,20/10/2019,Man United,Liverpool,1,1
+E0,21/10/2019,Sheffield United,Arsenal,1,0
+E0,25/10/2019,Southampton,Leicester,0,9
+E0,26/10/2019,Man City,Aston Villa,3,0
+E0,26/10/2019,Brighton,Everton,3,2
+E0,26/10/2019,Watford,Bournemouth,0,0
+E0,26/10/2019,West Ham,Sheffield United,1,1
+E0,26/10/2019,Burnley,Chelsea,2,4
+E0,27/10/2019,Newcastle,Wolves,1,1
+E0,27/10/2019,Arsenal,Crystal Palace,2,2
+E0,27/10/2019,Liverpool,Tottenham,2,1
+E0,27/10/2019,Norwich,Man United,1,3
+E0,02/11/2019,Bournemouth,Man United,1,0
+E0,02/11/2019,Arsenal,Wolves,1,1
+E0,02/11/2019,Aston Villa,Liverpool,1,2
+E0,02/11/2019,Brighton,Norwich,2,0
+E0,02/11/2019,Man City,Southampton,2,1
+E0,02/11/2019,Sheffield United,Burnley,3,0
+E0,02/11/2019,West Ham,Newcastle,2,3
+E0,02/11/2019,Watford,Chelsea,1,2
+E0,03/11/2019,Crystal Palace,Leicester,0,2
+E0,03/11/2019,Everton,Tottenham,1,1
+E0,08/11/2019,Norwich,Watford,0,2
+E0,09/11/2019,Chelsea,Crystal Palace,2,0
+E0,09/11/2019,Burnley,West Ham,3,0
+E0,09/11/2019,Newcastle,Bournemouth,2,1
+E0,09/11/2019,Southampton,Everton,1,2
+E0,09/11/2019,Tottenham,Sheffield United,1,1
+E0,09/11/2019,Leicester,Arsenal,2,0
+E0,10/11/2019,Man United,Brighton,3,1
+E0,10/11/2019,Wolves,Aston Villa,2,1
+E0,10/11/2019,Liverpool,Man City,3,1
+E0,23/11/2019,West Ham,Tottenham,2,3
+E0,23/11/2019,Arsenal,Southampton,2,2
+E0,23/11/2019,Bournemouth,Wolves,1,2
+E0,23/11/2019,Brighton,Leicester,0,2
+E0,23/11/2019,Crystal Palace,Liverpool,1,2
+E0,23/11/2019,Everton,Norwich,0,2
+E0,23/11/2019,Watford,Burnley,0,3
+E0,23/11/2019,Man City,Chelsea,2,1
+E0,24/11/2019,Sheffield United,Man United,3,3
+E0,25/11/2019,Aston Villa,Newcastle,2,0
+E0,30/11/2019,Newcastle,Man City,2,2
+E0,30/11/2019,Burnley,Crystal Palace,0,2
+E0,30/11/2019,Chelsea,West Ham,0,1
+E0,30/11/2019,Liverpool,Brighton,2,1
+E0,30/11/2019,Tottenham,Bournemouth,3,2
+E0,30/11/2019,Southampton,Watford,2,1
+E0,01/12/2019,Norwich,Arsenal,2,2
+E0,01/12/2019,Wolves,Sheffield United,1,1
+E0,01/12/2019,Leicester,Everton,2,1
+E0,01/12/2019,Man United,Aston Villa,2,2
+E0,03/12/2019,Crystal Palace,Bournemouth,1,0
+E0,03/12/2019,Burnley,Man City,1,4
+E0,04/12/2019,Chelsea,Aston Villa,2,1
+E0,04/12/2019,Leicester,Watford,2,0
+E0,04/12/2019,Man United,Tottenham,2,1
+E0,04/12/2019,Southampton,Norwich,2,1
+E0,04/12/2019,Wolves,West Ham,2,0
+E0,04/12/2019,Liverpool,Everton,5,2
+E0,05/12/2019,Sheffield United,Newcastle,0,2
+E0,05/12/2019,Arsenal,Brighton,1,2
+E0,07/12/2019,Everton,Chelsea,3,1
+E0,07/12/2019,Bournemouth,Liverpool,0,3
+E0,07/12/2019,Tottenham,Burnley,5,0
+E0,07/12/2019,Watford,Crystal Palace,0,0
+E0,07/12/2019,Man City,Man United,1,2
+E0,08/12/2019,Aston Villa,Leicester,1,4
+E0,08/12/2019,Newcastle,Southampton,2,1
+E0,08/12/2019,Norwich,Sheffield United,1,2
+E0,08/12/2019,Brighton,Wolves,2,2
+E0,09/12/2019,West Ham,Arsenal,1,3
+E0,14/12/2019,Liverpool,Watford,2,0
+E0,14/12/2019,Burnley,Newcastle,1,0
+E0,14/12/2019,Chelsea,Bournemouth,0,1
+E0,14/12/2019,Leicester,Norwich,1,1
+E0,14/12/2019,Sheffield United,Aston Villa,2,0
+E0,14/12/2019,Southampton,West Ham,0,1
+E0,15/12/2019,Man United,Everton,1,1
+E0,15/12/2019,Wolves,Tottenham,1,2
+E0,15/12/2019,Arsenal,Man City,0,3
+E0,16/12/2019,Crystal Palace,Brighton,1,1
+E0,21/12/2019,Everton,Arsenal,0,0
+E0,21/12/2019,Aston Villa,Southampton,1,3
+E0,21/12/2019,Bournemouth,Burnley,0,1
+E0,21/12/2019,Brighton,Sheffield United,0,1
+E0,21/12/2019,Newcastle,Crystal Palace,1,0
+E0,21/12/2019,Norwich,Wolves,1,2
+E0,21/12/2019,Man City,Leicester,3,1
+E0,22/12/2019,Watford,Man United,2,0
+E0,22/12/2019,Tottenham,Chelsea,0,2
+E0,26/12/2019,Tottenham,Brighton,2,1
+E0,26/12/2019,Aston Villa,Norwich,1,0
+E0,26/12/2019,Bournemouth,Arsenal,1,1
+E0,26/12/2019,Chelsea,Southampton,0,2
+E0,26/12/2019,Crystal Palace,West Ham,2,1
+E0,26/12/2019,Everton,Burnley,1,0
+E0,26/12/2019,Sheffield United,Watford,1,1
+E0,26/12/2019,Man United,Newcastle,4,1
+E0,26/12/2019,Leicester,Liverpool,0,4
+E0,27/12/2019,Wolves,Man City,3,2
+E0,28/12/2019,Brighton,Bournemouth,2,0
+E0,28/12/2019,Newcastle,Everton,1,2
+E0,28/12/2019,Southampton,Crystal Palace,1,1
+E0,28/12/2019,Watford,Aston Villa,3,0
+E0,28/12/2019,Norwich,Tottenham,2,2
+E0,28/12/2019,West Ham,Leicester,1,2
+E0,28/12/2019,Burnley,Man United,0,2
+E0,29/12/2019,Arsenal,Chelsea,1,2
+E0,29/12/2019,Liverpool,Wolves,1,0
+E0,29/12/2019,Man City,Sheffield United,2,0
+E0,01/01/2020,Brighton,Chelsea,1,1
+E0,01/01/2020,Burnley,Aston Villa,1,2
+E0,01/01/2020,Newcastle,Leicester,0,3
+E0,01/01/2020,Southampton,Tottenham,1,0
+E0,01/01/2020,Watford,Wolves,2,1
+E0,01/01/2020,Man City,Everton,2,1
+E0,01/01/2020,Norwich,Crystal Palace,1,1
+E0,01/01/2020,West Ham,Bournemouth,4,0
+E0,01/01/2020,Arsenal,Man United,2,0
+E0,02/01/2020,Liverpool,Sheffield United,2,0
+E0,10/01/2020,Sheffield United,West Ham,1,0
+E0,11/01/2020,Crystal Palace,Arsenal,1,1
+E0,11/01/2020,Chelsea,Burnley,3,0
+E0,11/01/2020,Everton,Brighton,1,0
+E0,11/01/2020,Leicester,Southampton,1,2
+E0,11/01/2020,Man United,Norwich,4,0
+E0,11/01/2020,Wolves,Newcastle,1,1
+E0,11/01/2020,Tottenham,Liverpool,0,1
+E0,12/01/2020,Bournemouth,Watford,0,3
+E0,12/01/2020,Aston Villa,Man City,1,6
+E0,18/01/2020,Watford,Tottenham,0,0
+E0,18/01/2020,Arsenal,Sheffield United,1,1
+E0,18/01/2020,Brighton,Aston Villa,1,1
+E0,18/01/2020,Man City,Crystal Palace,2,2
+E0,18/01/2020,Norwich,Bournemouth,1,0
+E0,18/01/2020,Southampton,Wolves,2,3
+E0,18/01/2020,West Ham,Everton,1,1
+E0,18/01/2020,Newcastle,Chelsea,1,0
+E0,19/01/2020,Burnley,Leicester,2,1
+E0,19/01/2020,Liverpool,Man United,2,0
+E0,21/01/2020,Aston Villa,Watford,2,1
+E0,21/01/2020,Bournemouth,Brighton,3,1
+E0,21/01/2020,Crystal Palace,Southampton,0,2
+E0,21/01/2020,Everton,Newcastle,2,2
+E0,21/01/2020,Sheffield United,Man City,0,1
+E0,21/01/2020,Chelsea,Arsenal,2,2
+E0,22/01/2020,Leicester,West Ham,4,1
+E0,22/01/2020,Tottenham,Norwich,2,1
+E0,22/01/2020,Man United,Burnley,0,2
+E0,23/01/2020,Wolves,Liverpool,1,2
+E0,29/01/2020,West Ham,Liverpool,0,2
+E0,01/02/2020,Leicester,Chelsea,2,2
+E0,01/02/2020,Bournemouth,Aston Villa,2,1
+E0,01/02/2020,Crystal Palace,Sheffield United,0,1
+E0,01/02/2020,Liverpool,Southampton,4,0
+E0,01/02/2020,Newcastle,Norwich,0,0
+E0,01/02/2020,Watford,Everton,2,3
+E0,01/02/2020,West Ham,Brighton,3,3
+E0,01/02/2020,Man United,Wolves,0,0
+E0,02/02/2020,Burnley,Arsenal,0,0
+E0,02/02/2020,Tottenham,Man City,2,0
+E0,08/02/2020,Everton,Crystal Palace,3,1
+E0,08/02/2020,Brighton,Watford,1,1
+E0,09/02/2020,Sheffield United,Bournemouth,2,1
+E0,14/02/2020,Wolves,Leicester,0,0
+E0,15/02/2020,Southampton,Burnley,1,2
+E0,15/02/2020,Norwich,Liverpool,0,1
+E0,16/02/2020,Aston Villa,Tottenham,2,3
+E0,16/02/2020,Arsenal,Newcastle,4,0
+E0,17/02/2020,Chelsea,Man United,0,2
+E0,19/02/2020,Man City,West Ham,2,0
+E0,22/02/2020,Chelsea,Tottenham,2,1
+E0,22/02/2020,Burnley,Bournemouth,3,0
+E0,22/02/2020,Crystal Palace,Newcastle,1,0
+E0,22/02/2020,Sheffield United,Brighton,1,1
+E0,22/02/2020,Southampton,Aston Villa,2,0
+E0,22/02/2020,Leicester,Man City,0,1
+E0,23/02/2020,Man United,Watford,3,0
+E0,23/02/2020,Wolves,Norwich,3,0
+E0,23/02/2020,Arsenal,Everton,3,2
+E0,24/02/2020,Liverpool,West Ham,3,2
+E0,28/02/2020,Norwich,Leicester,1,0
+E0,29/02/2020,Brighton,Crystal Palace,0,1
+E0,29/02/2020,Bournemouth,Chelsea,2,2
+E0,29/02/2020,Newcastle,Burnley,0,0
+E0,29/02/2020,West Ham,Southampton,3,1
+E0,29/02/2020,Watford,Liverpool,3,0
+E0,01/03/2020,Everton,Man United,1,1
+E0,01/03/2020,Tottenham,Wolves,2,3
+E0,07/03/2020,Liverpool,Bournemouth,2,1
+E0,07/03/2020,Arsenal,West Ham,1,0
+E0,07/03/2020,Crystal Palace,Watford,1,0
+E0,07/03/2020,Sheffield United,Norwich,1,0
+E0,07/03/2020,Southampton,Newcastle,0,1
+E0,07/03/2020,Wolves,Brighton,0,0
+E0,07/03/2020,Burnley,Tottenham,1,1
+E0,08/03/2020,Chelsea,Everton,4,0
+E0,08/03/2020,Man United,Man City,2,0
+E0,09/03/2020,Leicester,Aston Villa,4,0
+E0,17/06/2020,Aston Villa,Sheffield United,0,0
+E0,17/06/2020,Man City,Arsenal,3,0
+E0,19/06/2020,Norwich,Southampton,0,3
+E0,19/06/2020,Tottenham,Man United,1,1
+E0,20/06/2020,Watford,Leicester,1,1
+E0,20/06/2020,Brighton,Arsenal,2,1
+E0,20/06/2020,West Ham,Wolves,0,2
+E0,20/06/2020,Bournemouth,Crystal Palace,0,2
+E0,21/06/2020,Newcastle,Sheffield United,3,0
+E0,21/06/2020,Aston Villa,Chelsea,1,2
+E0,21/06/2020,Everton,Liverpool,0,0
+E0,22/06/2020,Man City,Burnley,5,0
+E0,23/06/2020,Leicester,Brighton,0,0
+E0,23/06/2020,Tottenham,West Ham,2,0
+E0,24/06/2020,Man United,Sheffield United,3,0
+E0,24/06/2020,Newcastle,Aston Villa,1,1
+E0,24/06/2020,Norwich,Everton,0,1
+E0,24/06/2020,Wolves,Bournemouth,1,0
+E0,24/06/2020,Liverpool,Crystal Palace,4,0
+E0,25/06/2020,Burnley,Watford,1,0
+E0,25/06/2020,Southampton,Arsenal,0,2
+E0,25/06/2020,Chelsea,Man City,2,1
+E0,27/06/2020,Aston Villa,Wolves,0,1
+E0,28/06/2020,Watford,Southampton,1,3
+E0,29/06/2020,Crystal Palace,Burnley,0,1
+E0,30/06/2020,Brighton,Man United,0,3
+E0,01/07/2020,Arsenal,Norwich,4,0
+E0,01/07/2020,Bournemouth,Newcastle,1,4
+E0,01/07/2020,Everton,Leicester,2,1
+E0,01/07/2020,West Ham,Chelsea,3,2
+E0,02/07/2020,Sheffield United,Tottenham,3,1
+E0,02/07/2020,Man City,Liverpool,4,0
+E0,04/07/2020,Norwich,Brighton,0,1
+E0,04/07/2020,Leicester,Crystal Palace,3,0
+E0,04/07/2020,Man United,Bournemouth,5,2
+E0,04/07/2020,Wolves,Arsenal,0,2
+E0,04/07/2020,Chelsea,Watford,3,0
+E0,05/07/2020,Burnley,Sheffield United,1,1
+E0,05/07/2020,Newcastle,West Ham,2,2
+E0,05/07/2020,Liverpool,Aston Villa,2,0
+E0,05/07/2020,Southampton,Man City,1,0
+E0,06/07/2020,Tottenham,Everton,1,0
+E0,07/07/2020,Crystal Palace,Chelsea,2,3
+E0,07/07/2020,Watford,Norwich,2,1
+E0,07/07/2020,Arsenal,Leicester,1,1
+E0,08/07/2020,Man City,Newcastle,5,0
+E0,08/07/2020,Sheffield United,Wolves,1,0
+E0,08/07/2020,West Ham,Burnley,0,1
+E0,08/07/2020,Brighton,Liverpool,1,3
+E0,09/07/2020,Bournemouth,Tottenham,0,0
+E0,09/07/2020,Everton,Southampton,1,1
+E0,09/07/2020,Aston Villa,Man United,0,3
+E0,11/07/2020,Norwich,West Ham,0,4
+E0,11/07/2020,Watford,Newcastle,2,1
+E0,11/07/2020,Liverpool,Burnley,1,1
+E0,11/07/2020,Sheffield United,Chelsea,3,0
+E0,11/07/2020,Brighton,Man City,0,5
+E0,12/07/2020,Wolves,Everton,3,0
+E0,12/07/2020,Aston Villa,Crystal Palace,2,0
+E0,12/07/2020,Tottenham,Arsenal,2,1
+E0,12/07/2020,Bournemouth,Leicester,4,1
+E0,13/07/2020,Man United,Southampton,2,2
+E0,14/07/2020,Chelsea,Norwich,1,0
+E0,15/07/2020,Burnley,Wolves,1,1
+E0,15/07/2020,Man City,Bournemouth,2,1
+E0,15/07/2020,Newcastle,Tottenham,1,3
+E0,15/07/2020,Arsenal,Liverpool,2,1
+E0,16/07/2020,Everton,Aston Villa,1,1
+E0,16/07/2020,Leicester,Sheffield United,2,0
+E0,16/07/2020,Crystal Palace,Man United,0,2
+E0,16/07/2020,Southampton,Brighton,1,1
+E0,17/07/2020,West Ham,Watford,3,1
+E0,18/07/2020,Norwich,Burnley,0,2
+E0,19/07/2020,Bournemouth,Southampton,0,2
+E0,19/07/2020,Tottenham,Leicester,3,0
+E0,20/07/2020,Brighton,Newcastle,0,0
+E0,20/07/2020,Sheffield United,Everton,0,1
+E0,20/07/2020,Wolves,Crystal Palace,2,0
+E0,21/07/2020,Watford,Man City,0,4
+E0,21/07/2020,Aston Villa,Arsenal,1,0
+E0,22/07/2020,Man United,West Ham,1,1
+E0,22/07/2020,Liverpool,Chelsea,5,3
+E0,26/07/2020,Arsenal,Watford,3,2
+E0,26/07/2020,Burnley,Brighton,1,2
+E0,26/07/2020,Chelsea,Wolves,2,0
+E0,26/07/2020,Crystal Palace,Tottenham,1,1
+E0,26/07/2020,Everton,Bournemouth,1,3
+E0,26/07/2020,Leicester,Man United,0,2
+E0,26/07/2020,Man City,Norwich,5,0
+E0,26/07/2020,Newcastle,Liverpool,1,3
+E0,26/07/2020,Southampton,Sheffield United,3,1
+E0,26/07/2020,West Ham,Aston Villa,1,1

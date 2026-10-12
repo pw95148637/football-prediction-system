@@ -1,0 +1,124 @@
+# Unattended matchday job for the live competition (EPL 2026-27).
+#
+# What it does, every 20 minutes during the hours a closing price can fall
+# due: call the odds API only when a price is DUE -- a locked fixture's closing
+# price (kickoff 10-45 minutes away, no closing 1x2 from its last hour yet) or
+# the entry price of a fixture whose J was just locked (kickoff within 100
+# hours, no price yet) -- and settle finished fixtures from the declared
+# results source on every run. All of that logic lives in
+# `python -m football_ai.competitions.ops matchday` (flags and their reasons are
+# defined there, and tested); this file only supplies a clock, a Python, the
+# secret, and the push.
+#
+# SAFE WHEN NOTHING IS GOING ON: with nothing due the snapshot step makes no
+# API call at all and spends no quota (and does not need the secret), so most
+# runs cost nothing but a minute of runner time. The competition being paused
+# does not stop this job.
+#
+# WHO WRITES WHICH FILE (football_ai/store/sync.py): this job writes only `odds`,
+# `results` and the results snapshot; interactive sessions write `locks`,
+# `judgments`, `evidence` and the rest. Different files never conflict on rebase. This is the ONLY
+# scheduled writer: the old Windows Task Scheduler job `wc2026-epl-matchday`
+# must stay disabled, or two machines would append prices to the same ledger.
+#
+# Failure: a step that raises makes the run fail (GitHub emails the owner);
+# whatever was written before the failure is still pushed.
+name: epl-matchday
+
+on:
+  schedule:
+    # :07, :27 and :47 past each hour, 10:00-19:59 UTC (owner-approved
+    # 2026-10-10). Premier League kickoffs run 11:30-20:00 UTC; every standard
+    # kickoff has two ticks inside its 10-45-minute closing-due window, so one
+    # late or dropped run (GitHub's cron is best effort) does not lose the
+    # close. 30 runs a day, at most 930 a month; in the private working repo each
+    # run (~30 s) is billed as one Actions minute, under the owner's 1000.
+    # football_ai/competitions/schedule.py mirrors this line and its selfcheck
+    # fails if the two drift apart.
+    - cron: "7,27,47 10-19 * * *"
+  workflow_dispatch:
+    inputs:
+      verify_push:
+        description: "Also check that this workflow's token may push to main (git push --dry-run; writes nothing)"
+        type: boolean
+        default: false
+
+# one writer at a time; a queued run waits instead of being cancelled
+concurrency:
+  group: ledger-writer
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  matchday:
+    # Showcase copy: the live job runs only in the private working repo.
+    # Here it is skipped unless a repository variable opts in.
+    if: ${{ vars.ENABLE_MATCHDAY == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - run: pip install -r requirements.txt
+
+      - name: Snapshot closing prices and settle
+        id: matchday
+        continue-on-error: true
+        env:
+          # only read when a closing or entry price is actually due
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: python -m football_ai.competitions.ops matchday
+
+      # A price-free copy of the played results (no odds column, no future
+      # fixture), committed so a cloud session whose network allowlist lacks
+      # football-data.co.uk can still compute ratings. Completed seasons are
+      # fetched once; the season in progress every run.
+      - name: Refresh the price-free results snapshot
+        continue-on-error: true
+        run: python -m football_ai.data.football_data_co_uk refresh-snapshot
+
+      # Run by hand with verify_push=true to prove the token can write to main
+      # before the first real price needs pushing. --dry-run still talks to
+      # GitHub and fails if write access is missing, but updates nothing.
+      - name: Verify push access (no write)
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.verify_push }}
+        run: |
+          git config user.name "epl-matchday"
+          git config user.email "epl-matchday@users.noreply.github.com"
+          git push --dry-run origin HEAD:main
+
+      - name: Publish the ledger
+        if: always()
+        run: |
+          git config user.name "epl-matchday"
+          git config user.email "epl-matchday@users.noreply.github.com"
+          python -m football_ai.store.sync publish -m "store: matchday $(date -u +%Y-%m-%dT%H:%MZ)" --branch main
+
+      # The raw API responses are gitignored (too bulky for git) and a runner
+      # is thrown away, so keep the bytes the store's `raw=` references point at.
+      - name: Keep raw odds responses
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: raw-odds-${{ github.run_id }}
+          path: football_ai/data/raw/the_odds_api
+          if-no-files-found: ignore
+          retention-days: 90
+
+      - name: Fail the run if the matchday step failed
+        if: steps.matchday.outcome == 'failure'
+        run: |
+          echo "matchday step failed; see its log above" >&2
+          exit 1

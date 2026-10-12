@@ -1,0 +1,116 @@
+{
+  "locked_at": "2026-07-07T09:08:51.743817+00:00",
+  "version": 1,
+  "payload": {
+    "match_id": "m97_fra_mar",
+    "teams": {
+      "home": "France",
+      "away": "Morocco"
+    },
+    "kickoff_utc": "2026-07-09T20:00:00Z",
+    "mode": "A",
+    "probs_90": {
+      "home": 0.646,
+      "draw": 0.2218,
+      "away": 0.1322
+    },
+    "qualify_home": 0.7848,
+    "lambdas": {
+      "home": 1.8491,
+      "away": 0.7652
+    },
+    "inputs": {
+      "elo_home_france": 2143,
+      "elo_away_morocco": 1921,
+      "elo_source": "eloratings.net World.tsv, read 2026-07-07 (FR 2143 rank#3, MA 1921 rank#11; Morocco a large recent riser +346 over the window, and a 2022 WC semifinalist)",
+      "elo_diff_raw": 222,
+      "d_eff": 225,
+      "d_eff_adjustments": [
+        "Tchouameni likely OUT (France first-choice DM, groin; missed the Paraguay R16, absent from training). FRA -8. Kone deputized in the 1-0 win and France are deep at DM (Camavinga/Rabiot/Kante), so a genuine but not large line-breaking dent.",
+        "Morocco cumulative load: played 120 min a.e.t. + a full penalty shootout in the R32 vs Netherlands (won 3-2 pens), and a heavy multi-leg trip (Monterrey MX -> Houston -> Boston, ~2600km). MAR -5.",
+        "Morocco Chadi Riad (CB, knee) and Ismael Saibari (top scorer, hamstring, off after 22' vs Canada) both doubtful. MAR -4 (doubts; may play).",
+        "France freshest remaining side (zero ET in any knockout round) + shortest trip (Philadelphia -> Boston ~500km). FRA +2.",
+        "ALL of the above situational facts came from the FIRST (clean) subagent, read and committed BEFORE any price exposure -> they are price-blind and valid for M. Net adjustments roughly cancel (Tchouameni loss ~offsets Morocco's fatigue+injuries); d_eff +225 vs raw +222."
+      ],
+      "venue": "Gillette/Boston Stadium, Foxborough MA (neutral; USA is host but neither France nor Morocco is a host) -> no +75 host bonus",
+      "pk_h": 0.5,
+      "pk_note": "Default 0.5. Bounou (Morocco GK) is a documented shootout specialist (2022 WC) and Morocco just won a shootout vs NED; if anything a small Morocco PK edge, but held at default (conservative, single-datapoint)."
+    },
+    "rationale": "M-ONLY LOCK (J CONTAMINATED — see contamination_notes). M is calibrated Elo->1x2 (predict_1x2, neutral symmetrized) at d_eff=+225. France Elo #3, tournament favorite (Opta ~31% to win, 44.7% to reach the final), but a BIG-FAVORITE + CROSS-CONTINENTAL case where the calibrated map is at its coarsest. Process is split: France's RESULTS are elite (14 goals) but hugely finishing-inflated (+5.8 over ~8 xG, the tournament's biggest overperformer; the R16 was a 1-0 grind with almost no open-play creation, no first-half shot on target) — their one repeatable strength is the best xG-defense (~0.76 xGA/g). Morocco (Elo #11, 2022 semifinalist who beat Spain+Portugal) is a genuine top side analysts think Elo may still UNDERrate, but their R16 3-0 flattered them (xG near-even 0.85-0.78). M outputs France 64.6% / draw 22.2% / Morocco 13.2%. NOTE the two competing distortions that make the M-market gap direction genuinely uncertain here: (a) 'Elo overrates big favorites' (pilot, m95) pushes France's true number DOWN; (b) 'Elo/market may underrate Morocco's pedigree' is cross-continental (error bars widen, direction unpredictable per doctrine). Neither is tradeable.",
+    "invalidation": [
+      "Tchouameni confirmed FIT and starting -> raise France (reduce the -8).",
+      "Confirmed XI shows France resting Mbappe/Dembele -> amend toward Morocco.",
+      "Morocco confirmed to have Riad + Saibari both fit and starting -> raise Morocco slightly.",
+      "Morocco confirmed missing Hakimi (their most important player) -> amend toward France.",
+      "Extreme weather / major disruption -> note but do not repredict."
+    ],
+    "sources": [
+      {
+        "item": "Elo FR 2143 / MA 1921",
+        "source": "eloratings.net World.tsv",
+        "as_of": "2026-07-07"
+      },
+      {
+        "item": "Fixture: Match 97, Gillette/Boston Stadium Foxborough MA, Thu 9 Jul 2026, 20:00 UTC, France listed first (FIFA match-centre)",
+        "source": "FIFA.com match-centre + Sky Sports schedule + World Soccer Talk",
+        "as_of": "2026-07-05/07"
+      },
+      {
+        "item": "No suspensions either side (yellow counts reset at QF; no R16 red cards)",
+        "source": "Al Jazeera/ESPN R16 reports + Sports Mole",
+        "as_of": "2026-07-03/04"
+      },
+      {
+        "item": "France: Tchouameni doubtful/likely out (groin, missed R16, absent training; Kone deputizing); Thuram minor doubt; Kante fit-but-benched; Mbappe(7g)/Dembele/Saliba/Camavinga fit",
+        "source": "ESPN + RMC Sport + Athlon via firewalled subagent",
+        "as_of": "2026-07-04/06"
+      },
+      {
+        "item": "Morocco: Chadi Riad (CB) doubtful (knee); Saibari doubtful (hamstring, MRI); En-Nesyri omitted from squad entirely; Hakimi fit; Ounahi(R16 brace)/Amrabat/Brahim Diaz fit",
+        "source": "The National + Morocco World News + ESPN via firewalled subagent",
+        "as_of": "2026-07-05/06"
+      },
+      {
+        "item": "Rest/load: equal 4 days (both R16 on 4 Jul, QF 9 Jul); neither R16 went to ET; France ZERO ET all knockouts; Morocco +30min ET + penalty shootout vs NED in R32",
+        "source": "ESPN/NBC/FIFA reports",
+        "as_of": "2026-06-30/07-04"
+      },
+      {
+        "item": "Travel: France Philadelphia->Boston (~500km short hop); Morocco Monterrey->Houston->Boston (~2600km cross-country multi-leg)",
+        "source": "NBC/ESPN/FIFA match reports",
+        "as_of": "2026-06-30/07-04"
+      },
+      {
+        "item": "xG France: tournament 14 goals from ~8 xG (+5.8, biggest overperformer; likely unsustainable finishing); best xG-defense ~0.76/g; R16 vs Paraguay ~1.4-1.56 for / ~0.15 against but penalty-loaded, no 1st-half shot on target",
+        "source": "FOX/xgscore.io + theanalyst Opta match report via firewalled subagent",
+        "as_of": "2026-07-04/07"
+      },
+      {
+        "item": "xG Morocco: R16 vs Canada 0.85-0.78 near-even (scoreline flattered them, 0.02 first-half xG); group xG roughly matched results (less variance than France)",
+        "source": "ESPN + xgscore.io via firewalled subagent",
+        "as_of": "2026-07-04/07"
+      },
+      {
+        "item": "Model context (line layer): Opta tournament-win France ~31.4% (clear favorite, 44.7% to final) / Morocco ~4%; Dimers France 59.2 / draw 24.6 / Morocco 16.2 (most-likely score Morocco 0-1 France; Dimers does not disclose market inputs). No confirmed Opta head-to-head. Opta match-model odds-input caveat could not be confirmed either way.",
+        "source": "theanalyst.com + dimers.com via firewalled subagent",
+        "as_of": "2026-07-04/07"
+      },
+      {
+        "item": "Expert previews: favor France but 'by a single moment of quality'; France struggled to create vs Paraguay + missing Tchouameni; Morocco = disciplined deep block + Hakimi/Brahim/Ounahi transitions, first African side to reach back-to-back WC QFs, 2022 semifinalist (genuinely good, plausibly Elo-underrated). Rematch of 2022 semi (France won 2-0).",
+        "source": "ESPN + Squawka + composite WST/globalpredict previews via firewalled subagent",
+        "as_of": "2026-07-04/07"
+      }
+    ],
+    "contamination_notes": {
+      "analyst_saw_prices": true,
+      "j_dropped": true,
+      "method": "M-ONLY lock. The evidence-pack subagent VIOLATED the odds firewall: in its odds_exposure declaration it wrote an actual market-implied number (a Kalshi prediction-market figure, 'France 62%') instead of only noting that a price leaked. The locking analyst therefore saw a market-implied France probability BEFORE locking -> J's independence is unrecoverable (por_esp precedent, PROTOCOL 2026-07-06). No j field: manufacturing a 'J' after seeing France~62% would be a fake independent prediction, exactly what the experiment guards against.",
+      "impact": "Match scores in B1-M only (M is provably price-blind arithmetic: Elo + situational facts from the CLEAN first subagent, committed pre-leak). EXCLUDED from B2 (no paper bet). J arm cannot reach 16 (adds to por_esp M-only, m92 MISSING) -> score.py §4 J-arm formal verdict remains on the reduced set. Declared, not hidden.",
+      "process_fix": "Future evidence-pack subagent prompts must state explicitly: NEVER write the numeric value of any leaked price/probability, not even in the odds_exposure list — record only the URL and a non-numeric slug. The m99/m98 subagents complied ('a price leaked, not reported'); this one did not.",
+      "firewall_exposure_other": [
+        "Multiple France-vs-Morocco odds/prediction pages surfaced as search titles (ESPN odds, DraftKings opening odds, betmgm, betfair, vegasodds, tips.gg) - NOT opened, no numbers beyond the Kalshi slip above"
+      ]
+    }
+  },
+  "sha256": "4caa9d97a75399e14afbace612735b6e1da852ec76302c9b8b05f7dd8e0f32a0"
+}

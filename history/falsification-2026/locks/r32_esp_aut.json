@@ -1,0 +1,98 @@
+{
+  "locked_at": "2026-07-02T04:46:14.193772+00:00",
+  "version": 1,
+  "payload": {
+    "match_id": "r32_esp_aut",
+    "pilot": true,
+    "teams": {
+      "home": "Spain",
+      "away": "Austria"
+    },
+    "kickoff_utc": "2026-07-02T19:00:00+00:00",
+    "mode": "A",
+    "probs_90": {
+      "home": 0.7284,
+      "draw": 0.1778,
+      "away": 0.0938
+    },
+    "qualify_home": 0.8465,
+    "lambdas": {
+      "home": 2.1211,
+      "away": 0.6669
+    },
+    "inputs": {
+      "instrument": "M v2 (calibration.json, ordered logit + goal curves)",
+      "elo_home": 2144,
+      "elo_away": 1836,
+      "elo_diff_raw": 308,
+      "elo_diff_adjustment": -13,
+      "elo_diff_effective": 295,
+      "adjustment_reasons": [
+        "-13: Nico Williams (adductor) not risked per team news; Pino/Munoz fringe; core spine (Yamal/Pedri/Rodri) fit",
+        "0: Austria no injuries or suspensions reported",
+        "0: neutral venue (SoFi, roofed), equal rest — no venue/rest adjustment"
+      ],
+      "pk_home": 0.5
+    },
+    "j": {
+      "probs_90": {
+        "home": 0.7,
+        "draw": 0.19,
+        "away": 0.11
+      },
+      "qualify_home": 0.8262,
+      "basis": [
+        "M v2 output as base (72.8/17.8/9.4 at d_eff=+295); intra-UEFA Elo = most trustworthy zone, pilot cross-confederation caveat does NOT apply here",
+        "Opta supercomputer (deliberate evidence, not a price): Spain 13.5% title, 3rd overall, 'would still be favourites vs Portugal next round' -> directional agreement with M",
+        "form asymmetry: Spain 0 conceded in 3 (shut out Uruguay); Austria 6 conceded in 3, needed 94' equaliser vs Algeria",
+        "style: Austria presses high (Rangnick), will not park the bus -> Spain's elite press resistance gets space, BUT pressing games carry chaos variance -> small bump to draw/upset tails vs M",
+        "Spain blunted by Cape Verde's low block (0-0) — noted, low weight: Austria's style is the opposite of a low block"
+      ]
+    },
+    "rationale": [
+      "Elo +308 raw, both ratings in-confederation and current through the group stage",
+      "defense asymmetry is the widest single signal: 0 vs 6 goals conceded",
+      "Williams absence is real but marginal (-13): depth covers, spine intact",
+      "goals model: lambdas 2.12/0.67 (total 2.79) — pressing Austria concedes real chances to elite attack"
+    ],
+    "invalidation": [
+      "late fitness news on Yamal/Pedri/Rodri -> amend",
+      "Spain announces heavy rotation (unlikely in a knockout) -> amend",
+      "Austria lineup abandons press for a low block -> J's style reasoning weakens"
+    ],
+    "sources": [
+      {
+        "item": "Elo: Spain ES 2144 (#2), Austria AT 1836 (#22), verbatim rows audited",
+        "source": "eloratings.net World.tsv",
+        "as_of": "2026-07-02"
+      },
+      {
+        "item": "Spain injuries: N.Williams (adductor, not risked), Pino (shoulder), Munoz (thigh); predicted XI",
+        "source": "sportsmole.co.uk team-news 600400 + preview 600390",
+        "as_of": "2026-07-02"
+      },
+      {
+        "item": "Austria: no injuries/suspensions; predicted XI (Alaba, Sabitzer, Laimer, X.Schlager, Arnautovic)",
+        "source": "sportsmole.co.uk preview 600390",
+        "as_of": "2026-07-02"
+      },
+      {
+        "item": "group results: Spain 7pts 0 conceded (4-0 KSA, 1-0 URU, 0-0 CPV); Austria 4pts (3-1 JOR, 0-2 ARG, 3-3 ALG)",
+        "source": "sportsmole.co.uk preview + goal.com preview",
+        "as_of": "2026-07-02"
+      },
+      {
+        "item": "Opta: Spain 13.5% title (3rd); expected past R32",
+        "source": "theanalyst.com knockout-stage predictions",
+        "as_of": "2026-07-02"
+      },
+      {
+        "item": "kickoff 3pm ET Jul 2, SoFi Stadium Inglewood; winner meets POR/CRO winner",
+        "source": "espn.com preview 49213161 + worldcupmatchtime.com",
+        "as_of": "2026-07-02"
+      }
+    ],
+    "contamination_notes": "Preview pages consulted for team news only; no odds numbers read before this lock. Opta model probabilities consulted deliberately as instrument-J evidence per pipeline v2 (estimates, not prices)."
+  },
+  "sha256": "51a3a8e77bd751732a3efe04e11e2611a961282e2829673f02b0b8852e438ef3"
+}

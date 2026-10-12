@@ -1,0 +1,170 @@
+{
+  "r32_esp_aut": {
+    "score90": [
+      3,
+      0
+    ],
+    "advanced": "home",
+    "notes": "Oyarzabal 36' 89', Porro 66'. Spain xG 2.84 (23 shots, 10 SoT); Austria xG 0.32 (5 shots, 0 SoT). Source: ESPN/FIFA match centre, 2026-07-03."
+  },
+  "r32_sui_alg": {
+    "score90": [
+      2,
+      0
+    ],
+    "advanced": "home",
+    "notes": "Embolo 10', Ndoye 46'. Switzerland xG 2.54 (11 shots, 5 SoT); Algeria more possession but far less real danger. Source: FIFA match centre 400021527 / FOX, 2026-07-03."
+  },
+  "m91_bra_nor": {
+    "score90": [
+      1,
+      2
+    ],
+    "advanced": "away",
+    "notes": "0-0 until 79'; Neymar (sub) penalty ~79' 1-0, Haaland late brace flips it (second ~90'), 1-2. xG BRA 2.73 - NOR 0.84; shots 14-9; box touches 32-17; BRA missed 4 big chances + woodwork (Endrick); Haaland clinical 2/2. Process = Brazil dominant; result = finishing variance. Casemiro STARTED (lock clause not triggered). Source: sofascore/xgscore/CNN/ESPN, 2026-07-06."
+  },
+  "m89_can_mar": {
+    "score90": [
+      0,
+      3
+    ],
+    "advanced": "away",
+    "notes": "Ounahi double (2H). xG MAR 0.85 - CAN 0.78: near-even process, scoreline heavily flattered Morocco (clinical finishing). Source: ESPN/NBC + CNN roundup, 2026-07-05."
+  },
+  "m90_par_fra": {
+    "score90": [
+      0,
+      1
+    ],
+    "advanced": "away",
+    "notes": "Mbappe penalty 70' (VAR: Gomez knee on Doue). 1H combined xG 0.20 (PY 0.05 - FRA 0.15); France 76% possession but couldn't get shots off vs compact physical 4-4-2. Paraguay nearly held. Source: Opta Analyst / ESPN, 2026-07-05."
+  },
+  "r32_arg_cpv": {
+    "score90": [
+      1,
+      1
+    ],
+    "advanced": "home",
+    "notes": "1-1 at 90' (Messi 29', Duarte 59'). ET: L.Martinez 92', Lopes Cabral 103' (stunning curler), winner 111' off Messi corner (OG per ESPN wording). Final 3-2 AET. xG ARG 2.16 - CPV 0.45: Cape Verde scored 2 from 0.45 xG = extreme overperformance; process fully Argentina. Source: ESPN MD22 recap, 2026-07-04."
+  },
+  "r32_col_gha": {
+    "score90": [
+      1,
+      0
+    ],
+    "advanced": "home",
+    "notes": "Arias 14', decided in 90'. Colombia xG 2.06 (18 shots, 7 SoT, 61% possession); Ghana 0.26 xG, 8 shots, ZERO on target. Process one-sided despite narrow scoreline. Source: ESPN MD22 recap + Yahoo, 2026-07-04."
+  },
+  "r32_aus_egy": {
+    "score90": [
+      1,
+      1
+    ],
+    "advanced": "away",
+    "notes": "1-1 through 120', Egypt 4-2 on penalties (their first-ever WC knockout win). Ashour 13' (set-piece routine; assist credited Hafez by FOX, Salah per Outlook). AUS equalizer = Hany OWN GOAL 55' — user observation (watched live): NOT a fluke OG; well-delivered free kick near the box into a packed area, Australia's height advantage forced everyone airborne, Egyptian touch came under that aerial pressure. A repeatable set-piece output, i.e. Australia's bunker+set-piece plan produced a real goal. HT xG AUS 0.28 - EGY 0.41, possession 56-44 EGY, SoT 1-1 HT; Beach crucial late save forced ET. FT xG not published by accessible sources. Sources: sofascore HT report / FOX boxscore / Outlook / user observation, 2026-07-04."
+  },
+  "m92_mex_eng": {
+    "score90": [
+      2,
+      3
+    ],
+    "advanced": "away",
+    "notes": "MISSING (no lock — orphan-grab contamination; EXCLUDED from B1/B2). Result recorded for do-all completeness ONLY; score.py does not score it (no lock). England 3-2 Mexico, R16, decided in 90 min (no ET/pens); England advance to QF vs Norway. Bellingham 36' & 38', Kane 60' pen; Mexico Quinones ~42', Jimenez 69' pen. Quansah (ENG) straight red 54' -> England ~36 min with 10. Process: Mexico dominated possession (~66%) and volume (~23-6 shots) but England clinical; xG disputed across providers (FOX MEX 2.83-ENG 2.32; ESPN 1.88-1.61; Opta-snippet 1.07-1.52). ~1h thunderstorm delay at Estadio Azteca. Sources: ESPN/FOX/CBS/Opta Analyst/englandfootball.com, 2026-07-05/06."
+  },
+  "r16_por_esp": {
+    "score90": [
+      0,
+      1
+    ],
+    "advanced": "away",
+    "notes": "Merino (sub, on 6 min earlier) 90+1' winner off a quick free-kick restart, past Diogo Costa. Spain xG 1.77 (15 shots) vs Portugal xG 0.60 (10 shots, ZERO shots on target in the 2nd half) -- clear, sustained process dominance matching the scoreline, not a fluke; Spain now first team in WC history with 6 straight clean sheets (10h09m without conceding). Ronaldo's last WC match: created one chance (won a Rodri foul in the box, saved by Simon), otherwise quiet. Portugal defended well until the very end (Costa saves on Yamal/Baena 16', Mendes hit the bar pre-half) but never generated a real chance after 8th-minute Oyarzabal miss. Source: ESPN match report/analysis, Opta Analyst (theanalyst.com), sofascore, 2026-07-06."
+  },
+  "m94_usa_bel": {
+    "score90": [
+      1,
+      4
+    ],
+    "advanced": "away",
+    "notes": "Belgium won comfortably, not a scare: De Ketelaere 9' & 33' (brace either side of Tillman's 31' USA equalizer-then-immediately-undone), Vanaken 57', Lukaku (sub) 90+3' capped it. Four different-phase goals (early, pre-half response, mid-2nd-half, late) -- not a single fluky sequence. USA's only goal (Tillman) briefly made it 1-1 before De Ketelaere restored the two-goal cushion 2 minutes later. Pre-match process context: Belgium entered on 2.10 non-penalty xG/match (well above USA's 1.45) despite a leaky defense (5.5 xGA across 4 games). Source: ESPN match report, xGscore.io, RealGM xG tracker, 2026-07-07."
+  },
+  "m95_arg_egy": {
+    "score90": [
+      3,
+      2
+    ],
+    "advanced": "home",
+    "notes": "Argentina came from 0-2 down (trailing as late as 67') to win 3-2 in regulation, no ET needed -- first WC knockout comeback from 2-0 down this late in history. Egypt: Ibrahim 15' header, Zico 67' (Hassan cutback after Salah break); a second Zico goal was VAR-disallowed (58', marginal foul on L.Martinez in buildup). Messi missed a first-half penalty (21', saved by Shobeir) -- his 2nd penalty miss of the tournament (first player ever to miss 2 in one WC). Argentina comeback: Romero 79' (Messi assist), Messi 83' (leveler, 8th tournament goal, tournament top scorer), Enzo Fernandez 90+2' winner -- triggered by Scaloni's 66' double sub (Lautaro Martinez, N.Gonzalez) freeing Messi to the right flank. xG: ARG 2.84 (19 shots/7 SoT, 64% poss) vs EGY 0.89 (5 shots/2 SoT) -- Argentina's underlying dominance matches the eventual scoreline despite trailing most of the match. Post-match controversy: Egypt coach Hossam Hassan crossed arms in FIFA's anti-racism-report gesture, referee Letexier booked him with a yellow instead of following protocol; a non-playing Egypt staff member was reportedly sent off (~94') after confronting officials over a waved-away Salah/Alvarez penalty shout in the box -- Egypt camp called it 'an injustice.' Argentina advance to QF vs Switzerland (Kansas City, 7/11). Sources: ESPN (match+report+VAR explainer), Sky Sports, Al Jazeera, Yahoo Sports, Olympics.com, cross-verified 2026-07-08; minor cross-source noise on exact card minutes/assist attribution (Fernandez winner assisted by Lisandro Martinez per Fox box score vs Lautaro Martinez per SI -- unresolved)."
+  },
+  "m97_fra_mar": {
+    "score90": [
+      2,
+      0
+    ],
+    "advanced": "home",
+    "notes": "France 2-0 in 90' (no ET). Total process domination despite Morocco 52% possession: xG FRA 3.10 (Sofascore) / 3.69 (ESPN, incl. the 0.79 missed pen) vs MAR 0.13-0.14; shots 21-4/5, SoT 8-1, big chances 5-0 (first-half shots 13-1). Mbappe penalty MISSED 28' (VAR-awarded ~25' Mazraoui foul; Bounou saved) -- elite finisher missing a 0.79-xG chance; Digne tipped onto crossbar by Bounou; Morocco's best moment a Hakimi FK wide ~45', ZERO big chances all night. Goals: Mbappe 60' (Doue assist), Dembele 66' (Mbappe assist) -- six-minute burst after HT 0-0. Scoreline FLATTERED MOROCCO (Bounou 6 saves): France underran its xG this match (2 goals vs ~3.1-3.7), i.e. the pre-match 'finishing overperformance +5.8 unsustainable' flag materialized, but process dominance made it moot. No late variance, no reds (only card Diop MAR). Lineups: Tchouameni did NOT play at all (groin); Mbappe+Dembele started (lock invalidation NOT triggered, no amend); MAR without Saibari (out, hamstring), Rahimi benched until 62', Riad benched despite fit (Salah-Eddine started CB). Mbappe precautionary ankle knock 77' (post-match 'all good', no SF concern per ESPN). France to SF vs esp/bel winner, Dallas 7/14. Sources: ESPN match page/analysis/recap, Sofascore recap+HT report, FOX box score, Al Jazeera, cross-verified 2026-07-09/10. Provider xG split (3.10 vs 3.69) traced to penalty-xG treatment."
+  },
+  "m100_arg_sui": {
+    "score90": [
+      1,
+      1
+    ],
+    "advanced": "home",
+    "notes": "1-1 at 90'; Argentina 3-1 AET (Alvarez 112' long-range curler, Lautaro 120+1' counter rebound vs stretched 10 men). No pens. Regulation: Mac Allister 10' glancing header (Messi corner), Ndoye 67' low finish off a counter (Rodriguez assist) -- regulation total 2 goals. HINGE: 72' VAR ruled Embolo SIMULATION (initially booked Paredes for catching his heel; review showed no contact, yellow reassigned = Embolo's 2nd -> RED, in tears, 5 min after the equalizer). Process: xG ARG 2.00 - SUI 0.53 over 120' (ESPN/FotMob, likely single Opta feed); shots ~20-22 vs ~10-11; possession 59-41; ARG only 2 SoT through 90' -- compact grindy regulation, Swiss low block + counters. Big moments: Embolo 1v1 saved ~32' (pen appeal denied), Kobel flicked away L.Martinez scissor-kick 90+9 (forced ET), SUI survived 'wave after wave' until 112'. 3-1 FLATTERS ARGENTINA (AP: 'made it look easier than it was'); both decisive goals = late vs fatigued 10-man side. Messi 9-game WC scoring streak ended but PotM (8.8). Lineups: Manzambi ABSENT (Yakin: 'tried everything, unable to perform'; Rieder in XI); Alvarez started, Lautaro sub 85'; Romero started (managed, off 105'). No new ARG injuries/suspensions for SF vs England (Atlanta 7/15). First time FIFA top-4 all reached WC semis. Sources: ESPN, NBC, CBS, FotMob, AP, FOX, Yahoo, cross-verified 2026-07-12."
+  },
+  "m99_nor_eng": {
+    "score90": [
+      1,
+      1
+    ],
+    "advanced": "away",
+    "notes": "1-1 at 90'; England 2-1 AET (Bellingham 93' ET rebound after Nyland spilled Rogers' long shot). No pens. Regulation goals: Schjelderup 36' (Odegaard assist, looping strike over Pickford), Bellingham 45+1' (Gordon through-ball in behind down Norway's right -- GROUND ball, not a cross). LOW-EVENT process despite the pre-match high-scoring read: full-match xG (incl. ET) NOR 0.68 - ENG 1.04 (ESPN/FotMob agree) ~= 1.4 combined per 90; shots 14-14, SoT 4-8. HT xG NOR 0.34-0.22 despite ENG 68% HT possession. Even, phase-swinging match: VAR disallowed Heggem's ~50-55' would-be 2-1 (Haaland push on Anderson), Kane 45+3' goal disallowed (marginal offside), England ET penalty awarded then OVERTURNED (Spence initiated contact); Ajer hit the crossbar from a corner. Haaland: 0 goals (14-match streak ended), 21 touches in 105', subbed ET interval (dead leg + exhaustion; Solbakken: 'He was finished'). England crosses/headers strength did NOT convert (0 headed goals). Tuchel: 'We were lucky today.' Lineups: Konsa RB (Quansah suspended -- FIFA ban confirmed [CORRECTION 2026-07-12: the 2-match ban covers this QF AND the semifinal, 4 sources ESPN/AlJazeera/UPI/SI; the settle-time claim 'expires after this match' was wrong -- he returns only for a potential final]), Reece James bench (71' sub), Moller Wolfe started; Norway started Sorloth+Schjelderup (Bobb/Nusa on ~63-68'). England to SF vs Argentina (Atlanta 7/15); Rice HT withdrawal (sciatica-type nerve pain + bug) = biggest semi doubt. Sources: ESPN, FOX, NBC live blog, Sofascore, Al Jazeera, Yahoo, cross-verified 2026-07-11/12."
+  },
+  "m98_esp_bel": {
+    "score90": [
+      2,
+      1
+    ],
+    "advanced": "home",
+    "notes": "Spain 2-1 in 90' (winner 88'). Process one-sided: xG ESP 1.96 (ESPN/Opta) / 2.08 (Sofascore) vs BEL 0.34/0.38; shots 19-6, SoT 8-2, possession 68-32. Goals: F.Ruiz 30' (rebound off Courtois parry), De Ketelaere 41' header (Castagne cross, KDB in build-up) = Belgium's ONLY big chance and the FIRST goal Spain conceded all tournament, Merino 88' (sub GK Lammens spilled Cubarsi shot; Merino scored 1m57s after subbing on -- 2nd straight KO-round late winner). Decisive variance: Courtois (BEL best player, 7.4) injured off 71' (right quad, in tears); Lammens (no competitive minutes since May) spilled the 88'. Scoreline FLATTERED BELGIUM. No pens, no VAR interventions, no reds (FOX 60' Witsel card entry = data error, contradicted by ESPN/CBS). Lineups: KDB STARTED, Doku STARTED, Lukaku BENCH (on 60') -- no trident, as 5/5 predicted XIs said; Tielemans injured in WARMUP (Vanaken pre-kickoff replacement); Spain full strength, Yamal started (6 shots, 4 dribbles). Spain to SF vs France (Dallas 7/14), no new injuries/suspensions. Sources: ESPN match page, FOX box score, Sky, CBS, Sofascore, cross-verified 2026-07-10/11."
+  },
+  "m96_sui_col": {
+    "score90": [
+      0,
+      0
+    ],
+    "advanced": "home",
+    "notes": "0-0 through 90' and full 120' (AET) -- lowest 90-min combined xG of the tournament (0.7). Colombia dominated process throughout (xG 1.03 vs SUI 0.35; shots 15-7; corners 7-3) but could not convert: Lucumi header off the crossbar (~100', ET) and Campaz badly missed an open one-on-one chance after a Xhaka error (115'-116', the single biggest chance of the match). Switzerland won 4-3 on penalties (Colombia shot first): COL scored Quintero, Campaz, Diaz, missed Sanchez (crossbar) and Cucho Hernandez (saved by Kobel); SUI scored Xhaka, Amdouni, Itten, R.Vargas (winner, sent Vargas the wrong way), missed Akanji (admitted post-match he second-guessed his placement). Switzerland's first-ever WC shootout win (lost their only prior one, 2006 vs Ukraine); first Swiss WC quarterfinal since 1954. Team-news theses check: Luis Suarez started for injured Cordoba as expected (played 82', booked, subbed for Cucho who then missed his kick); James Rodriguez started and played a clean 66' with no visible illness recurrence (subbed for Quintero in what read as tactical, not forced) -- the illness risk resolved as the mild case, not the risk case, yet Colombia still lost; a previously unflagged injury (Johan Manzambi, out with a training knee injury) emerged that the pre-lock team-news sweep had not captured -- a genuine gap, not a contradiction. Net: the concrete rest/travel/injury edge Switzerland's J-instrument leaned on did NOT need to resolve in Switzerland's favor to produce a Switzerland win -- Colombia's doubts mostly resolved in Colombia's own favor and they still out-chanced Switzerland heavily, but lost anyway via shootout variance, not via the process edge the pre-match thesis identified. Switzerland advance to QF vs Argentina (Kansas City, 7/11). Sources: FIFA match centre, ESPN, FOX Sports box score, Opta Analyst, France24, CBS Sports, Yahoo Sports, ColombiaOne, cross-verified 2026-07-08."
+  },
+  "m101_fra_esp": {
+    "score90": [
+      0,
+      2
+    ],
+    "advanced": "away",
+    "notes": "Spain 2-0 in 90' (no ET needed). Process one-sided, most extreme of the tournament: xG ESP 1.63 vs FRA 0.3 (Opta/theanalyst) -- Spain's lowest xG conceded in a WC semifinal since Brazil-Sweden 1994 (0.1), and the lowest xG France have ever managed in a WC game on record. Shots 10-10 but SoT 2-3 (ESP scored both shots on target; FRA 0-for-3). Possession 55-45 Spain (219/252 passes vs 163/195). Goals: Oyarzabal 22' penalty (Yamal fouled by Upamecano; 0.79xG/0.96xGOT, near-certain conversion), Porro 58' open play. No red cards, no VAR incidents reported. Spain to the final (MetLife 7/19) vs England/Argentina winner. Sources: ESPN, FOX Sports, Opta Analyst/theanalyst.com, Sofascore, FIFA match centre, CNN, NBC, NPR -- cross-verified 2026-07-14/15."
+  },
+  "m102_eng_arg": {
+    "score90": [
+      1,
+      2
+    ],
+    "advanced": "away",
+    "notes": "Argentina 2-1 comeback win in 90'+stoppage (no ET needed). Gordon 55' put England ahead (Morgan Rogers cross, right-footed finish, NOT a header); Enzo Fernandez 85' equalized (32-yard strike -- assist attribution disputed: ESPN shot-map shows no assist, but Sky Sports/CBS/Al Jazeera all credit Messi with the pass, recorded here as unresolved not as fact); Lautaro Martinez 90+2' winner, HEADER off a Messi cross. xG Argentina 1.84 vs England 0.53 (ESPN/Opta); shots 15-5, SoT 5-2, possession 64-36 Argentina; crossing 19 attempted/6 completed (32%) Argentina vs 15/3 (20%) England -- Argentina won the crossing battle. Kane anonymous: 26 touches, 1 shot, 0 SoT, 0.02 xG, no headers recorded, marked out by Romero. MECHANISM AUDIT (see mechanism_ledger.jsonl): the aerial/cross mechanism J and the research layer both bet on England for materialized in the OPPOSITE direction -- Argentina's winner was itself a Messi cross -> Lautaro header, plus two more Argentina headed chances (Mac Allister post 76', Nico Gonzalez saved 69'); Tuchel's own post-match quote confirms it explicitly: 'They won every header. They kept crossing and crossing. So we went to a back five...' (Al Jazeera 2026-07-15) -- the back-five switch was broken 3 minutes later by Fernandez's equalizer. Rice started and played to 82' (Nico O'Reilly on), a tactical substitution alongside James/Burn for the back-five switch, not an injury withdrawal -- Sofascore rating 7.1, 2 key passes, 1 SoT; the pre-match Rice-fitness uncertainty did not manifest as a limiting factor on the pitch. Lisandro Martinez subbed off 72-73' (Otamendi on), before both late goals -- the concession structure traces to the back-five switch itself, not his individual coverage. No PK shootout -- the pk_h=0.45 Dibu Martinez adjustment was untested. No true Pinnacle closing snapshot was captured for this match (scheduled T-15 grab did not fire, odds/m102_eng_arg.jsonl has zero closing=true rows vs 3 each for m100/m101); last real snapshot is 2026-07-14T18:44:52Z (~24h13m pre-kickoff): England 2.71/Draw 2.95/Argentina 3.08. Sources: ESPN match centre + player-stats page, theanalyst.com/Opta Analyst, Sofascore, Al Jazeera (incl. direct Tuchel quote), Sky Sports, thescore.com tactical review, Fox Sports box score -- cross-verified 2026-07-15/16, adversarially re-checked via independent WebFetch on the highest-risk claims."
+  },
+  "m103_fra_eng": {
+    "score90": [
+      4,
+      6
+    ],
+    "advanced": "away",
+    "notes": "England 6-4 France in 90' (bronze final, Miami; no ET needed). 10 goals -- first WC match with 10+ since Hungary 10-1 El Salvador (1982); England's best WC finish in 60 years. HT 0-4: Rice 3' (long-range curler), Konsa 18' (header), Saka 37' + 45+1'. 2H France rally: Mbappe 48', Barcola 54' (Mbappe assist, sub), Mbappe 66' -- reported by Olympics.com as making him all-time WC career top scorer, and taking him to 10 tournament goals (Golden Boot over Messi's 8, settled since Messi did not score in the final); Saka pen 87' (hat trick, 4th England men's WC hat-trick scorer); Dembele 90+6' (sub); Bellingham 90+8' (sub). xG: England 3.05 vs France 2.80 (Opta Analyst/xGscore -- highest combined xG of the tournament, 5.7); shots 19-19, SoT 11-9 England; possession 54-46 England. 1H England dominant (shots 11-5, SoT 7-2); 2H France dominant (xG 2.29-1.65, shots 14-8) -- process read: England's first-half blitz was real process advantage vs a flat, heavily-rotated France; France's 2H surge was real too but chasing from 0-4. LINEUPS/ROTATION (action-tree adjudication, counted vs each side's semifinal XI): France XI Maignan; Gusto, Konate, Lacroix, T.Hernandez; Rabiot, Zaire-Emery; Olise, Cherki, Doue; Mbappe = 7 changes from semi XI (Kounde/Upamecano/Saliba/Digne/Tchouameni/Dembele/Barcola out), 6 counted per pre-registered rule excluding Saliba. England XI D.Henderson; Quansah, Guehi, Konsa, Spence; Rice; Saka, Eze, Rogers, Rashford; Toney = 7 changes (Pickford/James/Stones/Anderson/Bellingham/Gordon/Kane out). England rotated MORE than France -- the 07-16 late-news reversal (England rotating harder, Kane to bench) materialized exactly; the locked J's asymmetric-rotation premise (France rotates, England near-full) was factually wrong by kickoff, as pre-flagged in the verdict's own 'where I might be wrong' item 1. T-75 ACTION TREE (pre-registered dead levels; NO session was present at T-75, so per the m91 rule these are recorded, not executed, and not retroactively claimed): triggered = Kane not in XI (+4 FRA), England changes >= France changes (+6 FRA), D.Henderson starts (+2 FRA); not triggered = Bellingham suspension (played as sub, never charged), Mbappe absent (started), Risser (Maignan started), FRA-ENG changes >=5 (6-7 = -1). Counterfactual net +12 France-ward would have made J's score WORSE on this outcome -- the tree pointed the wrong way this match. CONDITIONAL PAPER TICKET (from edge-hunt critique): required Kane+Bellingham+Rice all starting -- FAILED (Kane and Bellingham both benched), so no bet fired, correctly per its own registered conditions. Honest counterfactual both ways: England ML closed 4.57 (price condition >=3.85 held) and England won -- but the ticket's thesis was 'England full-strength value', and England won via exactly the opposite configuration (B-XI), so the ticket missing is premise-discipline working, not bad luck. The other registered candidate, BTTS No at FanDuel +210 (never taken -- price could not be mechanically verified), LOST at 54' (both teams scored) -- the price-verification rule saved 1u. MARKET: Pinnacle lock-time 1.91/3.91/3.93 -> T-80 1.81/4.10/4.24 -> closing 1.75/4.14/4.57 -- the market steamed France-ward all the way to kickoff (its rotation-asymmetry read was factually RIGHT about lineups) and England's B-XI won anyway: the sharpest closing line of the sample produced its worst single-match miss. TOTALS BLIND SPOT: market total line ~3.25 vs instrument curve lambda-sum 2.39 -- actual 10 goals; third and most extreme confirmation of the pre-registered tempo/totals blind spot (the bronze-openness tension the judgment layer logged as 'pending totals-layer consideration' materialized to the extreme). Sources: ESPN match centre/report/team-stats (gameId 760516), Opta Analyst (theanalyst.com bronze-final stats), xGscore.io, Sofascore, CNN, Yahoo Sports, Al Jazeera liveblog, Olympics.com, bulinews (Kane bench), SI/RotoWire/lineups.com (XIs), skysports teams pages (semifinal XIs) -- gathered and cross-checked 2026-07-20 at settle. CORRECTION (2026-07-20, after re-reading reports/m103_final_comparison.html): the sentence above about BTTS No is the stale 07-16 registration state only. The FINAL 07-17 comparison-table action section (updated with a manual Pinnacle snapshot) explicitly recommended BET: BTTS No @ Pinnacle 2.900, 200/1000 (named mechanism, +6.5pp vs devigged Pinnacle, +10.2% edge) -- so the decision-support layer DID recommend this bet and it LOST. The paper/SOP ledger genuinely has no entry (formal verdict stayed Pass + conditional ticket). The price-verification rule saved nothing; the loss belongs to the final recommendation."
+  },
+  "m104_esp_arg": {
+    "score90": [
+      0,
+      0
+    ],
+    "advanced": "home",
+    "notes": "Spain 1-0 Argentina AET (World Cup final, MetLife/New York-New Jersey Stadium) -- 0-0 after 90', Ferran Torres 106' winner (37 seconds into the ET second half, teed up by Nico Williams, both subs; Torres's earlier headed chance was saved). Spain's 2nd World Cup title (first since 2010). No penalty shootout -- the pk_h=0.45 Dibu-premium layer was never tested (again; untested in every match it was registered for). PROCESS -- utterly one-sided: xG Spain 1.94 (20 shots) vs Argentina 0.20 (2 shots) across 120'; Messi's only shot hit Merino in the face; media framing unanimous ('Spain suffocates Messi and Argentina'). Yamal started and was fine (first chance at 5', rated 7/10) -- the J-runner trial factor built on his fitness doubt resolved to nothing, exactly its own registered invalidation line. Enzo Fernandez sent off in 90'+ stoppage (second yellow, foul on Cubarsi), so Argentina played all of ET with 10 men -- confound for any ET-layer mechanism claims. MECHANISM AUDIT (details in mechanism_ledger.jsonl): tactical_stylistic_matchup -4 ARG (set-piece threat vs Spain's aerial concession) did NOT materialize -- Argentina generated 2 shots and 0.20 xG in 120 minutes, no meaningful set-piece threat recorded; this mechanism type is now 0-for-3 in this project's own ledger (r32_esp_aut, m102, m104). rest_travel +5 ESP (Argentina's two prior ETs + one fewer rest day) materialized in direction -- Argentina looked out of gas, went to a third ET, and conceded 106' -- but is confounded by the red card (10 men in ET), so recorded as direction-consistent-with-confound, not clean. EDGE-HUNT HONESTY RECORD: the strongest MARGINAL candidate (draw @3.02, from the 22-final 54.5% level-at-90 base rate) HIT -- 0-0 at 90'. It was correctly-per-rules not bet (MARGINAL, not REAL_EDGE; correlated cluster). Paired with m103's BTTS No candidate losing, the two registered-but-unbet candidates went exactly 1-1 -- n=2, no conclusion, recorded so the rules' filtering cost/benefit stays visible. MARKET: Pinnacle lock-time 2.34/3.02/3.63 -> closing 2.31/3.06/3.74, essentially stable; the market's extra Spain-lean vs M/J was directionally vindicated by process and outcome, but on the 90' vector the draw outcome scores M=J at parity-or-better vs the closing line (see score.py). The judgment layer's much stronger Spain lean (43.9/27.7/28.4) was process-vindicated (xG 1.94-0.20) but RPS-punished on the 90' draw -- the m91 settle language applies verbatim: the ledger goes to M/J, the reasoning goes to the judgment layer ('process advantage' vs 'finishing variance': Spain needed 106 minutes to convert total dominance). Sources: ESPN (gameId 760517), FIFA match centre, Yahoo Sports, SI match stats, The National ratings (Yamal 7, Torres 8, Fernandez 3, Messi 5), NBC News liveblog, Bleacher Report, FOX Sports (Torres goal + Fernandez red-card clips) -- gathered and cross-checked 2026-07-20 at settle. ADDENDUM (2026-07-20, user observation verified via ESPN live commentary / football360 / VnExpress): Nico Williams had a Spain goal DISALLOWED in the 6th minute of extra time (~96th min) -- ruled out for a Merino foul (stepping on Otamendi foot) in the build-up; widely criticized as a marginal/controversial call (one pundit: clear and obvious error). Spain would have led ~10 minutes earlier than the actual 106th-minute winner -- further evidence the 1-0-in-ET scoreline UNDERSTATES the process gap the xG already shows."
+  }
+}

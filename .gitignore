@@ -1,0 +1,14 @@
+__pycache__/
+history/falsification-2026/ops/grab_log.txt
+
+# wc2026 experiment (archived 2026-07-20, mirror layout): API key stays local; raw API dumps are bulky
+history/falsification-2026/config.json
+history/falsification-2026/odds/raw/
+
+# multi-league generalization (2026-07-24): raw external data-source dumps
+# are bulky and re-fetchable, same discipline as the line above.
+football_ai/data/raw/
+ops/*.log
+
+# temporary git worktrees created by isolated agents (full repo copies, never committed)
+.claude/worktrees/

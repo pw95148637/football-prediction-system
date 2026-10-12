@@ -1,0 +1,72 @@
+{
+  "locked_at": "2026-07-06T02:20:55.845093+00:00",
+  "version": 1,
+  "payload": {
+    "match_id": "r16_por_esp",
+    "pilot": false,
+    "teams": {
+      "home": "Portugal",
+      "away": "Spain"
+    },
+    "kickoff_utc": "2026-07-06T19:00:00+00:00",
+    "mode": "A",
+    "probs_90": {
+      "home": 0.1907489931080588,
+      "draw": 0.2680884131223993,
+      "away": 0.5411625937695419
+    },
+    "qualify_home": 0.30289096793610476,
+    "lambdas": {
+      "home": 0.8931828552397723,
+      "away": 1.583618915215936
+    },
+    "inputs": {
+      "instrument": "M v2 (calibration.json) — pure Elo, neutral venue, NO situational adjustment",
+      "elo_home": 2013,
+      "elo_away": 2159,
+      "elo_diff_raw": -146,
+      "elo_diff_adjustment": 0,
+      "elo_diff_effective": -146,
+      "adjustment_reasons": [
+        "0 net, neutral venue: AT&T/Dallas Stadium (Arlington TX) is neutral for both Iberian sides — no host +75 for either.",
+        "0 situational: DELIBERATELY applied no injury/rotation tuning to d_eff. Elo + team-news were gathered AFTER the analyst had already seen the market price (odds landed 2026-07-04), so any post-market situational tuning of M could unconsciously anchor it to the market. M is therefore locked as the clean, price-blind Elo->calibrated mapping.",
+        "Known team-state (Spain: Nico Williams adductor + Yeremy Pino shoulder OUT, both already absent in R32; otherwise near-full-strength, 0 R32 bookings. Portugal: fully fit, 0 R32 bookings) is discussed in the decision narrative (verdicts_main.md), NOT folded into locked M."
+      ],
+      "pk_home": 0.5,
+      "goals_note": "lambdas from calibrated curves (calibration.json); total 2.48"
+    },
+    "rationale": [
+      "Elo -146: Spain #1 (2159) vs Portugal #5 (2013), same eloratings.net World.tsv scale, read 2026-07-06.",
+      "M (pure Elo -> calibrated map, neutral) => POR 19.07 / draw 26.81 / ESP 54.12 (90'); qualify POR 30.3% / ESP 69.7%. This is instrument M ONLY — the mechanical control arm, computed by model.py from Elo, provably independent of the market price.",
+      "Process context (narrative, NOT an input to M): Spain dominant all tournament (4 clean sheets in 4, xG diff ~+1.80/game, dismantled Austria 3-0 with xG 2.84-0.32, allowed 0 shots on target); Portugal grinding (2-1 Croatia needing a 90+4' winner, xG 2.04-1.38, midfield below its best)."
+    ],
+    "invalidation": [
+      "M is a fixed Elo->prob mapping; it does not update on lineups. What would change the DECISION NARRATIVE (not M): Spain's confirmed XI (does Nico Williams even make the bench; Rodri/Yamal all start), Portugal's RW choice (Neto vs Conceicao vs B.Silva), and whether AT&T's roof is closed (heat neutralized).",
+      "Read is falsified toward Portugal if Spain heavily rotates or a key spine player (Rodri/Pedri/Cubarsi/Laporte) is late-scratched; toward Spain if Portugal drops Ronaldo or sets up ultra-passive."
+    ],
+    "sources": [
+      {
+        "item": "Elo Spain 2159 (rank 1), Portugal 2013 (rank 5), same scale; diff -146 (POR-ESP)",
+        "source": "eloratings.net World.tsv",
+        "as_of": "2026-07-06"
+      },
+      {
+        "item": "Fixture: R16 Match 93, AT&T/Dallas Stadium Arlington TX (neutral), kickoff 2026-07-06 19:00 UTC; referee Anthony Taylor",
+        "source": "ESPN / FIFA match centre / Ticketmaster / ysscores",
+        "as_of": "2026-07-06"
+      },
+      {
+        "item": "Spain R32 beat Austria 3-0 (Oyarzabal 2, Porro; xG 2.84-0.32, 0 SoT allowed); availability: Nico Williams (adductor) & Yeremy Pino (shoulder) out, otherwise near-full-strength, 0 R32 bookings; predicted XI Simon; Porro,Cubarsi,Laporte,Cucurella; Rodri,Pedri; Yamal,Olmo,Baena; Oyarzabal",
+        "source": "ESPN / theanalyst.com / Sports Mole / RotoWire",
+        "as_of": "2026-07-05"
+      },
+      {
+        "item": "Portugal R32 beat Croatia 2-1 (Ronaldo 68'pen, Ramos 90+4'; no extra time; xG 2.04-1.38); fully fit, no injuries/suspensions, 0 R32 bookings; predicted XI Costa; Cancelo,Dias,Veiga,Mendes; Neves,Vitinha; Neto,Fernandes,Leao; Ronaldo",
+        "source": "ESPN / xgscore.io / Sports Mole / Opta Analyst",
+        "as_of": "2026-07-05"
+      }
+    ],
+    "contamination_notes": "CONTAMINATED (main-sample Match 93). The Pinnacle 1x2 snapshot for this match (POR 4.08 / draw 3.68 / ESP 1.93) was recorded to odds/r16_por_esp.jsonl at 2026-07-04T05:01:31Z via an orphan `fetch_odds.py grab` with NO prior lock. Any lock created now (2026-07-06) is necessarily later than first-odds-contact, so score.py's timestamp audit flags this match CONTAMINATED: still counted in B1, excluded from B2 (PROTOCOL section 4). INSTRUMENT M (locked here): the pure-Elo calibrated mapping, computed deterministically by model.py from Elo (2013 vs 2159) + pre-registered constants — provably uninfluenced by the price. The CONTAMINATED flag reflects the timestamp, not any price influence on M's value. INSTRUMENT J: DELIBERATELY OMITTED. J requires pre-market independence, and the analyst has read the market price (Spain 1.93 favorite), so no honest independent J observation exists for this match. Submitting a post-market J would manufacture a fake independent prediction — the exact failure this experiment exists to prevent. Disclosed consequence: the J arm cannot reach n=16, so score.py's pre-registered section-4 verdict falls back to instrument M. NO paper bet placed (B2 excluded; and having seen the price, any claimed edge would be circular). The 07-04 orphan snapshot is NOT deleted — deleting it to fabricate a clean lock would be tampering with the audit trail."
+  },
+  "sha256": "5b5bf5203efd7f47d6026fdf1f97ce2bd8f5bcead1cd01f7446f74d35e560f04"
+}

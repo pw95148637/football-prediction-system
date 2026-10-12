@@ -1,0 +1,86 @@
+{
+  "locked_at": "2026-07-12T09:32:25.894358+00:00",
+  "version": 2,
+  "amend_reason": "instrument J synthesis (pre-market, auto-M-lock process): J=M no-deviation after firewalled evidence review; all candidate deviations two-sided or public, declined with documentation",
+  "original_sha256": "266b67e880247124364ec16ac89a79fce887c82c8fe639feb92d2b5fc3e0c91c",
+  "payload": {
+    "match_id": "m101_fra_esp",
+    "pilot": false,
+    "teams": {
+      "home": "France",
+      "away": "Spain"
+    },
+    "kickoff_utc": "2026-07-14T19:00:00+00:00",
+    "mode": "A",
+    "probs_90": {
+      "home": 0.312483178671794,
+      "draw": 0.3077685801116389,
+      "away": 0.37974824121656714
+    },
+    "qualify_home": 0.46171358009151164,
+    "lambdas": {
+      "home": 1.1281460597715438,
+      "away": 1.2541577383592344
+    },
+    "inputs": {
+      "instrument": "M v2 (calibration.json) — AUTO-M-LOCK: pure Elo, no situational tuning; locked mechanically at pairing-known time (CHANGELOG 2026-07-08)",
+      "elo_home": 2163,
+      "elo_away": 2190,
+      "elo_diff_raw": -27,
+      "elo_diff_adjustment": 0,
+      "elo_diff_effective": -27,
+      "adjustment_reasons": [
+        "0 net, neutral venue: no host nation playing at home; M kept as pure-Elo control — all situational synthesis lives in J (added later via amend, pre-market)"
+      ],
+      "pk_home": 0.5,
+      "goals_note": "lambdas from calibrated curves"
+    },
+    "rationale": [
+      "Elo -27: France 2163 vs Spain 2190, eloratings.net World.tsv fetched 2026-07-12T04:27:29.369850+00:00 (raw snapshots: 20260712T042729Z_World.tsv, 20260712T042729Z_en.teams.tsv).",
+      "AUTO-M-LOCK: mechanical price-blind arithmetic at pairing-known time — eliminates the m92 MISSING failure class. No analyst judgment is embedded in this version."
+    ],
+    "invalidation": [
+      "Situational facts (injuries/suspensions/lineups) belong to J or to a reasoned amend with the concrete new information — this v1 is the pure-Elo control and needs no invalidation conditions of its own.",
+      "Instrument J must be added by an odds-clean session via lock.py amend BEFORE any odds contact for this match; score.py drops a post-market j mechanically (contaminated_j).",
+      "PRE-REGISTERED ACTION TREE (T-75min lineup window, 2026-07-14 ~17:45 UTC): (1) Mbappe ruled out or benched (real injury escalation beyond the L'Equipe 07-10 'fit' read) -> amend toward Spain with the concrete fact; (2) Yamal or Rodri shock absence -> amend toward France with the concrete fact; (3) Tchouameni starting, Doue/Barcola swap, Williams/Baena swap -> no amend (squad-depth noise); (4) anything else -> stand. Market price is never an amend reason."
+    ],
+    "sources": [
+      {
+        "item": "Elo France 2163 (FR), Spain 2190 (ES); diff -27",
+        "source": "https://www.eloratings.net/World.tsv + https://www.eloratings.net/en.teams.tsv (raw in data/elo_snapshots/)",
+        "as_of": "2026-07-12T04:27:29.369850+00:00"
+      },
+      {
+        "item": "Fixture: Match 101, Dallas Stadium (AT&T Stadium), Arlington TX, ko 2026-07-14T19:00:00+00:00",
+        "source": "FIFA match centre 400021541 title + ESPN schedule + NBC DFW 2026-07-11 + SI 2026-07-09 + World Soccer Talk 2026-07-10, cross-verified by odds-firewalled subagent 2026-07-12 (14:00 CDT = 19:00 UTC)",
+        "as_of": "2026-07-12"
+      },
+      {
+        "item": "Evidence bundle: full six-match xG logs both teams, styles, injuries, H2H, model reads",
+        "source": "m101_fra_esp_prelock.md — gathered by odds-firewalled subagent, mechanically firewall-validated CLEAN (one rewrite cycle: brand-name proximity false positives) before analyst read, 2026-07-12",
+        "as_of": "2026-07-12"
+      }
+    ],
+    "contamination_notes": "AUTO-M-LOCK v1 was mechanical. J added 2026-07-12 by an odds-clean session: analyst has seen NO market price for m101 or m102 (odds files do not exist yet; the only market data touched this session was for already-locked m98/m99/m100). Evidence bundle passed firewall.py CLEAN before reading. Opta supercomputer output was quarantined inside the bundle as self-declared odds-ingesting and was NOT used in J.",
+    "j": {
+      "probs_90": {
+        "home": 0.312483178671794,
+        "draw": 0.3077685801116389,
+        "away": 0.37974824121656714
+      },
+      "qualify_home": 0.46171358009151164,
+      "basis": [
+        "J = M (d_eff -27, no deviation) by deliberate discipline after full evidence review (m101_fra_esp_prelock.md). Every candidate deviation was either two-sided or fully public; J=M is the registered honest conclusion (m99 precedent).",
+        "CONSIDERED AND DECLINED — style geometry toward France: Spain will claim the ball (25 straight WC matches never losing possession; tournament-highest high-block share 10.4%; shortest opponent sequences 19.3s) while France's best xG performance came exactly in ceded-ball transition mode (3.0-3.4 xG vs Morocco at 48% possession; Mbappe 8g/5.39xG tournament leader) and Spain's own cited analysts name pace-in-behind as their structural risk. DECLINED because the counter-case is equally evidenced: Spain's high line went unpunished all tournament (xGA 0.36/match, lowest on record; only 1 goal conceded), their counter-press kills transitions at source, and Spain won the last two competitive H2Hs (Euro 2024 SF 2-1, UNL 2025 SF 5-4) by beating France's wide defense — albeit vs a makeshift back line 13 months ago. Two-sided tension with n~1 per side: record, don't trade (m98 lesson).",
+        "CONSIDERED AND DECLINED — rest asymmetry: France 5 days vs Spain 4, neither team has played a single ET minute all tournament. Sub-noise magnitude, partly offset by Spain's venue familiarity (won at AT&T Stadium 7/6) vs France's first timezone change; fully public; rest_travel is 0.5-for-2 on pitch-materialization in this project's own ledger (m96, m100).",
+        "CONSIDERED AND DECLINED — injuries: both near full strength (Mbappe ankle = fit per L'Equipe 07-10 with a training-load caveat; Tchouameni available again but must displace Kone; Spain: Nico Williams returned as QF sub, only Pino out). Symmetric.",
+        "CONSIDERED AND DECLINED — finisher premium: Mbappe's +2.6 tournament overrun vs Spain's -2 underrun looks asymmetric but Spain's underrun is one freak day (Cape Verde 0-0 on 2.25 xG, opposing GK MotM) rather than a skill deficit (Oyarzabal 4g); m99 precedent: no premium when broadly symmetric elite finishing.",
+        "CONSIDERED AND DECLINED — tempo axis: no confirmed low-block plan on either side (Spain never bunkers; France engages with PPDA 8.15), no extreme weather (roofed climate-controlled venue), no incentive distortion. No anchored tempo evidence.",
+        "pk_home stays 0.5: Maignan saved a penalty this tournament and Simon is +1.3 goals prevented — no documented shootout asymmetry of the m100 Dibu class.",
+        "Dimers model read (France-leaning) noted as context only per SOP; independent models are line-context, never a J basis. Opta supercomputer quarantined (self-declared odds-ingesting)."
+      ],
+      "factors": []
+    }
+  },
+  "sha256": "6eb2b407dca904c91ab5d6fcda05d60354448804b9f8f18430a75429ef761ae8"
+}
