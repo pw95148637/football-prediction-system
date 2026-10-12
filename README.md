@@ -2,7 +2,7 @@
 
 **讓 LLM 在可驗證的邊界內工作：一套足球比賽機率預測系統。**
 
-[一頁介紹](https://pw95148637.github.io/football-prediction-system/) · [簡報 PDF](docs/WC2026.pdf) · [English](README.en.md)
+[一頁介紹](https://claude.ai/artifact/49oze3y8pgsxs5vnwC52SF) · [簡報 PDF](docs/WC2026.pdf) · [English](README.en.md)
 
 直接問 AI「誰會贏」，得到的是流暢但無法驗證的答案。這個系統把工作拆開：統計模型算基準、LLM 讀新聞與陣容、程式負責算術與規則。每場的估計先鎖定，再和市場價比較，最後用賽果檢驗。實戰跑過 2026 世界盃淘汰賽，現在用於英超 2026-27 賽季。
 

@@ -2,7 +2,7 @@
 
 **Keeping an LLM inside verifiable boundaries: a probability forecasting system for football matches.**
 
-[One-page overview](https://pw95148637.github.io/football-prediction-system/) · [Slides (PDF, Chinese)](docs/WC2026.pdf) · [中文](README.md)
+[One-page overview](https://claude.ai/artifact/49oze3y8pgsxs5vnwC52SF) · [Slides (PDF, Chinese)](docs/WC2026.pdf) · [中文](README.md)
 
 Ask an AI "who will win" and you get a fluent answer nobody can check. This system splits the work: a statistical model sets the baseline, an LLM reads news and line-ups, and code owns the arithmetic and the rules. Each match's estimate is locked before it is compared with the market price, then scored against the result. It ran live through the 2026 World Cup knockout stage and now covers the Premier League 2026-27 season.
 
